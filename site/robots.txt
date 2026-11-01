@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://karunyadigital.online/sitemap.xml

@@ -1,0 +1,11 @@
+const { chromium } = require('playwright');
+(async () => { const b = await chromium.launch(); const pg = await b.newPage({ viewport: { width: 390, height: 844 }, isMobile:true, hasTouch:true });
+await pg.goto('http://localhost:8765/index.html'); await pg.waitForTimeout(2500);
+await pg.click('.menu-btn'); await pg.waitForTimeout(600); await pg.click('.dd-btn'); await pg.waitForTimeout(500);
+await pg.screenshot({path:'/tmp/cs/mm1.png'});
+await pg.click('.menu-btn'); await pg.waitForTimeout(500);
+const y = await pg.$eval('#specialties', e=>e.offsetTop); await pg.evaluate(y=>scrollTo(0,y),y); await pg.waitForTimeout(2200); await pg.screenshot({path:'/tmp/cs/mm2.png'});
+await pg.goto('http://localhost:8765/ortho.html'); await pg.waitForTimeout(2000); await pg.screenshot({path:'/tmp/cs/mm3.png'});
+const y2 = await pg.$eval('.docs', e=>e.getBoundingClientRect().top+scrollY); await pg.evaluate(y=>scrollTo(0,y-80),y2); await pg.waitForTimeout(1500); await pg.screenshot({path:'/tmp/cs/mm4.png'});
+const ow = await pg.evaluate(()=>document.documentElement.scrollWidth); console.log('scrollWidth', ow);
+await b.close(); })();
