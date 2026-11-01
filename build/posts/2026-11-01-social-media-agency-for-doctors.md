@@ -65,7 +65,7 @@ In India, social media management for doctors usually depends on the number of r
 
 ## What results should you expect?
 
-Social media is a long game. In the first months, the focus is consistency and a complete profile. Over time, good reels that answer real questions can reach lakhs of people in your own region. Our doctors' best reels have crossed several lakh plays, and you can [see their profiles here](work.html).
+Social media is a long game. In the first months, the focus is consistency and a complete profile. Over time, good reels that answer real questions can reach lakhs of people in your own region. You can [see the doctors we work with here](work.html).
 
 ## Start with a free check
 

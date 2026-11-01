@@ -326,9 +326,7 @@ def icon(kind, size=300):
                 + cells)
     elif kind == "brand":
         body = (f'<rect x="40" y="30" width="150" height="150" rx="26" fill="{BLUE}" stroke="{NAVY}" stroke-width="4"/>'
-                f'<text x="115" y="96" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="700" font-size="30" fill="{WHITE}">Dr. Name</text>'
-                f'<text x="115" y="124" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="500" font-size="24" fill="{LIME}">×</text>'
-                f'<text x="115" y="156" text-anchor="middle" font-family="Waylimo,serif" font-size="34" fill="{WHITE}">Karunýa</text>'
+                f'<rect x="64" y="58" width="102" height="10" rx="5" fill="{LIME}"/><rect x="64" y="82" width="80" height="8" rx="4" fill="{SKY}"/><rect x="64" y="100" width="92" height="8" rx="4" fill="{SKY}"/><circle cx="84" cy="146" r="14" fill="{LIME}"/><circle cx="118" cy="146" r="14" fill="{SKY}"/><circle cx="152" cy="146" r="14" fill="{WHITE}"/>'
                 f'<circle cx="238" cy="78" r="46" fill="{LIME}" stroke="{NAVY}" stroke-width="4"/><circle cx="238" cy="78" r="30" fill="{SKY}"/><path d="M214 108 q24 -30 48 0" fill="{NAVY}"/><circle cx="238" cy="70" r="12" fill="{SKIN[0]}"/><path d="M226 64 q12 -16 24 0 q-12 -4 -24 0z" fill="{NAVY}"/>'
                 f'<g class="swatch"><rect x="204" y="150" width="32" height="32" rx="8" fill="{BLUE}" stroke="{NAVY}" stroke-width="3"/><rect x="238" y="150" width="32" height="32" rx="8" fill="{LIME}" stroke="{NAVY}" stroke-width="3"/><rect x="272" y="150" width="32" height="32" rx="8" fill="{NAVY}" stroke="{NAVY}" stroke-width="3"/></g>')
     return head + body + '</svg>'
@@ -506,7 +504,7 @@ def journey(cls="journey", compact=False):
     s.append(f'<circle r="7" fill="{LIME}"><animateMotion dur="7s" repeatCount="indefinite" path="{path}"/></circle>')
     s.append(f'<circle r="14" fill="{LIME}" opacity=".25"><animateMotion dur="7s" repeatCount="indefinite" path="{path}"/></circle>')
     if not compact:
-        labels = [(136, "Reel"), (450, "Viral"), (650, "Log dekhte hain"), (860, "Search"), (1060, "Clinic")]
+        labels = [(136, "Reel"), (450, "Viral"), (650, "People share"), (860, "Search"), (1060, "Clinic")]
         for x, t in labels:
             s.append(f'<text x="{x}" y="296" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="700" font-size="17" fill="{SKY}">{t}</text>')
     s.append('</svg>')

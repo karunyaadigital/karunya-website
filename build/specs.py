@@ -60,12 +60,12 @@ SPECS = {
         h1="The doctor every mother trusts first.",
         lead="Pregnancy, periods, PCOS, delivery. These are the questions families search late at night. We turn your knowledge into clear answers they can trust.",
         doctors=[
-            ("Dr. Manisha Chaudhary", "Meerut", "p-manisha", [], [(785706, IG + "DaOGOq8DGIV/"), (279644, IG + "DZ-K_xnledw/")]),
+            ("Dr. Manisha Chaudhary", "Meerut", "p-manisha", ["manisha-twins"], [(785706, IG + "DaOGOq8DGIV/"), (279644, IG + "DZ-K_xnledw/")]),
             ("Dr. Garima Singh", "Varanasi", "p-garima", ["garima"], [(540277, IG + "DdLt6EJlSV0/"), (279150, IG + "DcvbVXfFcfl/")]),
-            ("Dr. Alka Sony Chaudhary", "Siwan", "p-alka", ["alka"], [(4102136, IG + "DcDxddjzYnv/"), (3856640, IG + "DfEonRcj-PL/")]),
-            ("Dr. Tanima Shukla", "Lucknow", "p-tanima", [], [(64422, IG + "DWlAwwyDzsc/"), (47878, IG + "DZUSLPkgvVe/")]),
+            ("Dr. Alka Sony Chaudhary", "Siwan", "p-alka", ["alka", "alka2"], [(4102136, IG + "DcDxddjzYnv/"), (3856640, IG + "DfEonRcj-PL/")]),
+            ("Dr. Tanima Shukla", "Lucknow", "p-tanima", ["tanima"], [(64422, IG + "DWlAwwyDzsc/"), (47878, IG + "DZUSLPkgvVe/")]),
         ],
-        topics=["Late periods: what to do", "Early signs of PCOS", "Confusing pregnancy test results", "How to calculate a due date", "Normal delivery or C-section?", "What to eat during pregnancy", "Recovery after a C-section", "Changes during menopause", "When is discharge normal?"],
+        topics=["Late periods: what to do", "Early signs of PCOS", "Confusing pregnancy test results", "How to calculate a due date", "Normal delivery or C-section?", "Normal delivery with twins", "What to eat during pregnancy", "Recovery after a C-section", "Changes during menopause", "When is discharge normal?"],
         how=[("Sensitive topics, handled with dignity", "Periods, PCOS and infertility explained so a mother and daughter can watch together."),
              ("Myths vs facts", "Pregnancy and delivery myths cleared in simple words, so families feel calm, not scared."),
              ("Found in “near me” search", "A complete Google profile and website pages, so women nearby find accurate information first.")],
@@ -79,7 +79,7 @@ SPECS = {
         ],
         topics=["When to consider egg freezing", "What your AMH report means", "IUI or IVF?", "Common IVF myths", "Male infertility", "Questions to ask at your first visit", "After embryo transfer", "Age and fertility"],
         how=[("Honest and NMC-safe", "No success-rate claims. Just the process, realistic hope and the right information for couples."),
-             ("No patient stories", "No testimonials or patient images, ever. Only your expertise, explained clearly."),
+             ("Privacy comes first", "No patient is ever identified without written permission."),
              ("Content for a long journey", "IVF patients follow for months. We build series that guide them step by step.")],
     ),
     "ortho": dict(
@@ -102,7 +102,7 @@ SPECS = {
         lead="Dental content is among the most shared in healthcare. One good reel can reach families across your whole city.",
         doctors=[
             ("Dr. Sunaina Gupta", "Agra", "p-sunaina", [], [(5473055, IG + "DUsC0YPiIJY/"), (433813, IG + "Dd6XW7lErrs/")]),
-            ("Dr. Neetu Pal", "Greater Noida", "p-neetu", ["neetu"], []),
+            ("Dr. Neetu Pal", "Greater Noida", "p-neetu", ["neetu", "neetu-gums"], []),
         ],
         topics=["Why gums bleed", "Fear of root canal", "Implant or bridge?", "Children's teeth", "Braces and aligners", "Bad breath", "Teeth whitening", "Tooth sensitivity"],
         how=[("Animation people remember", "A friendly tooth character and a toothbrush journey that kids and adults watch and share."),
@@ -151,11 +151,11 @@ def profile_card(name, city, photo, plays, spec=""):
         return ""
     img = f'<img src="media/{photo}.jpg" alt="{name}" loading="lazy" width="600" height="750">' if photo else f'<span class="mono">{name.replace("Dr. ", "")[:1]}</span>'
     deg = f'<small class="deg">{DEG[name]}</small>' if name in DEG else ""
-    pl = f'<p class="pf-plays"><b>{plays_fmt(plays)}</b> plays on best reel</p>' if plays else ""
+    pl = ""
     return (f'<a class="pf" data-spec="{spec}" href="{url}" target="_blank" rel="noopener" aria-label="{name}: see Instagram profile">'
             f'<div class="pf-ph"><span class="ex-badge">Karunya Exclusive</span>{img}</div>'
             f'<div class="pf-body"><b class="pf-n">{name}</b>{deg}<span class="pf-c">{city}</span>{pl}'
-            f'<span class="pf-go">{IG_ICON}Click to see profile</span></div></a>')
+            f'<span class="pf-go">{IG_ICON}See profile</span></div></a>')
 
 
 def profile_cards(keys=None):
