@@ -711,3 +711,130 @@ legend{font-size:12.5px;font-weight:500;color:var(--mu);margin-bottom:8px;paddin
 .tm-av.ph{display:flex;align-items:center;justify-content:center}
 .tm-av.ph img{flex:none;width:124px;height:124px;border-radius:50%;object-fit:cover}
 .bm-core img{border-radius:26%}
+
+/* ================= v6 hero: the Karunya street ================= */
+.hero3{position:relative;overflow:hidden;color:#fff;min-height:max(900px,100svh);background:linear-gradient(180deg,#012A5E 0%,#014196 38%,#0251B0 62%,#3E8BDB 100%)}
+.hero3::after{content:"";position:absolute;inset:auto 0 0;height:4px;background:var(--lime);z-index:4}
+.h3-in{position:relative;z-index:3;padding-top:clamp(120px,17vh,160px)}
+.h3-h{font:400 clamp(44px,6vw,84px)/1 var(--fd);max-width:9.5em;letter-spacing:-.01em;animation:up 1s var(--ease) both}
+.lime{color:var(--lime)}
+.h3-k{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35em;margin-top:18px;font:400 clamp(22px,2.4vw,30px)/1.2 var(--fd);color:var(--sky);animation:up 1s var(--ease) .15s both}
+.h3-k .kin-slot{display:inline-block;min-width:11em;height:1.25em;font-size:1em}
+.h3-p{max-width:30em;font-size:16.5px;color:rgba(255,255,255,.82);margin:14px 0 28px;animation:up 1s var(--ease) .3s both}
+.h3-in .row{animation:up 1s var(--ease) .45s both}
+.h3-proof{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:34px}
+.h3-proof .bn{padding:0;border:0}
+.h3-proof .bn-n{font-size:clamp(30px,3vw,42px)}
+.h3-proof .bn-l{margin-top:4px;font-size:12.5px;color:var(--sky);max-width:190px}
+.hero3 .scene{position:absolute;left:50%;bottom:0;width:max(100%,1180px);height:auto;transform:translateX(-50%);z-index:1;max-width:none}
+
+/* scene motion */
+.star{animation:tw 3.2s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.25}50%{opacity:1}}
+.cloud{animation:drift 70s ease-in-out infinite alternate}
+.cloud.c2{animation-duration:90s}.cloud.c3{animation-duration:80s;animation-direction:alternate-reverse}
+@keyframes drift{from{translate:-60px 0}to{translate:90px 0}}
+.bird{animation:fly 22s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes fly{from{translate:-200px 10px}to{translate:900px -90px}}
+.rick{animation:ride 30s linear infinite 1s;translate:-300px 0}
+@keyframes ride{from{translate:-300px 0}to{translate:1900px 0}}
+.rick-bob{animation:rbob .45s ease-in-out infinite alternate}
+@keyframes rbob{to{translate:0 -2px}}
+.beam{animation:beam 2s ease-in-out infinite}
+@keyframes beam{50%{opacity:.08}}
+.walk-a{animation:walk 46s linear infinite alternate}
+.walk-b{animation:walk 38s linear infinite alternate-reverse}
+@keyframes walk{from{translate:0 0}to{translate:360px 0}}
+.step{animation:step .5s ease-in-out infinite alternate}
+@keyframes step{to{translate:0 -2.5px}}
+.cone{animation:flick 5s steps(1) infinite}
+@keyframes flick{0%,90%,100%{opacity:1}92%{opacity:.4}94%{opacity:1}96%{opacity:.5}}
+.sign,.sign-text,.sign-cross,.glow{animation:signOn 1.3s .5s both}
+@keyframes signOn{0%{opacity:.15}20%{opacity:1}30%{opacity:.25}45%{opacity:1}55%{opacity:.6}100%{opacity:1}}
+.glow{animation-name:glowOn}
+@keyframes glowOn{0%{opacity:0}45%{opacity:1}100%{opacity:.85}}
+.pin-drop{animation:drop .95s cubic-bezier(.28,1.5,.45,1) 1.15s both}
+@keyframes drop{0%{translate:0 -560px;opacity:0}15%{opacity:1}100%{translate:0 0;opacity:1}}
+.pin-float{animation:pinbob 3.2s ease-in-out 2.4s infinite}
+@keyframes pinbob{50%{translate:0 -7px}}
+.pin-shadow{transform-box:fill-box;transform-origin:center;animation:shad .95s 1.15s both}
+@keyframes shad{0%{scale:.2;opacity:0}70%{scale:.3;opacity:.1}100%{scale:1;opacity:.35}}
+.pin-bubble{transform-box:fill-box;transform-origin:left bottom;animation:pop .55s cubic-bezier(.3,1.7,.5,1) 2.15s both}
+@keyframes pop{from{scale:0;opacity:0}to{scale:1;opacity:1}}
+.ring{transform-box:fill-box;transform-origin:center;animation:pring 2.4s ease-out infinite;opacity:0}
+.ring.r1{animation-delay:.8s}.ring.r2{animation-delay:1.6s}
+@keyframes pring{0%{scale:.3;opacity:.9}100%{scale:2.4;opacity:0}}
+.wave-arm{transform-box:fill-box;transform-origin:0% 100%;animation:dwave 2.4s ease-in-out 2.6s infinite}
+@keyframes dwave{0%,40%,100%{rotate:0deg}10%{rotate:-18deg}20%{rotate:12deg}30%{rotate:-14deg}}
+/* social phone in the sky */
+.sk-phone{animation:skf 5s ease-in-out infinite}
+@keyframes skf{50%{translate:0 -10px}}
+.sk-prog{transform-box:fill-box;transform-origin:left;animation:prog 4s linear infinite}
+@keyframes prog{from{scale:0 1}to{scale:1 1}}
+.sk-heart{transform-box:fill-box;transform-origin:center;animation:hrt 2.6s ease-out infinite;opacity:0}
+.sk-heart.h2{animation-delay:.9s}.sk-heart.h3{animation-delay:1.7s}
+@keyframes hrt{0%{opacity:0;translate:0 10px;scale:.5}20%{opacity:1;scale:1.1}100%{opacity:0;translate:0 -60px;scale:.9}}
+/* patients walking into the clinic */
+.to-clinic{animation:tocl 14s linear infinite;opacity:0}
+.tc1{animation-delay:3.5s}.tc2{animation-delay:7s}.tc3{animation-delay:10.5s}
+@keyframes tocl{0%{translate:0 0;opacity:0}6%{opacity:1}88%{opacity:1}100%{translate:var(--d) 0;opacity:0}}
+
+/* floating social chips + 15-minute card */
+.h3-chips{position:absolute;inset:0;z-index:2;pointer-events:none}
+.pill2{position:absolute;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 15px 0 9px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);font-size:13px;font-weight:500;color:#fff;white-space:nowrap;animation:chip 9s ease-in-out infinite;opacity:0}
+.pill2 svg{width:22px;height:22px;padding:4px;border-radius:50%;background:var(--lime);color:var(--blue)}
+.q1{right:30%;top:20%}.q2{right:8%;top:14%;animation-delay:3s}.q3{right:22%;top:34%;animation-delay:6s}
+@keyframes chip{0%{opacity:0;transform:translateY(12px) scale(.94)}8%,30%{opacity:1;transform:none}40%,100%{opacity:0;transform:translateY(-14px)}}
+.h3-time{position:absolute;z-index:3;right:6%;top:46%;display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:18px;background:#fff;color:var(--ink);box-shadow:0 24px 50px -20px rgba(0,0,0,.5);animation:up 1s var(--ease) 2.6s both,skf 6s ease-in-out 3.6s infinite}
+.tt{display:flex;flex-direction:column;font-size:11.5px;color:var(--mu);line-height:1.3}
+.tt b{font-size:15px;color:var(--ink)}
+.ta{position:relative;width:46px;height:2px;background:var(--grey);overflow:hidden;border-radius:2px}
+.ta::after{content:"";position:absolute;inset:0;background:var(--blue);transform-origin:left;animation:prog 2.4s var(--ease) infinite}
+
+/* header over the dark hero */
+.lg-w{display:none}
+.p-home .hd:not(.solid) .lg-n{display:none}
+.p-home .hd:not(.solid) .lg-w{display:block}
+.p-home .hd:not(.solid) .nl{color:rgba(255,255,255,.82)}
+.p-home .hd:not(.solid) .nl:hover{color:#fff}
+.p-home .hd:not(.solid) .hd-wa,.p-home .hd:not(.solid) .menu{background:rgba(255,255,255,.12);box-shadow:none;color:#fff}
+.p-home .hd:not(.solid) .menu i{background:#fff}
+.p-home.menu-open .hd .lg-n{display:block}.p-home.menu-open .hd .lg-w{display:none}
+.p-home.menu-open .hd .nl{color:var(--ink)}
+
+/* simple cursor: small dot + smooth trail */
+.cur-dot{position:fixed;left:0;top:0;z-index:260;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--blue);pointer-events:none;opacity:0;transition:opacity .3s,background .3s}
+.cur-on .cur-dot{opacity:1}
+.cur-dot.lt{background:var(--lime)}
+
+@media (max-width:1100px){.h3-chips,.h3-time{display:none}}
+@media (max-width:860px){
+ .hero3{min-height:1040px}
+ .hero3 .scene{left:calc(50vw - 720px);width:1100px;transform:none}
+ .p-home.menu-open .nav .nl{color:var(--ink)}
+}
+@media (max-width:560px){
+ .hero3{min-height:1060px}
+ .h3-h{font-size:46px}
+ .h3-k{font-size:21px}
+ .h3-k .kin-slot{min-width:0;flex-basis:100%}
+ .h3-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+ .h3-proof .bn-n{font-size:24px}
+ .h3-proof .bn-l{font-size:11px}
+ .h3-in .row .btn{flex:1}
+}
+@media (prefers-reduced-motion:reduce){.to-clinic,.sk-heart{display:none}}
+.hero3{min-height:0}
+.hero3 .scene{position:relative;left:50%;bottom:auto;transform:translateX(-50%);margin-top:calc(-0.2 * max(100vw,1180px));display:block}
+.h3-time{top:auto;bottom:calc(0.12 * max(100vw,1180px));right:2.5%}
+.q1{right:34%;top:15%}.q3{right:4%;top:24%}
+@media (max-width:860px){.hero3{min-height:0}.hero3 .scene{left:calc(50vw - 720px);transform:none;width:1100px;margin-top:-180px}}
+.h3-time{bottom:calc(0.18 * max(100vw,1180px))}
+@media (max-width:860px){.hero3 .scene{margin-top:-40px}}
+.ft-bot a{color:var(--mu)}.ft-bot a:hover{color:var(--blue)}
+@media (max-width:640px){
+ .h3-proof .bn{display:block;padding:0;border:0;gap:0}
+ .h3-proof .bn-n{min-width:0}
+ .h3-k{display:block}
+ .h3-k .kin-slot{display:block;width:100%;height:1.3em;font-size:1em;margin-top:4px}
+}

@@ -104,11 +104,11 @@ def header(active=""):
     def L(href, name):
         cur = ' aria-current="page"' if name == active else ''
         return f'<a class="nl" href="{href}"{cur}>{name}</a>'
-    spec_links = "".join(f'<a href="{SPECS[k]["file"]}"><b>{SPECS[k]["name"]}</b><span>{plays_fmt(spec_total(k))} plays</span></a>' for k in SPECS)
+    spec_links = "".join(f'<a href="{SPECS[k]["file"]}"><b>{SPECS[k]["name"]}</b></a>' for k in SPECS)
     spec_on = ' aria-current="page"' if active in [SPECS[k]["short"] for k in SPECS] else ''
     return f'''<header class="hd">
  <div class="w hd-in">
-  <a class="brand" href="index.html" aria-label="Karunya Digital home"><img src="assets/logo-navy.png" alt="Karunya Digital" width="118" height="37"></a>
+  <a class="brand" href="index.html" aria-label="Karunya Digital home"><img class="lg-n" src="assets/logo-navy.png" alt="Karunya Digital" width="118" height="37"><img class="lg-w" src="assets/logo-white.png" alt="" width="118" height="37"></a>
   <nav class="nav" id="nav" aria-label="Main">
    {L("work.html", "Work")}{L("services.html", "Services")}
    <div class="dd"><button class="nl dd-btn" type="button" aria-expanded="false" aria-controls="dd-m"{spec_on}>Specialties</button><div class="dd-m" id="dd-m">{spec_links}</div></div>
@@ -157,7 +157,7 @@ def footer(cta=True):
      <li class="muted">{ADDR}</li></ul></div>
    </div>
   </div>
-  <div class="ft-bot"><span>© <span data-year>2026</span> Karunya Digital</span><span>Every post goes live only after the doctor's approval.</span><button class="totop" type="button" data-top>Back to top ↑</button></div>
+  <div class="ft-bot"><span>© <span data-year>2026</span> Karunya Digital</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Every post goes live only after the doctor's approval.</span><button class="totop" type="button" data-top>Back to top ↑</button></div>
  </div>
 </footer>
 <a class="wa-fab" href="{wa()}" target="_blank" rel="noopener" aria-label="Chat with Karunya Digital on WhatsApp">{WA_ICON}</a>
@@ -205,7 +205,7 @@ def doc_card(best, k, name, city, photo):
     spec = SPECS[k]["short"] if k in SPECS else "Pulmonology"
     tag = "a" if url and not fb else "div"
     attrs = f' href="{url}" target="_blank" rel="noopener" aria-label="{E(name)} on Instagram"' if tag == "a" else ""
-    pl = f'<p class="dc-pl"><b>{plays_fmt(best)}</b> plays on best reel</p>' if best else '<p class="dc-pl muted">Pulmonology content</p>'
+    pl = ""
     deg = f'<small>{DEG[name]}</small>' if name in DEG else ""
     if fb:
         go = (f'<span class="dc-links"><a class="dc-go" href="{url}" target="_blank" rel="noopener">{IG_ICON}Instagram</a>'
@@ -329,7 +329,7 @@ def work():
  <p class="lead" data-r>A few of the reels we script and edit. Tap “Sound on” to listen.</p></div></div>
  <div class="rc-row" data-drag>{rc}</div></section>
 <section class="sec" aria-labelledby="w3"><div class="w"><div class="sh"><p class="eyebrow" data-r>Karunya Exclusives</p><h2 id="w3" class="h2" data-r>Our doctors.</h2>
- <p class="lead" data-r>Tap a card to see their Instagram. Play counts from 1 November 2026.</p></div>
+ <p class="lead" data-r>Tap a card to see their Instagram.</p></div>
  <div class="dc-grid">{dcards}</div></div></section>
 </main>
 {video_modal()}
@@ -408,14 +408,13 @@ def spec_page(k):
     vids = "".join(reel_card(v, name, city) for name, city, photo, vv, reels in sp["doctors"] for v in vv)
     topics = "".join(f"<li>{t}</li>" for t in sp["topics"])
     how = "".join(f'<div class="val" data-r><span class="n">0{i + 1}</span><h3>{t}</h3><p>{d}</p></div>' for i, (t, d) in enumerate(sp["how"]))
-    others = "".join(f'<a class="oth" href="{SPECS[o]["file"]}"><b>{SPECS[o]["name"]}</b><span>{plays_fmt(spec_total(o))} plays</span>{ARROW}</a>' for o in SPECS if o != k)
+    others = "".join(f'<a class="oth" href="{SPECS[o]["file"]}"><b>{SPECS[o]["name"]}</b>{ARROW}</a>' for o in SPECS if o != k)
     tot = spec_total(k)
     body = f'''<main id="main">
 <section class="ph"><div class="w ph-g">
  <div><p class="eyebrow up"><a href="index.html">Home</a> / {sp["name"]}</p>
  <h1 class="ph-h up d1">{sp["h1"]}</h1><p class="ph-p up d2">{sp["lead"]}</p>
  <div class="row up d3"><a class="btn btn-lime" href="{wa(msg)}" target="_blank" rel="noopener">{WA_ICON}Talk on WhatsApp</a><a class="btn btn-ghost" href="audit.html">Get a free check</a></div></div>
- <div class="ph-stat up d2"><p class="st-n"><span>{plays_fmt(tot).split()[0]}</span><em>{(" " + plays_fmt(tot).split()[1]) if " " in plays_fmt(tot) else ""}</em></p><p class="st-l">plays on our {sp["short"]} doctors' best reels</p></div>
 </div></section>
 <section class="sec tight"><div class="w"><div class="sh"><p class="eyebrow" data-r>Karunya Exclusives</p><h2 class="h2" data-r>Our {sp["short"]} doctors.</h2></div><div class="dc-grid">{dcards}</div></div></section>
 {f'<section class="sec"><div class="w"><div class="sh"><p class="eyebrow" data-r>Reels</p><h2 class="h2" data-r>Edited by our team.</h2></div></div><div class="rc-row" data-drag>{vids}</div></section>' if vids else ''}
@@ -427,7 +426,7 @@ def spec_page(k):
 <section class="sec tight"><div class="w"><p class="eyebrow">Other specialties</p><div class="oths">{others}</div></div></section>
 </main>
 '''
-    return head(f"Marketing for {sp['name']} Doctors | Karunya Digital", f"Instagram reels, Google Business Profile and SEO for {sp['name']} doctors. Our doctors' best reels: {plays_fmt(tot)} plays.", k) + header(sp["short"]) + body + footer()
+    return head(f"Marketing for {sp['name']} Doctors | Karunya Digital", f"Instagram reels, Google Business Profile and SEO for {sp['name']} doctors, by a healthcare-only team.", k) + header(sp["short"]) + body + footer()
 
 
 # ------------------------------------------------------------------ AUDIT
@@ -549,10 +548,33 @@ def blog_post(p, posts):
     return h + header("Blog") + body + footer()
 
 
+
+# ------------------------------------------------------------------ LEGAL
+def legal(kind):
+    if kind == "privacy":
+        title, h1, intro = "Privacy Policy", "Privacy policy", "How Karunya Digital collects and uses information on this website."
+        body = f"""<h2>Who we are</h2><p>Karunya Digital is a healthcare marketing agency at {ADDR}. Phone {CALL_TXT}, WhatsApp {WA_TXT}.</p>
+<h2>What we collect</h2><p>When you use our free Google and Instagram check, we collect the details you type: your name, WhatsApp number, speciality, city and your answers. When you use the contact form, your message opens in WhatsApp and is sent only if you choose to send it.</p>
+<h2>How we use it</h2><p>We use these details only to share your report, reply to you and talk about our services. We do not sell or rent your information to anyone.</p>
+<h2>Where it is stored</h2><p>Form entries are stored securely with our website host, Netlify. Messages you send on WhatsApp are handled by WhatsApp.</p>
+<h2>Cookies</h2><p>This website does not use advertising or tracking cookies.</p>
+<h2>Your choices</h2><p>To see, correct or delete your details, message us on WhatsApp at {WA_TXT} or call {CALL_TXT}. We will act on your request within 7 working days.</p>
+<h2>Updates</h2><p>If this policy changes, the updated version will be posted on this page. Last updated: 2 November 2026.</p>"""
+    else:
+        title, h1, intro = "Terms of Service", "Terms of service", "The terms for using this website and working with Karunya Digital."
+        body = f"""<h2>About these terms</h2><p>By using karunyadigital.online you agree to these terms. Karunya Digital is based at {ADDR}.</p>
+<h2>Our services</h2><p>We provide social media content, Google Business Profile management, SEO, websites and branding for doctors and hospitals. The exact work, price and timeline for each client are confirmed in writing before we start.</p>
+<h2>Approvals</h2><p>No content is published without the client's approval. Clients are responsible for the medical accuracy of what they approve, and we plan every post around the NMC's Guidelines on Ethical Advertising and Public Communication.</p>
+<h2>Payments</h2><p>Plans are billed monthly in advance unless agreed otherwise in writing. Prices on this website are in Indian rupees.</p>
+<h2>Content on this website</h2><p>Articles on this website are general information for doctors and are not legal or medical advice. Logos, illustrations, videos and text on this website belong to Karunya Digital or are used with permission.</p>
+<h2>Contact</h2><p>Questions about these terms: WhatsApp {WA_TXT} or call {CALL_TXT}. Last updated: 2 November 2026.</p>"""
+    main = f'''<main id="main">{page_hero("Legal", h1, intro)}<section class="sec tight"><div class="w narrow"><article class="prose">{body}</article></div></section></main>'''
+    return head(f"{title} | Karunya Digital", intro, kind) + header() + main + footer(cta=False)
+
 # ------------------------------------------------------------------ WRITE
 POSTS = load_posts()
 files = [("index.html", home()), ("services.html", services()), ("work.html", work()), ("about.html", about()),
-         ("contact.html", contact()), ("audit.html", audit_page()), ("404.html", page404()), ("blog.html", blog_index(POSTS))]
+         ("contact.html", contact()), ("audit.html", audit_page()), ("404.html", page404()), ("blog.html", blog_index(POSTS)), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]
 files += [(SPECS[k]["file"], spec_page(k)) for k in SPECS]
 files += [(p["slug"] + ".html", blog_post(p, POSTS)) for p in POSTS]
 for fn, html in files:

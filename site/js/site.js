@@ -244,56 +244,44 @@
     new IntersectionObserver(function (en, o) { if (en[0].isIntersecting) { el.classList.add("in"); o.disconnect(); } }, { threshold: 0.35 }).observe(el);
   });
 
-  /* trail cursor: style changes per page and per section (fine pointers only, native cursor stays) */
+  /* cursor: native pointer + a small dot with one smooth trail (fine pointers only) */
   if (!reduce && window.matchMedia("(pointer:fine)").matches) {
+    var dot = document.createElement("div"); dot.className = "cur-dot"; dot.setAttribute("aria-hidden", "true");
     var cv = document.createElement("canvas"); cv.className = "trail"; cv.setAttribute("aria-hidden", "true");
-    document.body.appendChild(cv);
-    var ctx = cv.getContext("2d"), dpr = Math.min(window.devicePixelRatio || 1, 2), pts = [], running = false;
-    var PAGE = { home: "ribbon", services: "dots", work: "spark", about: "comet", blog: "dots", contact: "ribbon", audit: "spark", "404": "spark" };
-    var bodyKey = (document.body.className.match(/p-([\w-]+)/) || [])[1] || "home";
-    var pageMode = PAGE[bodyKey] || (bodyKey.indexOf("blog-") === 0 ? "dots" : "comet");
-    var DARK = ".canvas,.bm,.cta,.duo-c.blue,.pl.pop,.ct-wa,.a-card,.v-trust,.ph-stat";
-    var mode = pageMode, col = "2,81,176";
+    document.body.appendChild(cv); document.body.appendChild(dot);
+    var ctx = cv.getContext("2d"), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var DARK = ".hero3,.canvas,.bm,.cta,.duo-c.blue,.pl.pop,.ct-wa,.a-card,.ph-stat";
+    var mx = -100, my = -100, hx = -100, hy = -100, pts = [], light = false, raf = 0, lastT = null;
     function size() { cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
     size(); window.addEventListener("resize", size);
-    var lastT = null;
     window.addEventListener("pointermove", function (e) {
-      if (e.target !== lastT) {
-        lastT = e.target;
-        var sec = e.target.closest ? e.target.closest("[data-trail]") : null;
-        mode = sec ? sec.dataset.trail : pageMode;
-        col = (e.target.closest && e.target.closest(DARK)) ? "209,255,66" : "2,81,176";
-      }
-      pts.push({ x: e.clientX, y: e.clientY, life: 1, vx: (Math.random() - .5) * 1.4, vy: (Math.random() - .5) * 1.4 - .4, m: mode, c: col });
-      if (pts.length > 40) pts.shift();
-      if (!running) { running = true; requestAnimationFrame(draw); }
+      mx = e.clientX; my = e.clientY;
+      if (hx < 0) { hx = mx; hy = my; }
+      if (e.target !== lastT) { lastT = e.target; light = !!(e.target.closest && e.target.closest(DARK)); dot.classList.toggle("lt", light); }
+      document.documentElement.classList.add("cur-on");
+      if (!raf) raf = requestAnimationFrame(loop);
     }, { passive: true });
-    function star(x, y, r) {
-      ctx.beginPath();
-      for (var i = 0; i < 8; i++) { var a = i * Math.PI / 4, rr = i % 2 ? r * .38 : r; ctx.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr); }
-      ctx.closePath(); ctx.fill();
-    }
-    function draw() {
+    document.addEventListener("pointerleave", function () { document.documentElement.classList.remove("cur-on"); });
+    function loop() {
+      hx += (mx - hx) * 0.35; hy += (my - hy) * 0.35;
+      dot.style.transform = "translate(" + hx.toFixed(1) + "px," + hy.toFixed(1) + "px)";
+      pts.unshift({ x: hx, y: hy }); if (pts.length > 22) pts.pop();
       ctx.clearRect(0, 0, innerWidth, innerHeight);
-      for (var i = 0; i < pts.length; i++) {
-        var p = pts[i], t = (i + 1) / pts.length, a = Math.max(0, p.life);
-        ctx.fillStyle = ctx.strokeStyle = "rgba(" + p.c + "," + (a * .75).toFixed(3) + ")";
-        if (p.m === "ribbon" && i > 0 && pts[i - 1].m === "ribbon") {
-          var q = pts[i - 1]; ctx.lineWidth = 1 + t * 5 * a; ctx.lineCap = "round";
-          ctx.beginPath(); ctx.moveTo(q.x, q.y); ctx.lineTo(p.x, p.y); ctx.stroke();
-        } else if (p.m === "dots") {
-          p.x += p.vx * .6; p.y += p.vy * .6;
-          ctx.beginPath(); ctx.arc(p.x, p.y, 1.5 + 3 * a, 0, 6.283); ctx.fill();
-        } else if (p.m === "spark") {
-          p.x += p.vx; p.y += p.vy;
-          star(p.x, p.y, 2 + 6 * a * t);
-        } else if (p.m === "comet") {
-          ctx.beginPath(); ctx.arc(p.x, p.y, (1 + 7 * t) * a, 0, 6.283); ctx.fill();
+      if (pts.length > 2) {
+        var c = light ? "209,255,66" : "2,81,176";
+        for (var i = 1; i < pts.length - 1; i++) {
+          var t = 1 - i / pts.length, p0 = pts[i - 1], p1 = pts[i], p2 = pts[i + 1];
+          ctx.strokeStyle = "rgba(" + c + "," + (t * 0.55).toFixed(3) + ")";
+          ctx.lineWidth = 0.5 + t * 3.2; ctx.lineCap = "round";
+          ctx.beginPath();
+          ctx.moveTo((p0.x + p1.x) / 2, (p0.y + p1.y) / 2);
+          ctx.quadraticCurveTo(p1.x, p1.y, (p1.x + p2.x) / 2, (p1.y + p2.y) / 2);
+          ctx.stroke();
         }
-        p.life -= p.m === "ribbon" ? .07 : .045;
       }
-      pts = pts.filter(function (p) { return p.life > 0; });
-      if (pts.length) requestAnimationFrame(draw); else { running = false; ctx.clearRect(0, 0, innerWidth, innerHeight); }
+      var moving = Math.abs(mx - hx) + Math.abs(my - hy) > 0.2 || Math.abs(pts[0].x - pts[pts.length - 1].x) + Math.abs(pts[0].y - pts[pts.length - 1].y) > 0.5;
+      raf = moving ? requestAnimationFrame(loop) : 0;
+      if (!moving) ctx.clearRect(0, 0, innerWidth, innerHeight);
     }
   }
 

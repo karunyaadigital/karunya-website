@@ -44,6 +44,38 @@ def logo_mark():
     return '<div class="lm" aria-hidden="true"><span class="lm-word"></span></div>'
 
 
+
+
+def street_scene():
+    """The old Karunya street, now with the full story: a reel plays in the sky, likes fly to the clinic pin,
+    patients walk in, and the doctor waves from the door."""
+    from art import hero_scene, walker, NAVY, LIME, SKY, WHITE, PAPER
+    svg = hero_scene()
+    door = 1050
+    extra = []
+    # social phone in the sky
+    extra.append(f'''<g class="sk-phone" transform="translate(1388 150)">
+ <rect x="0" y="0" width="96" height="176" rx="18" fill="{NAVY}" stroke="{LIME}" stroke-width="3"/>
+ <rect x="8" y="14" width="80" height="148" rx="10" fill="#0E5BC4"/>
+ <circle cx="48" cy="72" r="20" fill="{LIME}"/><path d="M42 61 L58 72 L42 83 Z" fill="{NAVY}"/>
+ <rect class="sk-bar" x="16" y="140" width="64" height="5" rx="2.5" fill="{SKY}" opacity=".5"/><rect class="sk-prog" x="16" y="140" width="64" height="5" rx="2.5" fill="{LIME}"/>
+ <g class="sk-heart h1"><path d="M70 40 c-6 -8 -16 -2 -10 6 l10 10 l10 -10 c6 -8 -4 -14 -10 -6z" fill="#FF5A7A"/></g>
+ <g class="sk-heart h2"><path d="M20 50 c-5 -7 -14 -2 -9 5 l9 9 l9 -9 c5 -7 -4 -12 -9 -5z" fill="#FF5A7A"/></g>
+ <g class="sk-heart h3"><path d="M56 108 c-4 -6 -12 -2 -8 4 l8 8 l8 -8 c4 -6 -4 -10 -8 -4z" fill="{WHITE}"/></g>
+</g>''')
+    # dotted path from the phone to the clinic pin, with likes travelling it
+    p = "M1386 230 C1300 210 1220 190 1100 214"
+    extra.append(f'<path d="{p}" fill="none" stroke="{LIME}" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" opacity=".8"/>')
+    for i in range(4):
+        extra.append(f'<circle r="7" fill="{LIME}"><animateMotion dur="3.2s" begin="{i * 0.8}s" repeatCount="indefinite" path="{p}"/>'
+                     f'<animate attributeName="opacity" values="0;1;1;0" dur="3.2s" begin="{i * 0.8}s" repeatCount="indefinite"/></circle>')
+    # patients walking into the clinic
+    for i, (x, body, acc) in enumerate([(260, WHITE, LIME), (420, SKY, NAVY), (560, LIME, NAVY), (700, PAPER, "#0251B0")]):
+        extra.append(f'<g class="to-clinic tc{i}" style="--d:{door - x}px">{walker(x, 610, body, acc)}</g>')
+    svg = svg.replace("</svg>", "".join(extra) + "</svg>")
+    return svg
+
+
 def journeys():
     garima = """<article class="jr jr-garima" data-r>
  <div class="jr-vis v-map" aria-hidden="true">
@@ -99,10 +131,10 @@ def brand_motion():
 def home_body(ctx):
     g = ctx
     ARROW, WA_ICON, wa, IG_FOUNDER = g["ARROW"], g["WA_ICON"], g["wa"], g["IG_FOUNDER"]
-    big = "".join(f'<div class="bn" data-r><p class="bn-n"><span>{n}</span>{s}</p><p class="bn-l">{l}</p></div>' for n, s, l in BIG)
+    proof = "".join(f'<li class="bn" data-r><p class="bn-n"><span>{n}</span>{s}</p><p class="bn-l">{l}</p></li>' for n, s, l in BIG)
     words = "".join(f'<span class="kw">{w}</span>' for w in WORDS)
     pf = g["plays_fmt"]
-    ex = "".join(f'<li class="ex"><img src="media/{ph}.jpg" alt="{n}" width="300" height="375" loading="lazy"><span class="ex-b"><b>{n}</b>{g["SPECS"][k]["short"] if k in g["SPECS"] else "Pulmonology"} · {c}{f"<em>{pf(best)} views</em>" if best else ""}</span></li>'
+    ex = "".join(f'<li class="ex"><img src="media/{ph}.jpg" alt="{n}" width="300" height="375" loading="lazy"><span class="ex-b"><b>{n}</b>{g["SPECS"][k]["short"] if k in g["SPECS"] else "Pulmonology"} · {c}</span></li>'
                  for best, k, n, c, ph in g["doctors"]())
     what = [("Reels patients actually watch", "We study what your patients ask, write the script, guide your shoot on your phone, then edit, caption and post."),
             ("A Google profile that rings", "Complete, active and accurate, so you show up when someone nearby searches for your speciality."),
@@ -118,19 +150,23 @@ def home_body(ctx):
             f'<a class="bp-s" href="{p["slug"]}.html" data-r><img src="media/blog/{p["slug"]}.jpg" alt="" width="1200" height="630" loading="lazy"><span><span class="bp-c">{p["category"]}</span><b>{p["title"]}</b></span></a>'
             for p in posts[1:]) + '</div>'
     return f"""<main id="main">
-<section class="hero" aria-labelledby="hero-h" data-trail="ribbon">
- <div class="canvas">
-  {hero_bg()}
-  <div class="hero-in">
-   {logo_mark()}
-   <h1 id="hero-h" class="kin"><span class="kin-slot" aria-hidden="true">{words}</span><span class="sr">Doctors and hospitals </span><span class="kin-rest">become the name patients trust.</span></h1>
-   <p class="hero-p">Reels, Google and search for doctors. One team in Varanasi does the work. You approve every post.</p>
-   <div class="row hero-cta"><a class="btn btn-lime" href="audit.html">Get a free check</a><a class="btn btn-line" href="{wa()}" target="_blank" rel="noopener">{WA_ICON}WhatsApp us</a></div>
-  </div>
-  <div class="bns">{big}</div>
+<section class="hero3" aria-labelledby="hero-h">
+ <div class="w h3-in">
+  <h1 id="hero-h" class="h3-h">A good doctor should be <span class="lime">easy to find.</span></h1>
+  <p class="h3-k">We make sure patients find <span class="kin-slot" aria-hidden="true">{words}</span><span class="sr">doctors and hospitals</span></p>
+  <p class="h3-p">Reels, Google and search for doctors. One team in Varanasi does the work. You approve every post.</p>
+  <div class="row"><a class="btn btn-lime" href="audit.html">Get a free check</a><a class="btn btn-line" href="{wa()}" target="_blank" rel="noopener">{WA_ICON}WhatsApp us</a></div>
+  <ul class="h3-proof">{proof}</ul>
  </div>
- <p class="note w">Instagram: public reels of our client doctors, 1 Nov 2026. Google: Business Profile data of the 23 doctor and hospital profiles we manage, Nov 2024 to Oct 2026.</p>
+ <div class="h3-chips" aria-hidden="true">
+  <span class="pill2 q1">{ICON["follow"]}New follower from Varanasi</span>
+  <span class="pill2 q2">{ICON["heart"]}2,431 likes on today's reel</span>
+  <span class="pill2 q3">{ICON["pin"]}Directions requested</span>
+ </div>
+ <div class="h3-time" aria-hidden="true"><span class="tt"><b>6:00 pm</b>Saw your reel</span><span class="ta"></span><span class="tt"><b>6:15 pm</b>At your clinic</span></div>
+ {street_scene()}
 </section>
+<p class="note w">Instagram: public reels of our client doctors, 1 Nov 2026. Google: Business Profile data of the 23 doctor and hospital profiles we manage, Nov 2024 to Oct 2026.</p>
 
 <section class="bm" aria-labelledby="bm-h" data-trail="spark">
  <div class="w bm-g">

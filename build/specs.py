@@ -99,7 +99,7 @@ SPECS = {
     "dental": dict(
         file="dental.html", short="Dental", name="Dental", who="dentist",
         h1="The clinic your whole city smiles about.",
-        lead="Dental content is among the most shared in healthcare. One good reel can reach lakhs of people. One of Dr. Sunaina Gupta's reels has crossed 54 lakh plays.",
+        lead="Dental content is among the most shared in healthcare. One good reel can reach families across your whole city.",
         doctors=[
             ("Dr. Sunaina Gupta", "Agra", "p-sunaina", [], [(5473055, IG + "DUsC0YPiIJY/"), (433813, IG + "Dd6XW7lErrs/")]),
             ("Dr. Neetu Pal", "Greater Noida", "p-neetu", ["neetu"], []),
