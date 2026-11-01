@@ -4,7 +4,7 @@ import os, json, datetime, urllib.parse, html as _html
 from specs import SPECS, DEG, plays_fmt, spec_total, ig_profile, IG_ICON
 from audit import audit_form
 from build_posts import load_posts
-from home_page import home_body
+from home_page import home_body, founder_art, find_map
 from team_art import TEAM, char
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "site")
@@ -129,14 +129,19 @@ CTA_WORDS = "".join(f'<span class="cw2">{w}</span>' for w in ["clinic", "hospita
 
 
 def footer(cta=True):
-    band = f'''<section class="cta" aria-labelledby="cta-h" data-trail="spark">
- <div class="w">
-  <h2 id="cta-h" class="cta-h"><span class="sr">Let's make your clinic easy to find.</span><span aria-hidden="true">Let's make your</span><span class="cta-slot" aria-hidden="true">{CTA_WORDS}</span><span aria-hidden="true">easy to find.</span></h2>
-  <div class="row"><a class="btn btn-lime" href="audit.html">Get a free check</a><a class="btn btn-ghost" href="{wa()}" target="_blank" rel="noopener">{WA_ICON}Talk on WhatsApp</a></div>
+    band = f'''<section class="cta cta2" aria-labelledby="cta-h">
+ <div class="w cta2-g">
+  <div>
+   <h2 id="cta-h" class="cta2-h"><span class="sr">Let's make your clinic easy to find.</span><span aria-hidden="true">Let's make your</span><span class="cta-slot" aria-hidden="true">{CTA_WORDS}</span><span aria-hidden="true">easy to find.</span></h2>
+   <p class="cta2-p">When someone nearby searches, your practice should light up first.</p>
+   <div class="row"><a class="btn btn-lime" href="audit.html">Get a free check</a><a class="btn btn-ghost" href="{wa()}" target="_blank" rel="noopener">{WA_ICON}Talk on WhatsApp</a></div>
+  </div>
+  {find_map()}
  </div>
 </section>''' if cta else ""
     cols = "".join(f'<li><a href="{h}">{n}</a></li>' for h, n in [("work.html", "Work"), ("services.html", "Services & pricing"), ("blog.html", "Blog"), ("about.html", "About"), ("contact.html", "Contact"), ("audit.html", "Free check")])
     specs = "".join(f'<li><a href="{SPECS[k]["file"]}">{SPECS[k]["name"]}</a></li>' for k in SPECS)
+    specs += "".join(f'<li><a href="services.html">{n}</a></li>' for n in ["Pulmonology & Chest", "Paediatrics", "Dermatology", "ENT", "General Physicians", "Neurology", "Multi-speciality Hospitals"])
     return f'''{band}
 <footer class="ft">
  <div class="w">
@@ -253,7 +258,7 @@ def pricing_section():
 def team_grid():
     cards = ""
     for kind, n, r, d in TEAM:
-        av = '<img src="media/founder.webp" alt="Bhanu Pratap Rai" width="420" height="420" loading="lazy">' if kind == "photo" else char(kind)
+        av = founder_art("fa sm") if kind == "photo" else char(kind)
         link = f'<a class="tl" href="{IG_FOUNDER}" target="_blank" rel="noopener">Instagram{ARROW_UR}</a>' if kind == "photo" else ""
         cards += f'<article class="tm" data-r><div class="tm-av{" ph" if kind == "photo" else ""}">{av}</div><h3>{n}</h3><p class="tm-r">{r}</p><p>{d}</p>{link}</article>'
     return f'<div class="team">{cards}</div>'

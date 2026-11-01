@@ -76,6 +76,44 @@ def street_scene():
     return svg
 
 
+def founder_art(cls="fa"):
+    """Founder illustration with a living frame: dotted ring turns, hearts rise, sparkles blink."""
+    return (f'<div class="{cls}"><span class="fa-ring"></span><img src="media/founder.webp" alt="Bhanu Pratap Rai" width="420" height="420" loading="lazy">'
+            '<span class="fa-h h1">♥</span><span class="fa-h h2">♥</span><span class="fa-h h3">♥</span><span class="fa-s s1">+</span><span class="fa-s s2">+</span></div>')
+
+
+def heal_heard():
+    """Metaphor: a heartbeat (your care) becomes a broadcast signal that reaches patients, who light up one by one."""
+    people = ""
+    pos = [(800, 70), (900, 130), (780, 190), (900, 250), (800, 300), (690, 250)]
+    for i, (x, y) in enumerate(pos):
+        people += (f'<g class="pp p{i}" transform="translate({x} {y})"><circle class="pp-bg" r="26"/>'
+                   f'<circle cy="-6" r="8" class="pp-f"/><path d="M-13 15 q13 -14 26 0" class="pp-f"/>'
+                   f'<g class="pp-h"><circle cx="20" cy="-20" r="11" fill="#D1FF42"/><path d="M20 -14 c-4 -4 -9 -1 -6 3 l6 6 6 -6 c3 -4 -2 -7 -6 -3z" transform="translate(0 -8) scale(.9) translate(2 2)" fill="#012A5E"/></g></g>')
+    return f"""<div class="hh" aria-hidden="true">
+ <svg viewBox="0 0 1000 360" class="hh-svg">
+  <g class="hh-heart" transform="translate(110 180)"><circle r="62" class="hh-halo"/><path d="M0 34 C-48 4 -44 -38 -16 -38 C-6 -38 0 -30 0 -24 C0 -30 6 -38 16 -38 C44 -38 48 4 0 34Z" fill="#FF5A7A"/><path d="M-26 -4 h12 l6 -12 l8 24 l6 -12 h20" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <path class="hh-ecg" d="M175 180 H260 L280 130 L300 230 L320 110 L340 210 L355 180 H440" fill="none" stroke="#D1FF42" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+  <g class="hh-tower" transform="translate(500 180)">
+   <rect x="-34" y="-58" width="68" height="116" rx="14" fill="#0251B0" stroke="#D1FF42" stroke-width="3"/>
+   <rect x="-26" y="-46" width="52" height="80" rx="6" fill="#0E5BC4"/><path d="M-8 -20 L14 -6 L-8 8Z" fill="#D1FF42"/>
+   <circle class="hw w1" r="70"/><circle class="hw w2" r="70"/><circle class="hw w3" r="70"/>
+  </g>
+  {people}
+  <text x="110" y="292" class="hh-t" text-anchor="middle">You heal.</text>
+  <text x="820" y="350" class="hh-t lime" text-anchor="middle">We get you heard.</text>
+ </svg>
+</div>"""
+
+
+def find_map():
+    """CTA visual: a city map, a search sweep, and practices lighting up as they get found."""
+    spots = [("Clinic", 18, 30), ("Hospital", 70, 22), ("IVF centre", 40, 62), ("Dental clinic", 82, 58), ("Ortho clinic", 12, 74),
+             ("Nursing home", 58, 84), ("Chest clinic", 30, 14), ("Child clinic", 90, 86), ("Skin clinic", 52, 40), ("Gynae clinic", 74, 38)]
+    pins = "".join(f'<span class="fm-pin" style="left:{x}%;top:{y}%;--d:{(i * 0.6) % 6:.1f}s"><i></i><em>{t}</em></span>' for i, (t, x, y) in enumerate(spots))
+    return f'<div class="fm" aria-hidden="true"><div class="fm-grid"></div><div class="fm-sweep"></div><div class="fm-core"></div>{pins}</div>'
+
+
 def journeys():
     garima = """<article class="jr jr-garima" data-r>
  <div class="jr-vis v-map" aria-hidden="true">
@@ -134,7 +172,7 @@ def home_body(ctx):
     proof = "".join(f'<li class="bn" data-r><p class="bn-n"><span>{n}</span>{s}</p><p class="bn-l">{l}</p></li>' for n, s, l in BIG)
     words = "".join(f'<span class="kw">{w}</span>' for w in WORDS)
     pf = g["plays_fmt"]
-    ex = "".join(f'<li class="ex"><img src="media/{ph}.jpg" alt="{n}" width="300" height="375" loading="lazy"><span class="ex-b"><b>{n}</b>{g["SPECS"][k]["short"] if k in g["SPECS"] else "Pulmonology"} · {c}</span></li>'
+    ex = "".join(f'<li class="ex2"><span class="ex2-f"><img src="media/{ph}.jpg" alt="{n}" width="300" height="375" loading="lazy"></span><span class="ex2-b"><b>{n}</b><span>{g["SPECS"][k]["short"] if k in g["SPECS"] else "Pulmonology"} · {c}</span></span></li>'
                  for best, k, n, c, ph in g["doctors"]())
     what = [("Reels patients actually watch", "We study what your patients ask, write the script, guide your shoot on your phone, then edit, caption and post."),
             ("A Google profile that rings", "Complete, active and accurate, so you show up when someone nearby searches for your speciality."),
@@ -166,21 +204,18 @@ def home_body(ctx):
  <div class="h3-time" aria-hidden="true"><span class="tt"><b>6:00 pm</b>Saw your reel</span><span class="ta"></span><span class="tt"><b>6:15 pm</b>At your clinic</span></div>
  {street_scene()}
 </section>
-<p class="note w">Instagram: public reels of our client doctors, 1 Nov 2026. Google: Business Profile data of the 23 doctor and hospital profiles we manage, Nov 2024 to Oct 2026.</p>
 
-<section class="bm" aria-labelledby="bm-h" data-trail="spark">
- <div class="w bm-g">
-  <div class="bm-t">
-   <h2 id="bm-h" class="bm-h"><span class="bm-l l1">You heal.</span><span class="bm-l l2">We get you heard.</span></h2>
-   <p>Every reel, Google post and search page we make has one job: when a patient in your city looks for help, they find you, and they trust what they see.</p>
-  </div>
-  {brand_motion()}
+<section class="bm2" aria-labelledby="bm-h">
+ <div class="w">
+  <h2 id="bm-h" class="sr">You heal. We get you heard.</h2>
+  {heal_heard()}
+  <p class="bm2-p">Your care is the heartbeat. We turn it into a signal patients in your city can see, trust and act on.</p>
  </div>
 </section>
 
 <section class="sec exs" aria-labelledby="ex-h" data-trail="dots">
  <div class="w sh-row"><div class="sh"><p class="eyebrow">Karunya Exclusives</p><h2 id="ex-h" class="h2">The doctors who trust us.</h2></div><a class="tl" href="work.html">See all{ARROW}</a></div>
- <div class="marq ex-m"><ul class="marq-t">{ex}{ex}</ul></div>
+ <div class="marq ex-m2"><ul class="marq-t">{ex}{ex}</ul></div>
 </section>
 
 <section class="sec og-sec soft" aria-labelledby="og-h" data-trail="comet">
@@ -215,7 +250,7 @@ def home_body(ctx):
 
 <section class="sec soft" aria-labelledby="fd-h" data-trail="comet">
  <div class="w fd" data-r>
-  <img src="media/founder.webp" alt="Bhanu Pratap Rai" width="420" height="420" loading="lazy">
+  {founder_art()}
   <div>
    <h2 id="fd-h" class="fd-q">“We work only with doctors. Honest work every week, and a report you can understand in two minutes.”</h2>
    <p class="fd-n"><b>Bhanu Pratap Rai</b>Founder, Karunya Digital · <a href="{IG_FOUNDER}" target="_blank" rel="noopener">@bhanuhelpsdoctors</a></p>

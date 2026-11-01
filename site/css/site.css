@@ -838,3 +838,91 @@ legend{font-size:12.5px;font-weight:500;color:var(--mu);margin-bottom:8px;paddin
  .h3-k{display:block}
  .h3-k .kin-slot{display:block;width:100%;height:1.3em;font-size:1em;margin-top:4px}
 }
+
+/* ================= v7 ================= */
+/* heal -> heard metaphor */
+.bm2{margin:16px 12px 0;border-radius:32px;background:var(--ink);color:#fff;padding:60px 0 50px;position:relative;overflow:hidden;isolation:isolate}
+.bm2::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:900px;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(2,81,176,.6),transparent 60%);z-index:-1}
+.hh-svg{width:100%;max-width:1000px;height:auto;margin:0 auto;display:block;overflow:visible}
+.hh-halo{fill:rgba(255,90,122,.15);transform-box:fill-box;transform-origin:center;animation:halo 1.2s ease-out infinite}
+@keyframes halo{0%{transform:scale(.8);opacity:1}100%{transform:scale(1.4);opacity:0}}
+.hh-heart>path:first-of-type{transform-box:fill-box;transform-origin:center;animation:beat 1.2s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(.98)}45%{transform:scale(1.06)}}
+.hh-ecg{stroke-dasharray:.25 1;stroke-dashoffset:1.25;animation:ecg 2.4s linear infinite;filter:drop-shadow(0 0 6px rgba(209,255,66,.6))}
+@keyframes ecg{to{stroke-dashoffset:0}}
+.hw{fill:none;stroke:#D1FF42;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:hw 2.4s ease-out infinite;opacity:0}
+.hw.w2{animation-delay:.8s}.hw.w3{animation-delay:1.6s}
+@keyframes hw{0%{transform:scale(.6);opacity:.9}100%{transform:scale(3.4);opacity:0}}
+.hh-tower{animation:skf 4s ease-in-out infinite}
+.pp-bg{fill:rgba(255,255,255,.1);stroke:rgba(255,255,255,.25);stroke-width:1.5;transition:.4s}
+.pp-f{fill:rgba(255,255,255,.55);stroke:none}
+.pp path.pp-f{fill:none;stroke:rgba(255,255,255,.55);stroke-width:4;stroke-linecap:round}
+.pp{animation:ppon 4.8s ease-in-out infinite}
+.pp-h{opacity:0;transform-box:fill-box;transform-origin:center;animation:pph 4.8s ease-in-out infinite}
+.p1,.p1 .pp-h{animation-delay:.4s}.p2,.p2 .pp-h{animation-delay:.8s}.p3,.p3 .pp-h{animation-delay:1.2s}.p4,.p4 .pp-h{animation-delay:1.6s}.p5,.p5 .pp-h{animation-delay:2s}
+@keyframes ppon{0%,30%{filter:none}40%,85%{filter:drop-shadow(0 0 10px rgba(209,255,66,.7))}100%{filter:none}}
+.pp .pp-bg{animation:ppbg 4.8s ease-in-out infinite;animation-delay:inherit}
+@keyframes ppbg{0%,30%{fill:rgba(255,255,255,.1)}40%,85%{fill:#0251B0;stroke:#D1FF42}100%{fill:rgba(255,255,255,.1)}}
+@keyframes pph{0%,35%{opacity:0;transform:scale(.3) translateY(6px)}45%,80%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-10px)}}
+.hh-t{font:400 26px var(--fd);fill:#fff}
+.hh-t.lime{fill:#D1FF42}
+.bm2-p{max-width:520px;margin:18px auto 0;text-align:center;font-size:14px;color:rgba(255,255,255,.7)}
+
+/* clean framed doctor cards (Karunya theme) */
+.ex-m2{margin-top:34px;overflow:hidden;mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ex-m2 .marq-t{gap:18px;animation-duration:70s;padding:6px 0 14px}
+.ex-m2:hover .marq-t{animation-play-state:paused}
+.ex2{flex:none;width:210px;padding:10px 10px 14px;border-radius:24px;background:var(--white);box-shadow:0 0 0 1px var(--line),0 18px 30px -24px rgba(1,42,94,.4);transition:transform .35s var(--ease),box-shadow .3s}
+.ex2:hover{transform:translateY(-5px);box-shadow:0 0 0 1px var(--blue),0 24px 40px -24px rgba(1,42,94,.5)}
+.ex2-f{display:block;position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,var(--sky),#DDEBF7)}
+.ex2-f::after{content:"";position:absolute;left:10px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--lime) url(../assets/k-blue.png) center/60% no-repeat;box-shadow:0 0 0 3px #fff}
+.ex2-f img{width:100%;height:100%;object-fit:cover}
+.ex2-b{display:block;padding:12px 6px 0}
+.ex2-b b{display:block;font-size:14.5px;color:var(--ink)}
+.ex2-b span{display:block;font-size:12px;color:var(--mu);margin-top:2px}
+
+/* animated founder art */
+.fa{position:relative;width:220px;aspect-ratio:1;flex:none}
+.fa img{position:relative;z-index:1;width:100%;height:100%;border-radius:50%;object-fit:cover;animation:fabob 5s ease-in-out infinite}
+@keyframes fabob{0%,100%{transform:rotate(0) translateY(0)}50%{transform:rotate(-2deg) translateY(-6px)}}
+.fa-ring{position:absolute;inset:-12px;border-radius:50%;border:2.5px dashed var(--lime);animation:spin 30s linear infinite;z-index:0}
+.fa-h{position:absolute;z-index:2;color:var(--lime);font-size:22px;text-shadow:0 0 0 #012A5E,0 2px 0 #012A5E;animation:fah 3.6s ease-out infinite;opacity:0}
+.fa-h.h1{right:8%;top:20%}.fa-h.h2{right:0;top:42%;animation-delay:1.2s;font-size:16px}.fa-h.h3{left:2%;top:30%;animation-delay:2.4s;font-size:18px}
+@keyframes fah{0%{opacity:0;transform:translateY(10px) scale(.6)}20%{opacity:1;transform:scale(1.1)}100%{opacity:0;transform:translateY(-46px) scale(.9)}}
+.fa-s{position:absolute;z-index:2;color:#fff;font:700 22px var(--f);animation:twk 2.4s ease-in-out infinite}
+.fa-s.s1{left:-4%;top:60%}.fa-s.s2{right:-6%;top:6%;animation-delay:1.2s}
+@keyframes twk{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+.fa.sm{width:124px}
+.tm-av.ph .fa{margin:auto}
+.fd .fa{width:220px}
+
+/* CTA visual: practices light up as the search sweeps */
+.cta2{text-align:left;padding:80px 20px}
+.cta2-g{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center}
+.cta2-h{font:400 clamp(30px,3.8vw,48px)/1.1 var(--fd);margin:0}
+.cta2-h>span:not(.sr){display:block}
+.cta2-p{color:rgba(255,255,255,.72);font-size:15px;margin:16px 0 26px;max-width:380px}
+.cta2 .row{justify-content:flex-start}
+.fm{position:relative;aspect-ratio:1.25;border-radius:26px;background:#0A2F68;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.fm-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.07) 2px,transparent 2px),linear-gradient(115deg,transparent 48%,rgba(176,224,230,.18) 48%,rgba(176,224,230,.18) 51%,transparent 51%);background-size:56px 56px,56px 56px,100% 100%}
+.fm-sweep{position:absolute;left:50%;top:50%;width:150%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:conic-gradient(from 0deg,rgba(209,255,66,.35),rgba(209,255,66,0) 22%,transparent 100%);animation:spin 6s linear infinite}
+.fm-core{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 8px rgba(209,255,66,.2),0 0 0 18px rgba(209,255,66,.08)}
+.fm-pin{position:absolute;display:flex;align-items:center;gap:6px;translate:-50% -50%}
+.fm-pin i{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.35);box-shadow:0 0 0 0 rgba(209,255,66,.6);animation:fmp 6s ease-in-out infinite;animation-delay:var(--d)}
+.fm-pin em{font-size:11px;font-weight:700;color:rgba(255,255,255,.55);padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.06);white-space:nowrap;animation:fme 6s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes fmp{0%,8%{background:rgba(255,255,255,.35);box-shadow:0 0 0 0 rgba(209,255,66,.6)}12%,40%{background:var(--lime);box-shadow:0 0 0 10px rgba(209,255,66,0)}60%,100%{background:rgba(255,255,255,.35)}}
+@keyframes fme{0%,8%{color:rgba(255,255,255,.55);background:rgba(255,255,255,.06)}12%,40%{color:var(--ink);background:var(--lime)}60%,100%{color:rgba(255,255,255,.55);background:rgba(255,255,255,.06)}}
+
+@media (max-width:860px){
+ .cta2-g{grid-template-columns:1fr;gap:34px}
+ .hh-t{font-size:32px}
+}
+@media (max-width:640px){
+ .bm2{margin:12px 8px 0;border-radius:24px;padding:40px 0 34px}
+ .fm-pin em{font-size:9.5px;padding:2px 6px}
+ .ex2{width:170px}
+ .fa,.fd .fa{width:150px}
+}
+.ex-m2 li.ex2{display:block;width:210px;padding:10px 10px 14px;border-radius:24px;background:var(--white);white-space:normal;gap:0;font-size:inherit}
+.ex-m2 li.ex2 img{width:100%;height:100%;border-radius:0}
+@media (max-width:640px){.ex-m2 li.ex2{width:170px}}
