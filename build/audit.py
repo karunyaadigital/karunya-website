@@ -4,7 +4,7 @@ QUESTIONS = [
     ("g", "g1", "Do you have a Google Business Profile for your clinic?", [("Yes, and I manage it", 10), ("Yes, but nobody updates it", 5), ("No / not sure", 0)],
      "Claim and complete your Google Business Profile. It is the first thing a patient sees when they search “near me”."),
     ("g", "g2", "How many Google reviews do you have?", [("150+", 10), ("50 to 150", 7), ("10 to 50", 4), ("Under 10", 1)],
-     "Ask happy patients for a review at the reception desk with a simple QR card. More honest reviews means more trust."),
+     "Make your profile easy to find with a QR code at reception, and let genuine reviews come on their own. Never buy reviews or chase patients for them."),
     ("g", "g3", "Do you reply to your Google reviews?", [("Always", 10), ("Sometimes", 5), ("Never", 0)],
      "Reply to every review, good or bad, politely and without patient details. Patients read the replies."),
     ("g", "g4", "Photos on your Google profile?", [("20+ recent photos", 10), ("A few old photos", 4), ("None", 0)],
