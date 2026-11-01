@@ -82,21 +82,43 @@ def journeys():
     return garima + alka + manisha
 
 
+ORBIT = [("play", "Reels"), ("pin", "Google Maps"), ("search", "Search"), ("heart", "Trust"), ("call", "Calls"), ("follow", "Followers")]
+ICON["search"] = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>'
+
+
+def brand_motion():
+    """Karunya's own motion piece: the K mark at the centre, everything a patient touches orbiting it."""
+    inner = "".join(f'<span class="ob" style="--a:{i * 120}deg"><i>{ICON[k]}</i><em>{t}</em></span>' for i, (k, t) in enumerate(ORBIT[:3]))
+    outer = "".join(f'<span class="ob" style="--a:{60 + i * 120}deg"><i>{ICON[k]}</i><em>{t}</em></span>' for i, (k, t) in enumerate(ORBIT[3:]))
+    return f"""<div class="bm-orb" aria-hidden="true">
+  <div class="orb o1">{inner}</div><div class="orb o2">{outer}</div>
+  <div class="bm-core"><img src="assets/k-lime.png" alt="" width="120" height="120"></div>
+ </div>"""
+
+
 def home_body(ctx):
-    ARROW, WA_ICON, wa, IG_FOUNDER, doctors = (ctx[k] for k in ("ARROW", "WA_ICON", "wa", "IG_FOUNDER", "doctors"))
+    g = ctx
+    ARROW, WA_ICON, wa, IG_FOUNDER = g["ARROW"], g["WA_ICON"], g["wa"], g["IG_FOUNDER"]
     big = "".join(f'<div class="bn" data-r><p class="bn-n"><span>{n}</span>{s}</p><p class="bn-l">{l}</p></div>' for n, s, l in BIG)
     words = "".join(f'<span class="kw">{w}</span>' for w in WORDS)
-    face_html = "".join(f'<li><img src="media/{ph}.jpg" alt="" width="56" height="56" loading="lazy"><span><b>{n}</b>{c}</span></li>' for _, _, n, c, ph in doctors())
+    pf = g["plays_fmt"]
+    ex = "".join(f'<li class="ex"><img src="media/{ph}.jpg" alt="{n}" width="300" height="375" loading="lazy"><span class="ex-b"><b>{n}</b>{g["SPECS"][k]["short"] if k in g["SPECS"] else "Pulmonology"} · {c}{f"<em>{pf(best)} views</em>" if best else ""}</span></li>'
+                 for best, k, n, c, ph in g["doctors"]())
     what = [("Reels patients actually watch", "We study what your patients ask, write the script, guide your shoot on your phone, then edit, caption and post."),
             ("A Google profile that rings", "Complete, active and accurate, so you show up when someone nearby searches for your speciality."),
             ("Search pages that answer first", "Website pages and articles written for real patient questions in your city.")]
     what_html = "".join(f'<li data-r><h3>{t}</h3><p>{d}</p></li>' for t, d in what)
-    steps = [("Message us", "Tell us your speciality, city and goals on WhatsApp or a call."),
-             ("Approve your plan", "Every topic is planned before the month starts. Nothing goes live without your yes."),
-             ("We do the work", "Scripts, shoot guidance, editing, posting, Google updates and a monthly report you can read in two minutes.")]
-    steps_html = "".join(f'<li data-r><span>{i + 1}</span><h3>{t}</h3><p>{d}</p></li>' for i, (t, d) in enumerate(steps))
+    posts = g["POSTS"][:3]
+    blog = ""
+    if posts:
+        f0 = posts[0]
+        blog = (f'<a class="bp-main" href="{f0["slug"]}.html" data-r><img src="media/blog/{f0["slug"]}.jpg" alt="" width="1200" height="630" loading="lazy">'
+                f'<span class="bp-c">{f0["category"]} · {f0["minutes"]} min read</span><h3>{f0["title"]}</h3><p>{f0.get("description", "")}</p></a>')
+        blog += '<div class="bp-side">' + "".join(
+            f'<a class="bp-s" href="{p["slug"]}.html" data-r><img src="media/blog/{p["slug"]}.jpg" alt="" width="1200" height="630" loading="lazy"><span><span class="bp-c">{p["category"]}</span><b>{p["title"]}</b></span></a>'
+            for p in posts[1:]) + '</div>'
     return f"""<main id="main">
-<section class="hero" aria-labelledby="hero-h">
+<section class="hero" aria-labelledby="hero-h" data-trail="ribbon">
  <div class="canvas">
   {hero_bg()}
   <div class="hero-in">
@@ -110,40 +132,74 @@ def home_body(ctx):
  <p class="note w">Instagram: public reels of our client doctors, 1 Nov 2026. Google: Business Profile data of the 23 doctor and hospital profiles we manage, Nov 2024 to Oct 2026.</p>
 </section>
 
-<section class="faces" aria-labelledby="fc-h">
- <div class="w fc-head"><h2 id="fc-h" class="h3">50+ doctors across India work with Karunya</h2><a class="tl" href="work.html">See their work{ARROW}</a></div>
- <div class="marq"><ul class="marq-t">{face_html}{face_html}</ul></div>
+<section class="bm" aria-labelledby="bm-h" data-trail="spark">
+ <div class="w bm-g">
+  <div class="bm-t">
+   <h2 id="bm-h" class="bm-h"><span class="bm-l l1">You heal.</span><span class="bm-l l2">We get you heard.</span></h2>
+   <p>Every reel, Google post and search page we make has one job: when a patient in your city looks for help, they find you, and they trust what they see.</p>
+  </div>
+  {brand_motion()}
+ </div>
 </section>
 
-<section class="sec" aria-labelledby="wd-h">
+<section class="sec exs" aria-labelledby="ex-h" data-trail="dots">
+ <div class="w sh-row"><div class="sh"><p class="eyebrow">Karunya Exclusives</p><h2 id="ex-h" class="h2">The doctors who trust us.</h2></div><a class="tl" href="work.html">See all{ARROW}</a></div>
+ <div class="marq ex-m"><ul class="marq-t">{ex}{ex}</ul></div>
+</section>
+
+<section class="sec og-sec soft" aria-labelledby="og-h" data-trail="comet">
+ <div class="w sh-row"><div class="sh"><p class="eyebrow">Karunya Originals</p><h2 id="og-h" class="h2">Our own series, made for doctors.</h2></div>
+ <div class="arrows"><button type="button" class="arw" data-scroll="-1" aria-label="Previous episodes">←</button><button type="button" class="arw" data-scroll="1" aria-label="Next episodes">→</button></div></div>
+ {g["originals_row"]().replace('class="og-row" data-drag', 'class="og-row" data-drag data-scroller')}
+</section>
+
+<section class="sec" aria-labelledby="ad-h" data-trail="ribbon">
+ <div class="w ad-g">
+  <div class="ad-v" data-r>{g["reel_card"]("karunya-ad", "Karunya Digital in 45 seconds", "Made the way we make reels for doctors")}</div>
+  <div data-r><p class="eyebrow">Watch</p><h2 id="ad-h" class="h2">Karunya Digital in 45 seconds.</h2>
+   <p class="lead">Made exactly the way we make reels for our doctors: a clear hook, a simple story and a reason to act. Tap “Sound on”.</p>
+   <div class="row" style="margin-top:26px"><a class="btn btn-lime" href="{wa()}" target="_blank" rel="noopener">{WA_ICON}Make one like this for me</a></div></div>
+ </div>
+</section>
+
+<section class="sec soft" aria-labelledby="wd-h" data-trail="dots">
  <div class="w wd-g">
   <h2 id="wd-h" class="h2" data-r>Everything a patient sees before they call you.</h2>
   <ul class="wd">{what_html}</ul>
  </div>
 </section>
 
-<section class="sec soft" aria-labelledby="how-h">
+<section class="sec" aria-labelledby="tm-h" data-trail="spark">
  <div class="w">
-  <h2 id="how-h" class="h2" data-r>You treat patients. We handle the rest.</h2>
-  <ol class="steps">{steps_html}</ol>
+  <div class="sh"><p class="eyebrow">The team</p><h2 id="tm-h" class="h2" data-r>One team. Every skill a doctor needs.</h2>
+  <p class="lead" data-r>Strategy, scripts, editing, motion graphics, design, Google and client care, all under one roof in Varanasi.</p></div>
+  {g["team_grid"]()}
  </div>
 </section>
 
-<section class="sec" aria-labelledby="fd-h">
+<section class="sec soft" aria-labelledby="fd-h" data-trail="comet">
  <div class="w fd" data-r>
   <img src="media/founder.webp" alt="Bhanu Pratap Rai" width="420" height="420" loading="lazy">
   <div>
-   <h2 id="fd-h" class="fd-q">“We work only with doctors. We never promise rankings. We promise honest work every week, and a report you can understand.”</h2>
+   <h2 id="fd-h" class="fd-q">“We work only with doctors. Honest work every week, and a report you can understand in two minutes.”</h2>
    <p class="fd-n"><b>Bhanu Pratap Rai</b>Founder, Karunya Digital · <a href="{IG_FOUNDER}" target="_blank" rel="noopener">@bhanuhelpsdoctors</a></p>
   </div>
+ </div>
+</section>
+
+<section class="sec" aria-labelledby="bl-h" data-trail="dots">
+ <div class="w">
+  <div class="sh-row"><div class="sh"><p class="eyebrow">From the blog</p><h2 id="bl-h" class="h2">Guides for doctors who want to be found.</h2></div><a class="tl" href="blog.html">All articles{ARROW}</a></div>
+  <div class="bp">{blog}</div>
  </div>
 </section>
 
 <section class="sec tight" aria-label="Plans and NMC">
  <div class="w duo">
   <a class="duo-c" href="services.html#pricing" data-r><p class="duo-k">Plans</p><p class="duo-h">From ₹20,000 a month</p><span class="tl">See plans{ARROW}</span></a>
-  <a class="duo-c blue" href="blog-nmc-new-guidelines-doctors-social-media.html" data-r><p class="duo-k">NMC ready</p><p class="duo-h">Every post follows the October 2026 NMC guidelines</p><span class="tl">Read the guide{ARROW}</span></a>
+  <a class="duo-c blue" href="blog-nmc-new-guidelines-doctors-social-media.html" data-r data-trail="spark"><p class="duo-k">NMC ready</p><p class="duo-h">Every post follows the October 2026 NMC guidelines</p><span class="tl">Read the guide{ARROW}</span></a>
  </div>
 </section>
 </main>
+{g["video_modal"]()}
 """

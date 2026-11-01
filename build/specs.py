@@ -78,7 +78,7 @@ SPECS = {
             ("Dr. Tanu Sharma", "IVF Specialist", "p-tanu", ["tanu"], [(1605452, IG + "DakuYFujxOH/"), (178935, IG + "DcyPaDMElSg/")]),
         ],
         topics=["When to consider egg freezing", "What your AMH report means", "IUI or IVF?", "Common IVF myths", "Male infertility", "Questions to ask at your first visit", "After embryo transfer", "Age and fertility"],
-        how=[("No promises, only the truth", "No success-rate claims or guarantees. Just the process, realistic hope and the right information."),
+        how=[("Honest and NMC-safe", "No success-rate claims. Just the process, realistic hope and the right information for couples."),
              ("No patient stories", "No testimonials or patient images, ever. Only your expertise, explained clearly."),
              ("Content for a long journey", "IVF patients follow for months. We build series that guide them step by step.")],
     ),

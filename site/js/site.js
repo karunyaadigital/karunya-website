@@ -238,6 +238,65 @@
     });
   }
 
+  /* brand motion band: words land when it scrolls in */
+  document.querySelectorAll(".bm").forEach(function (el) {
+    if (!hasIO) { el.classList.add("in"); return; }
+    new IntersectionObserver(function (en, o) { if (en[0].isIntersecting) { el.classList.add("in"); o.disconnect(); } }, { threshold: 0.35 }).observe(el);
+  });
+
+  /* trail cursor: style changes per page and per section (fine pointers only, native cursor stays) */
+  if (!reduce && window.matchMedia("(pointer:fine)").matches) {
+    var cv = document.createElement("canvas"); cv.className = "trail"; cv.setAttribute("aria-hidden", "true");
+    document.body.appendChild(cv);
+    var ctx = cv.getContext("2d"), dpr = Math.min(window.devicePixelRatio || 1, 2), pts = [], running = false;
+    var PAGE = { home: "ribbon", services: "dots", work: "spark", about: "comet", blog: "dots", contact: "ribbon", audit: "spark", "404": "spark" };
+    var bodyKey = (document.body.className.match(/p-([\w-]+)/) || [])[1] || "home";
+    var pageMode = PAGE[bodyKey] || (bodyKey.indexOf("blog-") === 0 ? "dots" : "comet");
+    var DARK = ".canvas,.bm,.cta,.duo-c.blue,.pl.pop,.ct-wa,.a-card,.v-trust,.ph-stat";
+    var mode = pageMode, col = "2,81,176";
+    function size() { cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+    size(); window.addEventListener("resize", size);
+    var lastT = null;
+    window.addEventListener("pointermove", function (e) {
+      if (e.target !== lastT) {
+        lastT = e.target;
+        var sec = e.target.closest ? e.target.closest("[data-trail]") : null;
+        mode = sec ? sec.dataset.trail : pageMode;
+        col = (e.target.closest && e.target.closest(DARK)) ? "209,255,66" : "2,81,176";
+      }
+      pts.push({ x: e.clientX, y: e.clientY, life: 1, vx: (Math.random() - .5) * 1.4, vy: (Math.random() - .5) * 1.4 - .4, m: mode, c: col });
+      if (pts.length > 40) pts.shift();
+      if (!running) { running = true; requestAnimationFrame(draw); }
+    }, { passive: true });
+    function star(x, y, r) {
+      ctx.beginPath();
+      for (var i = 0; i < 8; i++) { var a = i * Math.PI / 4, rr = i % 2 ? r * .38 : r; ctx.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr); }
+      ctx.closePath(); ctx.fill();
+    }
+    function draw() {
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i], t = (i + 1) / pts.length, a = Math.max(0, p.life);
+        ctx.fillStyle = ctx.strokeStyle = "rgba(" + p.c + "," + (a * .75).toFixed(3) + ")";
+        if (p.m === "ribbon" && i > 0 && pts[i - 1].m === "ribbon") {
+          var q = pts[i - 1]; ctx.lineWidth = 1 + t * 5 * a; ctx.lineCap = "round";
+          ctx.beginPath(); ctx.moveTo(q.x, q.y); ctx.lineTo(p.x, p.y); ctx.stroke();
+        } else if (p.m === "dots") {
+          p.x += p.vx * .6; p.y += p.vy * .6;
+          ctx.beginPath(); ctx.arc(p.x, p.y, 1.5 + 3 * a, 0, 6.283); ctx.fill();
+        } else if (p.m === "spark") {
+          p.x += p.vx; p.y += p.vy;
+          star(p.x, p.y, 2 + 6 * a * t);
+        } else if (p.m === "comet") {
+          ctx.beginPath(); ctx.arc(p.x, p.y, (1 + 7 * t) * a, 0, 6.283); ctx.fill();
+        }
+        p.life -= p.m === "ribbon" ? .07 : .045;
+      }
+      pts = pts.filter(function (p) { return p.life > 0; });
+      if (pts.length) requestAnimationFrame(draw); else { running = false; ctx.clearRect(0, 0, innerWidth, innerHeight); }
+    }
+  }
+
   /* footer: live Varanasi time, year, back to top */
   var clock = document.querySelector("[data-clock]");
   if (clock) {

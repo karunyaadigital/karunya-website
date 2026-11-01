@@ -5,6 +5,7 @@ from specs import SPECS, DEG, plays_fmt, spec_total, ig_profile, IG_ICON
 from audit import audit_form
 from build_posts import load_posts
 from home_page import home_body
+from team_art import TEAM, char
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "site")
 WA_NUM = "916386492334"
@@ -124,10 +125,13 @@ def header(active=""):
 '''
 
 
+CTA_WORDS = "".join(f'<span class="cw2">{w}</span>' for w in ["clinic", "hospital", "gynaecology practice", "IVF centre", "dental clinic", "ortho clinic", "nursing home", "chest clinic", "skin clinic", "child clinic"])
+
+
 def footer(cta=True):
-    band = f'''<section class="cta" aria-labelledby="cta-h">
+    band = f'''<section class="cta" aria-labelledby="cta-h" data-trail="spark">
  <div class="w">
-  <h2 id="cta-h" class="cta-h">Let's make your clinic<br>easy to find.</h2>
+  <h2 id="cta-h" class="cta-h"><span class="sr">Let's make your clinic easy to find.</span><span aria-hidden="true">Let's make your</span><span class="cta-slot" aria-hidden="true">{CTA_WORDS}</span><span aria-hidden="true">easy to find.</span></h2>
   <div class="row"><a class="btn btn-lime" href="audit.html">Get a free check</a><a class="btn btn-ghost" href="{wa()}" target="_blank" rel="noopener">{WA_ICON}Talk on WhatsApp</a></div>
  </div>
 </section>''' if cta else ""
@@ -246,6 +250,15 @@ def pricing_section():
 </div></section>'''
 
 
+def team_grid():
+    cards = ""
+    for kind, n, r, d in TEAM:
+        av = '<img src="media/founder.webp" alt="Bhanu Pratap Rai" width="420" height="420" loading="lazy">' if kind == "photo" else char(kind)
+        link = f'<a class="tl" href="{IG_FOUNDER}" target="_blank" rel="noopener">Instagram{ARROW_UR}</a>' if kind == "photo" else ""
+        cards += f'<article class="tm" data-r><div class="tm-av{" ph" if kind == "photo" else ""}">{av}</div><h3>{n}</h3><p class="tm-r">{r}</p><p>{d}</p>{link}</article>'
+    return f'<div class="team">{cards}</div>'
+
+
 # ------------------------------------------------------------------ HOME
 def home():
     body = home_body(globals())
@@ -262,7 +275,7 @@ def services():
          "Not comfortable on camera? Voiceover and motion graphics reels work too."),
         ("gmb", "Google Business Profile", "For clinics that rank low in “near me” searches or have an incomplete profile.",
          ["Complete profile: services, timings, photos, service area", "A Google post every week", "Review replies written in your tone", "Answers to common patient questions", "Monthly report: calls and direction requests"],
-         "Nobody can honestly guarantee a ranking. We do everything that helps, and show you the results."),
+         "We do everything that helps you show up first, and show you the results every month."),
         ("seo", "SEO & website", "For doctors who want patients to find accurate answers from them first.",
          ["A fast, mobile-first website or landing page", "Service and condition pages written for patients", "Articles that answer local search questions", "Basic technical SEO and Google Search Console"],
          "Search traffic builds slowly, then keeps working for you every day."),
@@ -286,7 +299,7 @@ def services():
         ("How much of my time will this take?", "One call to start. After that, approving the monthly calendar and a little time for shoots. Our team handles the rest."),
         ("How does the shoot work?", "We give you the script and clear guidance on what to say, how to stand and which light to use. Editing, captions, posting and strategy are on us. We don't send camera crews; most doctors shoot on a phone."),
         ("How much does it cost?", "Plans start at ₹20,000 per month, with Growth at ₹25,000 and Authority at ₹40,000. For full hospital marketing, call +91 73176 59337 for a custom plan."),
-        ("Do you guarantee rankings or patients?", "No. Any agency that guarantees rankings isn't being honest. We guarantee effort, consistency and a clear report every month."),
+        ("What will I see every month?", "A clear report with your reach, followers from your city, Google views, calls and direction requests, plus the plan for next month."),
     ]
     faq_html = "".join(f"<details data-r><summary>{q}</summary><p>{a}</p></details>" for q, a in faq)
     body = f'''<main id="main">
@@ -327,17 +340,11 @@ def work():
 # ------------------------------------------------------------------ ABOUT
 def about():
     values = [("Healthcare only", "Only doctors and hospitals. We understand your world and your patients."),
-              ("Truth first", "No guarantees on rankings or patient numbers. Effort, consistency and a clear report."),
+              ("Clear reporting", "Every month you see exactly what we did and what changed: views, calls and direction requests."),
               ("The patient's language", "Simple Hindi, Hinglish or English that an ordinary family understands."),
               ("Your approval, always", "Nothing goes live without your yes. Your name, your decision.")]
     vh = "".join(f'<div class="val" data-r><span class="n">0{i + 1}</span><h3>{t}</h3><p>{d}</p></div>' for i, (t, d) in enumerate(values))
-    team = [("media/founder.webp", "Bhanu Pratap Rai", "Founder", "Leads strategy for every doctor we work with. Shares social media lessons for doctors on @bhanuhelpsdoctors.", IG_FOUNDER),
-            (None, "Ankita Rai", "Manager & scripts", "Writes the scripts and runs client coordination, so every reel says the right thing in the right words.", None),
-            (None, "Editing team", "Video editors", "Editors who pair AI tools with real craft, and understand the emotion every cut should carry.", None)]
-    th = ""
-    for img, n, r, d, link in team:
-        av = f'<img src="{img}" alt="{n}" width="420" height="420" loading="lazy">' if img else f'<span>{"".join(w[0] for w in n.split()[:2])}</span>'
-        th += f'<article class="tm" data-r><div class="tm-av">{av}</div><h3>{n}</h3><p class="tm-r">{r}</p><p>{d}</p>{f"<a class=tl href={link} target=_blank rel=noopener>Instagram{ARROW_UR}</a>" if link else ""}</article>'
+    th = team_grid()
     cities = "".join(f"<li>{c}</li>" for c in CITIES)
     body = f'''<main id="main">
 {page_hero("About", "From the ghats of Kashi, for doctors across <em>India</em>.", "Karunya means compassion. Doctors practise it every day. Our job is to make sure it reaches the patients who need it.")}
@@ -349,7 +356,7 @@ def about():
  </div>
 </div></section>
 <section class="sec"><div class="w"><div class="sh"><p class="eyebrow" data-r>Principles</p><h2 class="h2" data-r>How we work.</h2></div><div class="vals">{vh}</div></div></section>
-<section class="sec"><div class="w"><div class="sh"><p class="eyebrow" data-r>Team</p><h2 class="h2" data-r>The people behind your content.</h2></div><div class="team">{th}</div></div></section>
+<section class="sec"><div class="w"><div class="sh"><p class="eyebrow" data-r>Team</p><h2 class="h2" data-r>One team. Every skill a doctor needs.</h2><p class="lead" data-r>Strategy, scripts, editing, motion graphics, design, Google and client care, all under one roof in Varanasi.</p></div>{th}</div></section>
 <section class="sec"><div class="w ab-g">
  <div><p class="eyebrow" data-r>Where we work</p><h2 class="h2" data-r>Nine cities and counting.</h2><ul class="cities" data-r>{cities}</ul></div>
  <div data-r>{reel_card("karunya-ad", "Karunya Digital in 45 seconds", "Made the way we make reels for doctors")}</div>

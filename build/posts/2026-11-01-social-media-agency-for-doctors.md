@@ -45,7 +45,7 @@ A general agency may create beautiful posts that get likes but no appointments. 
 4. **How do you handle NMC guidelines?** Listen for patient education, no superlatives, no testimonials or before-and-after posts, and a clear plan for the October 2026 guidelines ([our NMC guide](blog-nmc-new-guidelines-doctors-social-media.html)).
 5. **How much of my time will it take?** A good agency asks for a little shoot time and approvals, not your whole week.
 6. **What will the monthly report show?** Reach, followers from your city, profile visits, calls and direction requests.
-7. **Do you guarantee rankings or patients?** If they say yes, be careful. Nobody can honestly guarantee that.
+7. **Can you show me real results?** Ask for real numbers from doctors they already work with: reel views, Google calls and direction requests.
 
 ## Red flags to avoid
 
