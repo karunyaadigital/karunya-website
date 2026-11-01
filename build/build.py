@@ -191,14 +191,23 @@ def doctors():
     return out
 
 
+FB = {"Dr. Madhuresh Kumar": "https://www.facebook.com/starorthoandmaternity/"}
+FB_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>'
+
+
 def doc_card(best, k, name, city, photo):
     url = ig_profile(name)
+    fb = FB.get(name)
     spec = SPECS[k]["short"] if k in SPECS else "Pulmonology"
-    tag = "a" if url else "div"
-    attrs = f' href="{url}" target="_blank" rel="noopener" aria-label="{E(name)} on Instagram"' if url else ""
+    tag = "a" if url and not fb else "div"
+    attrs = f' href="{url}" target="_blank" rel="noopener" aria-label="{E(name)} on Instagram"' if tag == "a" else ""
     pl = f'<p class="dc-pl"><b>{plays_fmt(best)}</b> plays on best reel</p>' if best else '<p class="dc-pl muted">Pulmonology content</p>'
     deg = f'<small>{DEG[name]}</small>' if name in DEG else ""
-    go = f'<span class="dc-go">{IG_ICON}Instagram{ARROW_UR}</span>' if url else ""
+    if fb:
+        go = (f'<span class="dc-links"><a class="dc-go" href="{url}" target="_blank" rel="noopener">{IG_ICON}Instagram</a>'
+              f'<a class="dc-go" href="{fb}" target="_blank" rel="noopener">{FB_ICON}Facebook</a></span>')
+    else:
+        go = f'<span class="dc-go">{IG_ICON}Instagram{ARROW_UR}</span>' if url else ""
     return (f'<{tag} class="dc"{attrs}><div class="dc-ph"><img src="media/{photo}.jpg" alt="{E(name)}" width="600" height="750" loading="lazy"></div>'
             f'<div class="dc-b"><span class="dc-sp">{spec} · {E(city)}</span><b>{E(name)}</b>{deg}{pl}{go}</div></{tag}>')
 

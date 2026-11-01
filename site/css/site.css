@@ -572,3 +572,5 @@ legend{font-size:12.5px;font-weight:500;color:var(--mu);margin-bottom:8px;paddin
 @media (max-width:640px){.hb-curve{bottom:0}.pills{bottom:0}}
 .kw{white-space:nowrap}
 @media (max-width:640px){.kin-slot{font-size:.78em;height:1.25em}}
+.dc-links{display:flex;gap:14px}
+.faces{padding:64px 0 20px}

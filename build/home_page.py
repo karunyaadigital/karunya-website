@@ -110,13 +110,6 @@ def home_body(ctx):
  <p class="note w">Instagram: public reels of our client doctors, 1 Nov 2026. Google: Business Profile data of the 23 doctor and hospital profiles we manage, Nov 2024 to Oct 2026.</p>
 </section>
 
-<section class="sec" aria-labelledby="jr-h">
- <div class="w">
-  <h2 id="jr-h" class="h2" data-r>Three doctors. Three cities. Patients found all of them.</h2>
-  <div class="jrs">{journeys()}</div>
- </div>
-</section>
-
 <section class="faces" aria-labelledby="fc-h">
  <div class="w fc-head"><h2 id="fc-h" class="h3">50+ doctors across India work with Karunya</h2><a class="tl" href="work.html">See their work{ARROW}</a></div>
  <div class="marq"><ul class="marq-t">{face_html}{face_html}</ul></div>
