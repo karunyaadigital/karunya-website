@@ -12,11 +12,12 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-01 | digital marketing for doctors | blog-digital-marketing-for-doctors-india |
 | 2026-11-02 | seo for doctors | blog-seo-for-doctors |
 | 2026-11-02 | bio for doctors on instagram | blog-bio-for-doctors-on-instagram |
+| 2026-11-03 | healthcare marketing agency | blog-healthcare-marketing-agency |
+| 2026-11-03 | google reviews for doctors nmc | blog-google-reviews-for-doctors-nmc |
 
 ## Backlog (pick from here, or find new ones with research)
 | Keyword | Volume | Notes / angle |
 |---|---|---|
-| healthcare marketing agency | 720 | "What a healthcare marketing agency does (and doesn't) in 2026" |
 | social media for doctors | 90 | Platform-by-platform guide |
 | how to increase patient flow in clinic | 50 | Frame as "being found + patient experience", never solicitation |
 | how to increase patients in clinic | 40 | Same, NMC-safe |
@@ -29,7 +30,6 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | medical clinic marketing ideas | 30 | |
 | youtube for doctors | low | Long-form + Shorts |
 | reel ideas for gynaecologist / orthopaedic / ivf / dentist | low | Speciality series, one post each |
-| google reviews for doctors nmc | low | Genuine reviews vs soliciting |
 | doctor website design | low | What a doctor's website needs |
 | nmc guidelines for doctors on social media | 10 | Supporting post / FAQ |
 | ai for doctors social media | low | AI labelling rules from NMC |
@@ -39,3 +39,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | hospital website doctor directory nmc | low | Guidelines treat a factual doctor directory as patient information |
 | doctor photo on signboard nmc rule | low | Explain the photograph restriction for self-promotion |
 | paid listing doctor platforms nmc | low | Paid ranking banned; what to do with Practo-style listings |
+| pay per lead marketing for doctors nmc | low | Found 3 Nov: guidelines bar agency payment linked to patient referrals |
+| how to reply to negative google reviews doctor | low | Patient-confidentiality-safe reply templates |
+| hospital advertising rules nmc | low | NMC hospital permitted/prohibited list (reported 18 Oct 2026) |
+| influencer marketing doctors nmc | low | Celebrities/influencers/patients can't give endorsements |
+| doctor greetings posts festival nmc | low | Greetings allowed if no professional promotion (Diwali/Chhath season) |
