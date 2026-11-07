@@ -17,14 +17,40 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-07 | dental clinic marketing ideas | blog-dental-clinic-marketing-ideas |
 | 2026-11-07 | nmc penalties for doctors advertising | blog-nmc-penalties-for-doctors-advertising |
 
-## Backlog (pick from here, or find new ones with research)
+## Focus (owner, 7 Nov 2026)
+Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
+
+## Backlog: agency-intent keywords (volumes not checked yet: Apify quota used up on 7 Nov)
+| Keyword | Volume | Notes / angle |
+|---|---|---|
+| digital marketing agency for doctors | ? | Main money keyword: what to expect, services, NMC-safe checklist |
+| healthcare marketing agency in india | 50 | Agency comparison checklist (no attacks on named competitors) |
+| medical marketing agency | ? | What a medical marketing agency does vs general agency |
+| hospital marketing agency | ? | Hospital-specific: departments, doctor directory, CEA rules |
+| digital marketing agency in varanasi | ? | Local: Karunya's home city |
+| digital marketing agency for doctors in lucknow | ? | City guide; no office claims outside Varanasi |
+| digital marketing agency for doctors in patna | ? | City guide (Bihar) |
+| digital marketing agency in prayagraj | ? | City guide |
+| digital marketing agency cost for doctors | ? | Price ranges explained; link services.html#pricing |
+| digital marketing packages for doctors | ? | What each package level should include |
+| how to choose a digital marketing agency for clinic | ? | Questions to ask, red flags |
+| freelancer vs agency for doctors | ? | Honest comparison table |
+| seo agency for doctors | ? | What SEO work an agency actually does |
+| social media marketing agency for hospitals | ? | |
+| instagram marketing agency for doctors | ? | Reels scripting + editing + posting (no camera crew) |
+| dental marketing agency india | ? | Use NDC advisory (14 Oct 2026) |
+| ivf clinic marketing agency | ? | Speciality |
+| gynaecologist marketing agency | ? | Speciality |
+| orthopaedic doctor marketing agency | ? | Speciality |
+| best digital marketing agency for doctors | ? | "best" only as the search phrase; never a claim about Karunya |
+
+## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
 |---|---|---|
 | social media for doctors | 90 | Platform-by-platform guide |
 | how to increase patient flow in clinic | 50 | Frame as "being found + patient experience", never solicitation |
 | how to increase patients in clinic | 40 | Same, NMC-safe |
 | clinic advertising ideas | 50 | What is still allowed after NMC Oct 2026 |
-| healthcare marketing agency in india | 50 | Agency comparison checklist |
 | instagram for doctors | 40 | Reels formats that work |
 | online marketing for doctors | 30 | |
 | how to increase patients in dental clinic | 30 | |
