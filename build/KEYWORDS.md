@@ -16,6 +16,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-03 | google reviews for doctors nmc | blog-google-reviews-for-doctors-nmc |
 | 2026-11-07 | dental clinic marketing ideas | blog-dental-clinic-marketing-ideas |
 | 2026-11-07 | nmc penalties for doctors advertising | blog-nmc-penalties-for-doctors-advertising |
+| 2026-11-08 | digital marketing agency for doctors | blog-digital-marketing-agency-for-doctors |
+| 2026-11-08 | digital marketing agency in varanasi | blog-digital-marketing-agency-in-varanasi |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -23,11 +25,9 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 ## Backlog: agency-intent keywords (volumes not checked yet: Apify quota used up on 7 Nov)
 | Keyword | Volume | Notes / angle |
 |---|---|---|
-| digital marketing agency for doctors | ? | Main money keyword: what to expect, services, NMC-safe checklist |
 | healthcare marketing agency in india | 50 | Agency comparison checklist (no attacks on named competitors) |
 | medical marketing agency | ? | What a medical marketing agency does vs general agency |
 | hospital marketing agency | ? | Hospital-specific: departments, doctor directory, CEA rules |
-| digital marketing agency in varanasi | ? | Local: Karunya's home city |
 | digital marketing agency for doctors in lucknow | ? | City guide; no office claims outside Varanasi |
 | digital marketing agency for doctors in patna | ? | City guide (Bihar) |
 | digital marketing agency in prayagraj | ? | City guide |
@@ -42,6 +42,10 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | ivf clinic marketing agency | ? | Speciality |
 | gynaecologist marketing agency | ? | Speciality |
 | orthopaedic doctor marketing agency | ? | Speciality |
+| healthcare digital marketing agency for clinics | ? | Found 8 Nov: competitor pages use "for doctors, clinics & hospitals"; clinic-owner angle |
+| digital marketing company for doctors in india | ? | Found 8 Nov: "company" variant common in listings; India-wide comparison |
+| doctor marketing agency contract checklist | ? | Found 8 Nov: guidelines summaries advise reviewing every agency contract; account ownership, exit terms |
+| digital marketing agency for hospitals in varanasi | ? | Local hospital angle; SSPG 500-bed upgrade news (Jan 2026) |
 | best digital marketing agency for doctors | ? | "best" only as the search phrase; never a claim about Karunya |
 
 ## Old backlog (reference only, not primary keywords)
