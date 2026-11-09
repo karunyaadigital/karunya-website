@@ -18,6 +18,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-07 | nmc penalties for doctors advertising | blog-nmc-penalties-for-doctors-advertising |
 | 2026-11-08 | digital marketing agency for doctors | blog-digital-marketing-agency-for-doctors |
 | 2026-11-08 | digital marketing agency in varanasi | blog-digital-marketing-agency-in-varanasi |
+| 2026-11-09 | hospital marketing agency | blog-hospital-marketing-agency |
+| 2026-11-09 | digital marketing agency for doctors in lucknow | blog-digital-marketing-agency-for-doctors-in-lucknow |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -27,8 +29,6 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 |---|---|---|
 | healthcare marketing agency in india | 50 | Agency comparison checklist (no attacks on named competitors) |
 | medical marketing agency | ? | What a medical marketing agency does vs general agency |
-| hospital marketing agency | ? | Hospital-specific: departments, doctor directory, CEA rules |
-| digital marketing agency for doctors in lucknow | ? | City guide; no office claims outside Varanasi |
 | digital marketing agency for doctors in patna | ? | City guide (Bihar) |
 | digital marketing agency in prayagraj | ? | City guide |
 | digital marketing agency cost for doctors | ? | Price ranges explained; link services.html#pricing |
@@ -46,6 +46,11 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | digital marketing company for doctors in india | ? | Found 8 Nov: "company" variant common in listings; India-wide comparison |
 | doctor marketing agency contract checklist | ? | Found 8 Nov: guidelines summaries advise reviewing every agency contract; account ownership, exit terms |
 | digital marketing agency for hospitals in varanasi | ? | Local hospital angle; SSPG 500-bed upgrade news (Jan 2026) |
+| digital marketing agency in lucknow | ? | Found 9 Nov: broader city term; many blogspot "top company" lists rank for it |
+| healthcare digital marketing company in lucknow | ? | Found 9 Nov: "company" variant used by Lucknow listing pages |
+| hospital digital marketing services | ? | Found 9 Nov: services-intent variant; hospital factual-info rules (departments, facilities, packages) |
+| hospital seo agency | ? | Found 9 Nov: department pages + doctor directory angle |
+| marketing agency for multispeciality hospital | ? | Found 9 Nov: approval process across many doctors |
 | best digital marketing agency for doctors | ? | "best" only as the search phrase; never a claim about Karunya |
 
 ## Old backlog (reference only, not primary keywords)
