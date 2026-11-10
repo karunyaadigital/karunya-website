@@ -20,6 +20,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-08 | digital marketing agency in varanasi | blog-digital-marketing-agency-in-varanasi |
 | 2026-11-09 | hospital marketing agency | blog-hospital-marketing-agency |
 | 2026-11-09 | digital marketing agency for doctors in lucknow | blog-digital-marketing-agency-for-doctors-in-lucknow |
+| 2026-11-10 | digital marketing agency cost for doctors | blog-digital-marketing-agency-cost-for-doctors |
+| 2026-11-10 | dental marketing agency india | blog-dental-marketing-agency-india |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -31,14 +33,12 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | medical marketing agency | ? | What a medical marketing agency does vs general agency |
 | digital marketing agency for doctors in patna | ? | City guide (Bihar) |
 | digital marketing agency in prayagraj | ? | City guide |
-| digital marketing agency cost for doctors | ? | Price ranges explained; link services.html#pricing |
 | digital marketing packages for doctors | ? | What each package level should include |
 | how to choose a digital marketing agency for clinic | ? | Questions to ask, red flags |
 | freelancer vs agency for doctors | ? | Honest comparison table |
 | seo agency for doctors | ? | What SEO work an agency actually does |
 | social media marketing agency for hospitals | ? | |
 | instagram marketing agency for doctors | ? | Reels scripting + editing + posting (no camera crew) |
-| dental marketing agency india | ? | Use NDC advisory (14 Oct 2026) |
 | ivf clinic marketing agency | ? | Speciality |
 | gynaecologist marketing agency | ? | Speciality |
 | orthopaedic doctor marketing agency | ? | Speciality |
@@ -52,6 +52,11 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | hospital seo agency | ? | Found 9 Nov: department pages + doctor directory angle |
 | marketing agency for multispeciality hospital | ? | Found 9 Nov: approval process across many doctors |
 | best digital marketing agency for doctors | ? | "best" only as the search phrase; never a claim about Karunya |
+| dental clinic marketing agency in varanasi | ? | Found 10 Nov: city + dental; NDC advisory angle |
+| healthcare seo pricing india | ? | Found 10 Nov: competitor pages target "seo pricing healthcare"; SEO-only scope vs full retainer |
+| digital marketing agency for dentists | ? | Found 10 Nov: "dentists" variant used by listing sites (Clutch/DesignRush dental categories) |
+| monthly retainer vs pay per lead doctors | ? | Found 10 Nov: pricing-model comparison; NMC fee-linkage rule |
+| digital marketing agency for hospitals in india | ? | Found 10 Nov: Clutch/listing pages for healthcare agencies India |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
