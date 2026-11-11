@@ -22,6 +22,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-09 | digital marketing agency for doctors in lucknow | blog-digital-marketing-agency-for-doctors-in-lucknow |
 | 2026-11-10 | digital marketing agency cost for doctors | blog-digital-marketing-agency-cost-for-doctors |
 | 2026-11-10 | dental marketing agency india | blog-dental-marketing-agency-india |
+| 2026-11-11 | medical marketing agency | blog-medical-marketing-agency |
+| 2026-11-11 | digital marketing agency for doctors in patna | blog-digital-marketing-agency-for-doctors-in-patna |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -30,8 +32,6 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | Keyword | Volume | Notes / angle |
 |---|---|---|
 | healthcare marketing agency in india | 50 | Agency comparison checklist (no attacks on named competitors) |
-| medical marketing agency | ? | What a medical marketing agency does vs general agency |
-| digital marketing agency for doctors in patna | ? | City guide (Bihar) |
 | digital marketing agency in prayagraj | ? | City guide |
 | digital marketing packages for doctors | ? | What each package level should include |
 | how to choose a digital marketing agency for clinic | ? | Questions to ask, red flags |
@@ -57,6 +57,11 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | digital marketing agency for dentists | ? | Found 10 Nov: "dentists" variant used by listing sites (Clutch/DesignRush dental categories) |
 | monthly retainer vs pay per lead doctors | ? | Found 10 Nov: pricing-model comparison; NMC fee-linkage rule |
 | digital marketing agency for hospitals in india | ? | Found 10 Nov: Clutch/listing pages for healthcare agencies India |
+| digital marketing agency for doctors in prayagraj | ? | Found 11 Nov: city + doctors variant of the Prayagraj guide |
+| healthcare digital marketing agency in bihar | ? | Found 11 Nov: state-level term; listing sites (DesignRush/Sortlist) show Bihar agencies |
+| hindi content marketing agency for doctors | ? | Found 11 Nov: language angle for UP/Bihar patients (Hindi/Hinglish scripts) |
+| remote vs local digital marketing agency for doctors | ? | Found 11 Nov: comparison; working with an agency in another city |
+| medical seo agency india | ? | Found 11 Nov: "medical" variant of SEO agency term; NMC clause on manipulating rankings |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
