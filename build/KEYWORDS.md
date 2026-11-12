@@ -24,6 +24,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-10 | dental marketing agency india | blog-dental-marketing-agency-india |
 | 2026-11-11 | medical marketing agency | blog-medical-marketing-agency |
 | 2026-11-11 | digital marketing agency for doctors in patna | blog-digital-marketing-agency-for-doctors-in-patna |
+| 2026-11-12 | freelancer vs agency for doctors | blog-freelancer-vs-agency-for-doctors |
+| 2026-11-12 | digital marketing agency in prayagraj | blog-digital-marketing-agency-in-prayagraj |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -32,10 +34,8 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | Keyword | Volume | Notes / angle |
 |---|---|---|
 | healthcare marketing agency in india | 50 | Agency comparison checklist (no attacks on named competitors) |
-| digital marketing agency in prayagraj | ? | City guide |
 | digital marketing packages for doctors | ? | What each package level should include |
 | how to choose a digital marketing agency for clinic | ? | Questions to ask, red flags |
-| freelancer vs agency for doctors | ? | Honest comparison table |
 | seo agency for doctors | ? | What SEO work an agency actually does |
 | social media marketing agency for hospitals | ? | |
 | instagram marketing agency for doctors | ? | Reels scripting + editing + posting (no camera crew) |
@@ -62,6 +62,11 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | hindi content marketing agency for doctors | ? | Found 11 Nov: language angle for UP/Bihar patients (Hindi/Hinglish scripts) |
 | remote vs local digital marketing agency for doctors | ? | Found 11 Nov: comparison; working with an agency in another city |
 | medical seo agency india | ? | Found 11 Nov: "medical" variant of SEO agency term; NMC clause on manipulating rankings |
+| digital marketing agency for hospitals in prayagraj | ? | Found 12 Nov: Park Medi World 550-bed PPP hospital groundbreaking (Oct 2026); hospital angle |
+| social media manager for doctors | ? | Found 12 Nov: hiring-intent variant (freelancer/in-house/agency); role scope + NMC approval |
+| in-house vs agency marketing for hospitals | ? | Found 12 Nov: comparison for hospital admins; intermediary responsibility clause |
+| digital marketing agency in allahabad | ? | Found 12 Nov: old city name still searched; can link to Prayagraj guide |
+| healthcare digital marketing agency in uttar pradesh | ? | Found 12 Nov: state-level term; listing pages mix all industries |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
