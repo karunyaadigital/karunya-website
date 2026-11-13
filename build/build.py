@@ -116,6 +116,68 @@ def header(active):
 '''
 
 
+SPIN_WA_NUM = "917317659337"
+SPIN_MSG = "Hi, I spun the wheel on your website and want to claim the Black Friday offer (services worth Rs 15,000 at Rs 10,000/month)."
+SPIN_SEGMENTS = [
+    ("Black<br>Friday", "hot"), ("10% OFF", ""), ("Free Audit", ""), ("&#8377;2,000 OFF", ""),
+    ("Surprise", ""), ("Free Consult", ""), ("5% OFF", ""), ("Try Luck", ""),
+]
+SPIN_COLORS = ["#D1FF42", "#0251B0", "#012A5E", "#0251B0", "#012A5E", "#0251B0", "#012A5E", "#0251B0"]
+
+
+def spin_wa():
+    return f"https://wa.me/{SPIN_WA_NUM}?text=" + urllib.parse.quote(SPIN_MSG)
+
+
+def spin_section():
+    n = len(SPIN_SEGMENTS)
+    step = 360 / n
+    start = -step / 2
+    stops = []
+    for c in SPIN_COLORS:
+        end = start + step
+        stops.append(f"{c} {start:.2f}deg {end:.2f}deg")
+        start = end
+    gradient = "conic-gradient(" + ",".join(stops) + ")"
+    segs = "".join(
+        f'<span class="seg{" seg-hot" if cls == "hot" else ""}" style="transform:rotate({i * step:.2f}deg)">'
+        f'<em style="transform:rotate({-i * step:.2f}deg)">{label}</em></span>'
+        for i, (label, cls) in enumerate(SPIN_SEGMENTS))
+    return f'''<section class="sec dark spin-sec" id="spin-offer" aria-labelledby="spin-h">
+ <div class="wrap spin-grid">
+  <div class="spin-copy">
+   <p class="og-tag rv">Black Friday</p>
+   <h2 id="spin-h" class="rv">Spin the wheel. Unlock your offer.</h2>
+   <p class="lead rv">One spin, one real offer &mdash; services worth &#8377;15,000 at just &#8377;10,000/month, only till 30 Nov.</p>
+   <ul class="spin-points rv">
+    <li>Reels, Google Business Profile &amp; SEO &mdash; one monthly plan</li>
+    <li>No fake prizes. This is the only thing on the wheel.</li>
+    <li>Unlock it, then message us on WhatsApp to claim it</li>
+   </ul>
+  </div>
+  <div class="spin-stage rv">
+   <div class="wheel-wrap">
+    <div class="wheel-pin" aria-hidden="true"></div>
+    <div class="wheel" id="spin-wheel" style="background:{gradient}" aria-hidden="true">{segs}</div>
+    <button class="wheel-hub" type="button" id="spin-btn">
+     <span>SPIN<br>TO WIN</span>
+    </button>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="fc-pop spin-pop" id="spin-pop" role="dialog" aria-modal="false" aria-labelledby="spinp-h" hidden>
+ <button class="fcp-x" type="button" data-spin-close aria-label="Close">&times;</button>
+ <div class="fcp-badge">You unlocked it</div>
+ <h2 id="spinp-h">Black Friday Offer</h2>
+ <p class="spinp-price"><s>&#8377;15,000</s> <b>&#8377;10,000/month</b></p>
+ <p class="spinp-note">Reels, Google Business Profile &amp; SEO &mdash; one monthly plan. Valid only till 30 November.</p>
+ <a class="btn btn-wa" href="{spin_wa()}" target="_blank" rel="noopener">{wa_icon()}Message us to claim</a>
+ <p class="fcp-note">One real offer, no hidden terms. Ends 30 Nov.</p>
+</div>
+'''
+
+
 def ig_btn(url, handle, cls="ig-btn"):
     return f'<a class="{cls}" href="{url}" target="_blank" rel="noopener">{IG_ICON}<span>@{handle}</span></a>'
 
@@ -586,6 +648,8 @@ def home():
  </div>
 </section>
 {ticker()}
+
+{spin_section()}
 
 <section class="sec light story" id="journey" aria-labelledby="story-h">
  <div class="wrap">

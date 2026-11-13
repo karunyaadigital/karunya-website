@@ -298,6 +298,42 @@
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !pop.hidden) closePop(); });
   }
 
+  /* spin the wheel: homepage Black Friday offer reveal */
+  var wheel = document.getElementById("spin-wheel");
+  var spinBtn = document.getElementById("spin-btn");
+  var spinPop = document.getElementById("spin-pop");
+  if (wheel && spinBtn) {
+    var wheelWrap = wheel.closest(".wheel-wrap");
+    var spins = 0;
+    function openSpinPop() {
+      if (pop) { pop.hidden = true; pop.classList.remove("show"); }
+      if (!spinPop) return;
+      spinPop.hidden = false;
+      spinPop.classList.add("show");
+      try { sessionStorage.setItem("kd-pop", "1"); } catch (e) {}
+    }
+    function closeSpinPop() { if (spinPop) { spinPop.hidden = true; spinPop.classList.remove("show"); } }
+    function endSpin() {
+      wheel.removeEventListener("transitionend", endSpin);
+      spinBtn.disabled = false;
+      if (wheelWrap) wheelWrap.classList.remove("spinning");
+      openSpinPop();
+    }
+    spinBtn.addEventListener("click", function () {
+      if (spinBtn.disabled) return;
+      spinBtn.disabled = true;
+      if (wheelWrap) wheelWrap.classList.add("spinning");
+      spins += 1;
+      var degrees = reduce ? 360 : 1800 + spins * 360;
+      wheel.style.transform = "rotate(" + degrees + "deg)";
+      if (reduce) { setTimeout(endSpin, 400); } else { wheel.addEventListener("transitionend", endSpin); }
+    });
+    if (spinPop) {
+      spinPop.querySelectorAll("[data-spin-close]").forEach(function (x) { x.addEventListener("click", closeSpinPop); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !spinPop.hidden) closeSpinPop(); });
+    }
+  }
+
   /* footer: live Varanasi time + office status, back to top */
   var clock = document.querySelector("[data-clock]");
   if (clock) {
