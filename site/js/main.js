@@ -255,6 +255,38 @@
     }
   }
 
+  /* sale bar: live countdown + dismiss-for-session */
+  var saleBar = document.getElementById("sale-bar");
+  if (saleBar) {
+    var saleClosed = false;
+    try { saleClosed = sessionStorage.getItem("kd-sale") === "1"; } catch (e) {}
+    if (saleClosed) document.body.classList.add("sale-closed");
+    var saleCd = document.getElementById("sale-cd");
+    if (saleCd) {
+      var target = new Date(saleCd.getAttribute("data-countdown")).getTime();
+      var dEl = saleCd.querySelector("[data-cd-d]"), hEl = saleCd.querySelector("[data-cd-h]"),
+          mEl = saleCd.querySelector("[data-cd-m]"), sEl = saleCd.querySelector("[data-cd-s]");
+      function pad(n) { return n < 10 ? "0" + n : "" + n; }
+      function tickCd() {
+        var diff = target - Date.now();
+        if (diff <= 0) { saleBar.hidden = true; return; }
+        var s = Math.floor(diff / 1000);
+        var d = Math.floor(s / 86400); s -= d * 86400;
+        var h = Math.floor(s / 3600); s -= h * 3600;
+        var m = Math.floor(s / 60); s -= m * 60;
+        if (dEl) dEl.textContent = pad(d); if (hEl) hEl.textContent = pad(h);
+        if (mEl) mEl.textContent = pad(m); if (sEl) sEl.textContent = pad(s);
+      }
+      tickCd();
+      setInterval(tickCd, 1000);
+    }
+    var saleX = saleBar.querySelector("[data-sale-close]");
+    if (saleX) saleX.addEventListener("click", function () {
+      document.body.classList.add("sale-closed");
+      try { sessionStorage.setItem("kd-sale", "1"); } catch (e) {}
+    });
+  }
+
   /* free check popup: after 10 seconds on the site, once per session */
   var pop = document.getElementById("fc-pop");
   if (pop && !/audit\.html/.test(location.pathname)) {

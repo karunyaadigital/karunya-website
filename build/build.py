@@ -69,6 +69,29 @@ def head(title, desc, page):
 '''
 
 
+SALE_MSG = "Hello Karunya Digital, I saw the Black Friday offer (services worth Rs 15,000 at Rs 10,000/month). I'd like to claim it."
+SALE_ITEMS = [
+    '<b class="sale-chip">Black Friday Offer</b> <s>&#8377;15,000</s> worth of services at just <b>&#8377;10,000/month</b>',
+    'Reels, Google Business Profile &amp; SEO &mdash; one monthly plan',
+    'Offer ends <b>30 Nov</b> &mdash; only for doctors who book this month',
+]
+
+
+def sale_bar():
+    row = '<span class="sale-star" aria-hidden="true">&#10022;</span>'.join(f'<span class="sale-item">{it}</span>' for it in SALE_ITEMS)
+    track = (row + '<span class="sale-star" aria-hidden="true">&#10022;</span>') * 3
+    return f'''<div class="sale-bar" id="sale-bar">
+ <p class="sr">Black Friday offer: services worth Rs 15,000 for just Rs 10,000 a month, only until 30 November. Message us on WhatsApp to claim it.</p>
+ <div class="sale-track-wrap" aria-hidden="true"><div class="sale-track">{track}</div></div>
+ <div class="sale-right">
+  <span class="sale-cd" id="sale-cd" data-countdown="2026-11-30T23:59:59+05:30" aria-hidden="true"><b data-cd-d>00</b>d<b data-cd-h>00</b>h<b data-cd-m>00</b>m<b data-cd-s>00</b>s</span>
+  <a class="sale-cta" href="{wa(SALE_MSG)}" target="_blank" rel="noopener">Claim offer</a>
+  <button class="sale-x" type="button" data-sale-close aria-label="Close offer banner">&times;</button>
+ </div>
+</div>
+'''
+
+
 def header(active):
     def L(href, name):
         cur = ' aria-current="page"' if name == active else ''
@@ -83,7 +106,7 @@ def header(active):
           f'<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>'
           f'<div class="dd-menu" id="dd-menu">{items}</div></div>')
     links = L("index.html", "Home") + dd + L("services.html", "Services") + L("work.html", "Work") + L("blog.html", "Blog") + L("about.html", "About") + L("contact.html", "Contact")
-    return f'''<header class="site-header">
+    return f'''{sale_bar()}<header class="site-header">
  <div class="wrap head-in">
   <a class="brand" href="index.html" aria-label="Karunya Digital home"><img src="assets/logo-white.png" alt="Karunya Digital" width="120" height="38"></a>
   <nav class="nav" id="nav" aria-label="Main">{links}<a class="btn btn-lime btn-sm" href="audit.html">Free check</a></nav>
