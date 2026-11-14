@@ -28,6 +28,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-12 | digital marketing agency in prayagraj | blog-digital-marketing-agency-in-prayagraj |
 | 2026-11-13 | seo agency for doctors | blog-seo-agency-for-doctors |
 | 2026-11-13 | digital marketing agency in gorakhpur | blog-digital-marketing-agency-in-gorakhpur |
+| 2026-11-14 | instagram marketing agency for doctors | blog-instagram-marketing-agency-for-doctors |
+| 2026-11-14 | digital marketing agency in kanpur for doctors | blog-digital-marketing-agency-in-kanpur-for-doctors |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -39,7 +41,6 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | digital marketing packages for doctors | ? | What each package level should include |
 | how to choose a digital marketing agency for clinic | ? | Questions to ask, red flags |
 | social media marketing agency for hospitals | ? | |
-| instagram marketing agency for doctors | ? | Reels scripting + editing + posting (no camera crew) |
 | ivf clinic marketing agency | ? | Speciality |
 | gynaecologist marketing agency | ? | Speciality |
 | orthopaedic doctor marketing agency | ? | Speciality |
@@ -72,7 +73,11 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | local seo agency for clinics | ? | Found 13 Nov: Maps/profile-focused SEO scope; NMC 8.1(xii) no ranking manipulation |
 | questions to ask seo agency before hiring doctor | ? | Found 13 Nov: Google "Do you need an SEO?" question list + NMC checks |
 | healthcare seo company in india | ? | Found 13 Nov: Clutch "SEO companies for healthcare providers in India" listing pages rank |
-| digital marketing agency in kanpur for doctors | ? | Found 13 Nov: next UP city guide in the series |
+| digital marketing agency for hospitals in kanpur | ? | Found 14 Nov: Park Medi World to run 300-bed Axis Hospital, Rooma (Sept 2026); hospital factual-info angle |
+| healthcare digital marketing company in kanpur | ? | Found 14 Nov: "company" variant; listing pages mix all industries |
+| social media marketing agency for doctors in india | ? | Found 14 Nov: Clutch "social media marketing companies for healthcare providers in India" pages rank |
+| reels agency for doctors | ? | Found 14 Nov: Reels-only scope (scripts, editing, posting; no crew); NMC AI-content rule |
+| youtube marketing agency for doctors | ? | Found 14 Nov: long-form patient education angle |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
