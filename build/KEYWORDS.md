@@ -30,6 +30,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-13 | digital marketing agency in gorakhpur | blog-digital-marketing-agency-in-gorakhpur |
 | 2026-11-14 | instagram marketing agency for doctors | blog-instagram-marketing-agency-for-doctors |
 | 2026-11-14 | digital marketing agency in kanpur for doctors | blog-digital-marketing-agency-in-kanpur-for-doctors |
+| 2026-11-15 | digital marketing packages for doctors | blog-digital-marketing-packages-for-doctors |
+| 2026-11-15 | ivf clinic marketing agency | blog-ivf-clinic-marketing-agency |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -38,10 +40,8 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | Keyword | Volume | Notes / angle |
 |---|---|---|
 | healthcare marketing agency in india | 50 | Agency comparison checklist (no attacks on named competitors) |
-| digital marketing packages for doctors | ? | What each package level should include |
 | how to choose a digital marketing agency for clinic | ? | Questions to ask, red flags |
 | social media marketing agency for hospitals | ? | |
-| ivf clinic marketing agency | ? | Speciality |
 | gynaecologist marketing agency | ? | Speciality |
 | orthopaedic doctor marketing agency | ? | Speciality |
 | healthcare digital marketing agency for clinics | ? | Found 8 Nov: competitor pages use "for doctors, clinics & hospitals"; clinic-owner angle |
@@ -78,6 +78,11 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | social media marketing agency for doctors in india | ? | Found 14 Nov: Clutch "social media marketing companies for healthcare providers in India" pages rank |
 | reels agency for doctors | ? | Found 14 Nov: Reels-only scope (scripts, editing, posting; no crew); NMC AI-content rule |
 | youtube marketing agency for doctors | ? | Found 14 Nov: long-form patient education angle |
+| fertility clinic marketing agency | ? | Found 15 Nov: "fertility" variant of IVF term; ART Act sex-selection ad ban angle |
+| gynaecology clinic marketing agency india | ? | Found 15 Nov: gynae + IVF overlap; NMC + ART Act checks |
+| social media agency for ivf clinic | ? | Found 15 Nov: listing pages (krowdbase) rank "social media companies for IVF clinics" by city |
+| healthcare digital marketing packages india | ? | Found 15 Nov: package/pricing pages from healthcare agencies rank; scope comparison |
+| seo packages for doctors | ? | Found 15 Nov: SEO-only package variant; what monthly SEO should include |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
