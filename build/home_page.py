@@ -265,9 +265,9 @@ def home_body(ctx):
  </div>
 </section>
 
-<section class="sec tight" aria-label="Plans and NMC">
+<section class="sec tight" aria-label="Free check and NMC">
  <div class="w duo">
-  <a class="duo-c" href="services.html#pricing" data-r><p class="duo-k">Plans</p><p class="duo-h">From ₹20,000 a month</p><span class="tl">See plans{ARROW}</span></a>
+  <a class="duo-c" href="audit.html" data-r><p class="duo-k">Free check</p><p class="duo-h">See how easy it is for patients to find you</p><span class="tl">Check my clinic{ARROW}</span></a>
   <a class="duo-c blue" href="blog-nmc-new-guidelines-doctors-social-media.html" data-r data-trail="spark"><p class="duo-k">NMC ready</p><p class="duo-h">Every post follows the October 2026 NMC guidelines</p><span class="tl">Read the guide{ARROW}</span></a>
  </div>
 </section>

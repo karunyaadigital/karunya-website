@@ -107,6 +107,6 @@ They are still visible to patients, so it's safest to treat them as current and 
 
 ## Not sure if your profiles are safe?
 
-Take our [free 2-minute Google + Instagram check](audit.html), or [message Karunya Digital on WhatsApp](https://wa.me/916386492334) and we'll go through your posts with you. Plans are on our [pricing page](services.html#pricing).
+Take our [free 2-minute Google + Instagram check](audit.html), or [message Karunya Digital on WhatsApp](https://wa.me/916386492334) and we'll go through your posts with you.
 
 Sources: [Medical Dialogues: penalties for advertising violations](https://medicaldialogues.in/health-news/nmc/doctors-may-face-suspension-upto-12-months-removal-from-medical-register-for-upto-3-years-nmc-specifies-penalties-for-advertising-guidelines-violations-180943), [Medical Dialogues: appellate mechanism](https://medicaldialogues.in/health-news/nmc/nmc-specifies-appellate-mechanism-for-doctors-penalised-for-violating-ethical-advertising-guidelines-181281), [Nexaflow: agency responsibility and pre-October content](https://www.gonexaflow.com/blog/latest-nmc-advertising-guidelines-2026)

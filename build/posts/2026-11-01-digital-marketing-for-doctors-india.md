@@ -109,7 +109,7 @@ You can absolutely start alone with a phone and 20 minutes a week. As your pract
 Usually a few months of steady work. Google profile improvements can show early results; reels and SEO build up over time.
 
 **How much does digital marketing for doctors cost in India?**
-It depends on the platforms and number of reels. At Karunya Digital, plans start at Rs 20,000 per month. See our [pricing](services.html#pricing).
+It depends on the platforms and number of reels. We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 **Is digital marketing allowed for doctors under NMC rules?**
 Educational, accurate and non-promotional communication is allowed. Self-promotion, testimonials, guarantees and patient solicitation are not.

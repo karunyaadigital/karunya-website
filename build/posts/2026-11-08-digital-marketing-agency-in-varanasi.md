@@ -76,7 +76,7 @@ Local agency prices vary a lot, and we won't quote other firms' rates. When comp
 | Compliance check process | Protects your registration |
 | Contract length and exit terms | So you're not stuck |
 
-Karunya Digital's plans are Starter Rs 20,000, Growth Rs 25,000 and Authority Rs 40,000 per month. Details are on our [pricing page](services.html#pricing).
+We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 ## About Karunya Digital
 

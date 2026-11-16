@@ -61,7 +61,7 @@ No agency can build a doctor's personal brand alone. The best results come when 
 
 ## What does it cost?
 
-In India, social media management for doctors usually depends on the number of reels, platforms and whether ads are included. At Karunya Digital, plans start at Rs 20,000 per month, with Growth at Rs 25,000 and Authority at Rs 40,000. Full hospital marketing is planned separately. You can see the details on our [services page](services.html#pricing).
+In India, social media management for doctors usually depends on the number of reels, platforms and whether ads are included. We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 ## What results should you expect?
 

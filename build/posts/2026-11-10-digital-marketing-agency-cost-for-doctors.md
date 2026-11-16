@@ -100,25 +100,18 @@ The Medical Dialogues analysis lists claims such as "No. 1 Hospital", "Best Doct
 
 Our [digital marketing agency for doctors hiring checklist](blog-digital-marketing-agency-for-doctors.html) has more questions to ask.
 
-## What Karunya Digital charges
+## How Karunya Digital prices its work
 
-We won't guess other agencies' prices. Here is ours, so you have one clear reference point. Karunya Digital is a healthcare marketing agency in Varanasi, founded by Bhanu Pratap Rai, and has worked with 50+ doctor clients. We use fixed monthly plans:
+Karunya Digital is a healthcare marketing agency in Varanasi, founded by Bhanu Pratap Rai, and has worked with 50+ doctor clients. We don't publish fixed prices. After a short call about your speciality, city and goals, we send a written plan with the exact work and a fixed monthly fee, so there are no surprises later.
 
-| Plan | Price per month | Includes |
-|---|---|---|
-| Starter | Rs 20,000 | Reel scripts and editing, Google Business Profile management, monthly content calendar, monthly report |
-| Growth | Rs 25,000 | Everything in Starter, more Reels, monthly strategy call, review replies, doctor branding |
-| Authority | Rs 40,000 | Everything in Growth, motion-graphic Reels, YouTube Shorts, competitor analysis, priority support |
-| Full hospital | Custom | Every doctor and department, hospital and doctor brands together |
-
-We give you scripts and shoot guidance so you can record on your phone; editing, captions, posting and strategy are handled by us. We don't send camera crews. Every post goes live only after your approval, and we keep content factual and educational. Full details are on our [pricing page](services.html#pricing).
+We give you scripts and shoot guidance so you can record on your phone; editing, captions, posting and strategy are handled by us. We don't send camera crews. Every post goes live only after your approval, and we keep content factual and educational. See what we do on our [services page](services.html).
 
 We are one option. Use the same questions with any agency you speak to.
 
 ## Frequently asked questions
 
 **How much does a digital marketing agency cost for doctors in India?**
-It depends on the scope: number of channels, monthly content, editing level and number of doctors. Compare what is included, not just the fee. Karunya Digital's plans are Rs 20,000, Rs 25,000 and Rs 40,000 per month.
+It depends on the scope: number of channels, monthly content, editing level and number of doctors. Compare what is included, not just the fee. We share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 **Is ad spend included in the agency fee?**
 Usually not. Money paid to Google or Meta for ads is normally separate. Ask the agency to confirm this in writing.

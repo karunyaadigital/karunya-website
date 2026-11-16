@@ -142,6 +142,6 @@ Yes. A bio in Hindi or Hinglish can feel more familiar to local patients. Just k
 
 ## Want a second opinion on your profile?
 
-Take our [free 2-minute Google + Instagram check](audit.html) to see your score and top three fixes. If you want us to handle scripts, editing, posting and strategy for your page, see our [plans](services.html#pricing) or [chat with Karunya Digital on WhatsApp](https://wa.me/916386492334).
+Take our [free 2-minute Google + Instagram check](audit.html) to see your score and top three fixes. If you want us to handle scripts, editing, posting and strategy for your page, see our [services](services.html) or [chat with Karunya Digital on WhatsApp](https://wa.me/916386492334).
 
 Sources: [Medical Dialogues: NMC issues ethical advertising guidelines](https://medicaldialogues.in/health-news/nmc/nmc-issues-ethical-advertising-public-communication-guidelines-for-doctors-hospitals-details-180731), [Medical Dialogues: photographs and paid rankings](https://medicaldialogues.in/news/health/doctors/nmc-prohibits-promotional-use-of-doctors-photographs-bars-paid-rankings-on-healthcare-platforms-180870), [Medical Dialogues: permitted exceptions](https://medicaldialogues.in/health-news/nmc/nmc-lists-exceptions-to-prohibited-advertising-practices-for-doctors-180928), [The South First: doctors on Instagram](https://thesouthfirst.com/health/doctors-on-instagram-nmc-says-no-to-patient-testimonials-paid-ads-ai-promotions-and-guaranteed-claims/)

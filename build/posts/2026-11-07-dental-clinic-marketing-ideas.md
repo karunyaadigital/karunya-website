@@ -125,6 +125,6 @@ Yes, but you stay responsible for what goes out in your name. Pick an agency tha
 
 ## Want to see how your dental clinic looks online?
 
-Take our [free 2-minute Google + Instagram check](audit.html), or [message Karunya Digital on WhatsApp](https://wa.me/916386492334). We write scripts, guide your shoot, edit and post patient-education content for dentists. See plans on our [pricing page](services.html#pricing).
+Take our [free 2-minute Google + Instagram check](audit.html), or [message Karunya Digital on WhatsApp](https://wa.me/916386492334). We write scripts, guide your shoot, edit and post patient-education content for dentists.
 
 Sources: [Medical Dialogues: National Dental Commission warns dentists against unethical social media advertising](https://medicaldialogues.in/news/health/doctors/national-dental-commission-warns-dentists-against-unethical-social-media-advertising-181335), [Medical Dialogues: NMC ethical advertising guidelines](https://medicaldialogues.in/health-news/nmc/nmc-issues-ethical-advertising-public-communication-guidelines-for-doctors-hospitals-details-180731)

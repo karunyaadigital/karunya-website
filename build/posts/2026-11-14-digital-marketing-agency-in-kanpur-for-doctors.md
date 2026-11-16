@@ -86,7 +86,7 @@ Karunya Digital is a healthcare marketing agency based in Varanasi, founded by B
 
 We work only with doctors and hospitals. We write Reel scripts in simple Hindi or Hinglish, give you shoot guidance so you can record on your phone, and handle editing, captions, posting, your Google Business Profile and monthly strategy. We don't send camera crews. Every post is checked against the NMC rules and goes live only after your approval.
 
-Plans are fixed monthly fees: Starter Rs 20,000, Growth Rs 25,000 and Authority Rs 40,000. See [pricing](services.html#pricing). Use the questions above to compare any agency, including us.
+We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours. Use the questions above to compare any agency, including us.
 
 ## Frequently asked questions
 

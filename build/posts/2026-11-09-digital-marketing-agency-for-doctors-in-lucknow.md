@@ -74,7 +74,7 @@ We won't guess at other agencies' prices. Compare the model instead:
 | Ad spend + management fee | Only if the ad content is factual |
 | Pay per patient / per lead | No: reported as prohibited |
 
-Karunya Digital, for reference, uses fixed monthly plans: Starter Rs 20,000, Growth Rs 25,000 and Authority Rs 40,000 per month. Details are on our [pricing page](services.html#pricing).
+We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 ## Red flags in a proposal
 
@@ -107,7 +107,7 @@ We are one option among many. Use the questions above with any agency you speak 
 Not necessarily. Most of the work is online. What matters is that the agency understands your area, your patients and the NMC rules.
 
 **How much does a digital marketing agency for doctors in Lucknow cost?**
-It depends on the agency and scope. Compare what is included each month. Karunya Digital's plans are Rs 20,000, Rs 25,000 and Rs 40,000 per month.
+It depends on the agency and scope. Compare what is included each month. We share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 **Can an agency ask my patients for Google reviews?**
 The guidelines summary says doctors may not request patient reviews or testimonials for promotion, and buying or manipulating reviews is prohibited. Focus on replying politely and keeping your profile accurate.

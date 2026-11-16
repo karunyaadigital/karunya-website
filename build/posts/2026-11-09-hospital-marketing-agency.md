@@ -72,7 +72,7 @@ Pricing varies a lot and we won't guess at other agencies' fees. What you can co
 | Ad spend + management fee | You pay the platform; agency manages factual ads | Only if the ad content follows the rules |
 | Pay per patient / per lead | Fee per patient or enquiry | No: reported as prohibited |
 
-For reference, Karunya Digital charges fixed monthly fees: Starter Rs 20,000, Growth Rs 25,000 and Authority Rs 40,000 per month. A hospital with several departments usually needs a larger scope. See what each plan includes on our [pricing page](services.html#pricing).
+We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 ## Red flags in a hospital marketing proposal
 

@@ -90,7 +90,7 @@ Karunya Digital is a healthcare marketing agency based in Varanasi, founded by B
 
 For dentists, we write patient-education scripts and give you shoot guidance so you can record on your phone, without filming patients or procedures. We then handle editing, captions, posting, Google Business Profile work and strategy. We don't send camera crews. Every post goes live only after your approval.
 
-Our fixed monthly plans are Starter Rs 20,000, Growth Rs 25,000 and Authority Rs 40,000 per month. See what each includes on our [pricing page](services.html#pricing).
+We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 We are one option among many. Use the questions above with any agency you speak to.
 
@@ -106,7 +106,7 @@ The advisory flags recording or broadcasting consultations and procedures. Expla
 Dentists are registered with the dental councils and follow the Dentists (Code of Ethics) Regulations and NDC advisories. The NDC advisory is the main reference for dental clinics.
 
 **How much does a dental marketing agency cost?**
-It depends on scope. Compare what is included each month. Karunya Digital's plans are Rs 20,000, Rs 25,000 and Rs 40,000 per month.
+It depends on scope. Compare what is included each month. We share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 **What can a dental clinic post now?**
 Patient education: oral hygiene tips, when to see a dentist, what common treatments involve, aftercare and clinic information like timings and location.

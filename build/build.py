@@ -62,33 +62,10 @@ def head(title, desc, page):
 <link rel="preload" href="fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add("js")</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"ProfessionalService","name":"Karunya Digital","url":"https://karunyadigital.online/","description":"Healthcare marketing agency for doctors and hospitals in India: Instagram reels, Google Business Profile, SEO and doctor branding","logo":"https://karunyadigital.online/assets/icon-blue-512.png","image":"https://karunyadigital.online/assets/icon-blue-512.png","priceRange":"Rs 20,000 - Rs 40,000 per month","knowsAbout":["Social media management for doctors","Healthcare marketing","SEO for doctors","Google Business Profile","NMC advertising guidelines"],"founder":{{"@type":"Person","name":"Bhanu Pratap Rai","sameAs":"{IG_FOUNDER}"}},"sameAs":["{IG_KARUNYA}"],"telephone":"{CALL}","openingHours":"Mo-Sa 10:00-19:00","address":{{"@type":"PostalAddress","streetAddress":"Taktakpur Road, Near Mahavir Mandir","addressLocality":"Varanasi","postalCode":"221001","addressRegion":"Uttar Pradesh","addressCountry":"IN"}},"areaServed":["Varanasi","Meerut","Lucknow","Prayagraj","Agra","Greater Noida"]}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"ProfessionalService","name":"Karunya Digital","url":"https://karunyadigital.online/","description":"Healthcare marketing agency for doctors and hospitals in India: Instagram reels, Google Business Profile, SEO and doctor branding","logo":"https://karunyadigital.online/assets/icon-blue-512.png","image":"https://karunyadigital.online/assets/icon-blue-512.png","knowsAbout":["Social media management for doctors","Healthcare marketing","SEO for doctors","Google Business Profile","NMC advertising guidelines"],"founder":{{"@type":"Person","name":"Bhanu Pratap Rai","sameAs":"{IG_FOUNDER}"}},"sameAs":["{IG_KARUNYA}"],"telephone":"{CALL}","openingHours":"Mo-Sa 10:00-19:00","address":{{"@type":"PostalAddress","streetAddress":"Taktakpur Road, Near Mahavir Mandir","addressLocality":"Varanasi","postalCode":"221001","addressRegion":"Uttar Pradesh","addressCountry":"IN"}},"areaServed":["Varanasi","Meerut","Lucknow","Prayagraj","Agra","Greater Noida"]}}</script>
 </head>
 <body class="page-{page}">
 <a class="skip" href="#main">Skip to content</a>
-'''
-
-
-SALE_MSG = "Hello Karunya Digital, I saw the Black Friday offer (services worth Rs 15,000 at Rs 10,000/month). I'd like to claim it."
-SALE_ITEMS = [
-    '<b class="sale-chip">Black Friday Offer</b> <s>&#8377;15,000</s> worth of services at just <b>&#8377;10,000/month</b>',
-    'Reels, Google Business Profile &amp; SEO &mdash; one monthly plan',
-    'Offer ends <b>30 Nov</b> &mdash; only for doctors who book this month',
-]
-
-
-def sale_bar():
-    row = '<span class="sale-star" aria-hidden="true">&#10022;</span>'.join(f'<span class="sale-item">{it}</span>' for it in SALE_ITEMS)
-    track = (row + '<span class="sale-star" aria-hidden="true">&#10022;</span>') * 3
-    return f'''<div class="sale-bar" id="sale-bar">
- <p class="sr">Black Friday offer: services worth Rs 15,000 for just Rs 10,000 a month, only until 30 November. Message us on WhatsApp to claim it.</p>
- <div class="sale-track-wrap" aria-hidden="true"><div class="sale-track">{track}</div></div>
- <div class="sale-right">
-  <span class="sale-cd" id="sale-cd" data-countdown="2026-11-30T23:59:59+05:30" aria-hidden="true"><b data-cd-d>00</b>d<b data-cd-h>00</b>h<b data-cd-m>00</b>m<b data-cd-s>00</b>s</span>
-  <a class="sale-cta" href="{wa(SALE_MSG)}" target="_blank" rel="noopener">Claim offer</a>
-  <button class="sale-x" type="button" data-sale-close aria-label="Close offer banner">&times;</button>
- </div>
-</div>
 '''
 
 
@@ -106,75 +83,13 @@ def header(active):
           f'<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>'
           f'<div class="dd-menu" id="dd-menu">{items}</div></div>')
     links = L("index.html", "Home") + dd + L("services.html", "Services") + L("work.html", "Work") + L("blog.html", "Blog") + L("about.html", "About") + L("contact.html", "Contact")
-    return f'''{sale_bar()}<header class="site-header">
+    return f'''<header class="site-header">
  <div class="wrap head-in">
   <a class="brand" href="index.html" aria-label="Karunya Digital home"><img src="assets/logo-white.png" alt="Karunya Digital" width="120" height="38"></a>
   <nav class="nav" id="nav" aria-label="Main">{links}<a class="btn btn-lime btn-sm" href="audit.html">Free check</a></nav>
   <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
  </div>
 </header>
-'''
-
-
-SPIN_WA_NUM = "917317659337"
-SPIN_MSG = "Hi, I spun the wheel on your website and want to claim the Black Friday offer (services worth Rs 15,000 at Rs 10,000/month)."
-SPIN_SEGMENTS = [
-    ("Black<br>Friday", "hot"), ("10% OFF", ""), ("Free Audit", ""), ("&#8377;2,000 OFF", ""),
-    ("Surprise", ""), ("Free Consult", ""), ("5% OFF", ""), ("Try Luck", ""),
-]
-SPIN_COLORS = ["#D1FF42", "#0251B0", "#012A5E", "#0251B0", "#012A5E", "#0251B0", "#012A5E", "#0251B0"]
-
-
-def spin_wa():
-    return f"https://wa.me/{SPIN_WA_NUM}?text=" + urllib.parse.quote(SPIN_MSG)
-
-
-def spin_section():
-    n = len(SPIN_SEGMENTS)
-    step = 360 / n
-    start = -step / 2
-    stops = []
-    for c in SPIN_COLORS:
-        end = start + step
-        stops.append(f"{c} {start:.2f}deg {end:.2f}deg")
-        start = end
-    gradient = "conic-gradient(" + ",".join(stops) + ")"
-    segs = "".join(
-        f'<span class="seg{" seg-hot" if cls == "hot" else ""}" style="transform:rotate({i * step:.2f}deg)">'
-        f'<em style="transform:rotate({-i * step:.2f}deg)">{label}</em></span>'
-        for i, (label, cls) in enumerate(SPIN_SEGMENTS))
-    return f'''<section class="sec dark spin-sec" id="spin-offer" aria-labelledby="spin-h">
- <div class="wrap spin-grid">
-  <div class="spin-copy">
-   <p class="og-tag rv">Black Friday</p>
-   <h2 id="spin-h" class="rv">Spin the wheel. Unlock your offer.</h2>
-   <p class="lead rv">One spin, one real offer &mdash; services worth &#8377;15,000 at just &#8377;10,000/month, only till 30 Nov.</p>
-   <ul class="spin-points rv">
-    <li>Reels, Google Business Profile &amp; SEO &mdash; one monthly plan</li>
-    <li>No fake prizes. This is the only thing on the wheel.</li>
-    <li>Unlock it, then message us on WhatsApp to claim it</li>
-   </ul>
-  </div>
-  <div class="spin-stage rv">
-   <div class="wheel-wrap">
-    <div class="wheel-pin" aria-hidden="true"></div>
-    <div class="wheel" id="spin-wheel" style="background:{gradient}" aria-hidden="true">{segs}</div>
-    <button class="wheel-hub" type="button" id="spin-btn">
-     <span>SPIN<br>TO WIN</span>
-    </button>
-   </div>
-  </div>
- </div>
-</section>
-<div class="fc-pop spin-pop" id="spin-pop" role="dialog" aria-modal="false" aria-labelledby="spinp-h" hidden>
- <button class="fcp-x" type="button" data-spin-close aria-label="Close">&times;</button>
- <div class="fcp-badge">You unlocked it</div>
- <h2 id="spinp-h">Black Friday Offer</h2>
- <p class="spinp-price"><s>&#8377;15,000</s> <b>&#8377;10,000/month</b></p>
- <p class="spinp-note">Reels, Google Business Profile &amp; SEO &mdash; one monthly plan. Valid only till 30 November.</p>
- <a class="btn btn-wa" href="{spin_wa()}" target="_blank" rel="noopener">{wa_icon()}Message us to claim</a>
- <p class="fcp-note">One real offer, no hidden terms. Ends 30 Nov.</p>
-</div>
 '''
 
 
@@ -339,36 +254,6 @@ def bridge_section():
 
 
 
-PLANS = [
-    ("Starter", "20,000", "For doctors starting to build their presence online.",
-     ["Instagram reels: script and editing", "Google Business Profile management", "Monthly content calendar", "Monthly report"]),
-    ("Growth", "25,000", "For doctors ready to grow fast in their city.",
-     ["Everything in Starter", "More reels every month", "A strategy call every month", "Replies to reviews", "Doctor branding"]),
-    ("Authority", "40,000", "For doctors who want to be the known name in their speciality.",
-     ["Everything in Growth", "High-end motion graphic reels", "YouTube Shorts", "Competitor analysis", "Priority support"]),
-]
-
-
-def pricing(compact=False):
-    cards = ""
-    for i, (n, p, d, f) in enumerate(PLANS):
-        pop = ' pop' if i == 1 else ''
-        badge = '<span class="pl-badge">Most popular</span>' if i == 1 else ''
-        msg = f"Hello Karunya Digital, I'm interested in the {n} plan (Rs {p}/month)."
-        cards += (f'<article class="plan{pop} rv">{badge}<h3>{n}</h3><p class="pl-d">{d}</p>'
-                  f'<p class="pl-p"><span>Rs</span><b>{p}</b><em>/month</em></p>'
-                  f'<ul>{"".join(f"<li>{x}</li>" for x in f)}</ul>'
-                  f'<a class="btn {"btn-lime" if pop else "btn-line-w"}" href="{wa(msg)}" target="_blank" rel="noopener">Choose {n}</a></article>')
-    cards += (f'<article class="plan hosp rv"><h3>Full hospital marketing</h3><p class="pl-d">Multi-speciality hospitals with many doctors and departments.</p>'
-              f'<p class="pl-p"><b class="small">Custom plan</b></p><ul><li>Every doctor and department</li><li>Hospital and doctor brands together</li><li>Dedicated team</li></ul>'
-              f'<a class="btn btn-wa" href="tel:{CALL}">Call {CALL_TXT}</a></article>')
-    return f'''<section class="sec dark pricing" id="pricing" aria-labelledby="pr-h"><div class="wrap">
- <h2 id="pr-h" class="rv">Simple monthly plans</h2>
- <p class="lead rv">Clear prices, no hidden costs. We fine-tune the exact work to your speciality and city on a call.</p>
- <div class="plans">{cards}</div>
-</div></section>'''
-
-
 def team():
     cards = ""
     for kind, n, r, d in TEAM:
@@ -436,7 +321,7 @@ def audit_page():
  <ol class="fixes" data-fixes></ol>
  <div class="a-lead">
   <div><h3>Your report is with the Karunya team.</h3><p>We'll review your actual Google profile and Instagram and share a detailed plan with you on WhatsApp. Want to talk right now?</p></div>
-  <div class="a-lead-cta"><a class="btn btn-wa" data-wa-now href="{wa()}" target="_blank" rel="noopener">{wa_icon()}Chat on WhatsApp now</a><a class="btn btn-line-w" href="services.html#pricing">See plans</a></div>
+  <div class="a-lead-cta"><a class="btn btn-wa" data-wa-now href="{wa()}" target="_blank" rel="noopener">{wa_icon()}Chat on WhatsApp now</a><a class="btn btn-line-w" href="services.html">See our services</a></div>
  </div>
 </div></section>
 
@@ -649,8 +534,6 @@ def home():
 </section>
 {ticker()}
 
-{spin_section()}
-
 <section class="sec light story" id="journey" aria-labelledby="story-h">
  <div class="wrap">
   <h2 id="story-h" class="rv">One night. One patient. One search.</h2>
@@ -772,8 +655,6 @@ def home():
  </div>
 </section>
 
-{pricing()}
-
 {blog_preview()}
 
 <section class="sec white seo-sec" aria-labelledby="seo-h"><div class="wrap seo-grid">
@@ -890,21 +771,20 @@ def services():
         ("Do you follow the NMC guidelines?", "Yes. Our content follows the NMC's Guidelines on Ethical Advertising and Public Communication (October 2026): patient education first, no superlative claims, no testimonials and no patient images. Every post goes live only after your approval."),
         ("How much of my time will this take?", "One call to start. After that, approving the monthly calendar and a little time for shoots. Our team handles the rest."),
         ("How does the shoot work?", "We give you the script and clear guidance on what to say, how to stand and which light to use. Editing, captions, posting and strategy are on us. Most doctors shoot on their phone."),
-        ("How much does it cost?", "Plans start at Rs 20,000 per month, with Growth at Rs 25,000 and Authority at Rs 40,000. For full hospital marketing, call +91 73176 59337 for a custom plan."),
+        ("How much does it cost?", "It depends on your speciality, city and goals. After a short call we send a written plan with the exact work and a fixed monthly fee. For full hospital marketing, call +91 73176 59337."),
         ("What will I see every month?", "A clear report with your reach, followers from your city, Google views, calls and direction requests, plus the plan for next month."),
     ]
     faq_html = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in faq)
     body = f'''<main id="main">
 {page_hero("Everything a clinic needs, in one place.", "Five services, one team. You focus on patients; we handle how they find you.")}
 <section class="sec light"><div class="wrap">{rows}</div></section>
-{pricing()}
 <section class="sec white" aria-labelledby="faq-h"><div class="wrap">
  <h2 id="faq-h">Questions doctors ask most</h2>
  <div class="faq">{faq_html}</div>
 </div></section>
 </main>
 '''
-    return head("Social Media Marketing Services for Doctors | Karunya Digital", "Social media management, Instagram reels, Google Business Profile, SEO and personal branding for doctors and hospitals. Plans from Rs 20,000/month.", "services") + header("Services") + body + footer()
+    return head("Social Media Marketing Services for Doctors | Karunya Digital", "Social media management, Instagram reels, Google Business Profile, SEO and personal branding for doctors and hospitals.", "services") + header("Services") + body + footer()
 
 
 # ------------------------------------------------------------------ WORK

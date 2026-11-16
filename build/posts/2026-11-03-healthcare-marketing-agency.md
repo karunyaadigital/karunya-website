@@ -94,7 +94,7 @@ There is no single right answer. It depends on your time, budget and how many pl
 
 Karunya Digital is a healthcare marketing agency based in Varanasi. We work only with doctors and hospitals. We give you scripts, shoot guidance, editing, posting and strategy, so you can record short educational videos on your own phone and we handle the rest. Every post is written to stay factual and within the NMC rules.
 
-Plans start at Rs 20,000 per month. You can see what each plan includes on our [pricing page](services.html#pricing).
+We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 ## Frequently asked questions
 

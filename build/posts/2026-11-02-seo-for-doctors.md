@@ -125,7 +125,7 @@ Both can work. In Tier 2 cities, many patients search in Hindi or Hinglish, so a
 You can handle the basics yourself: your Google profile, replying to reviews and answering common questions. Website structure and regular content take time, which is where an agency can help.
 
 **How much does SEO cost for a clinic?**
-It depends on scope. You can see what our monthly plans include on our [pricing page](services.html#pricing).
+It depends on scope. See what our monthly work includes on our [services page](services.html), or [message us on WhatsApp](https://wa.me/916386492334) for a plan that fits your clinic.
 
 ## Check where your clinic stands today
 

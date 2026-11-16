@@ -95,13 +95,9 @@ Also ask to see public profiles of doctors the agency already manages. That show
 
 Karunya Digital is a healthcare marketing agency in Varanasi, founded by Bhanu Pratap Rai, working with 50+ doctor clients. We work only with doctors and hospitals.
 
-Our plans are fixed monthly fees:
+Every clinic gets a plan built around its speciality, city and goals. Depending on what you need, it can include Reel scripts and editing, Google Business Profile management, a monthly content calendar and report, review replies, doctor branding, motion-graphic Reels, YouTube Shorts and competitor analysis.
 
-- **Starter, Rs 20,000/month:** Reel scripts and editing, Google Business Profile management, a monthly content calendar and a monthly report.
-- **Growth, Rs 25,000/month:** everything in Starter, more Reels, a monthly strategy call, review replies and doctor branding.
-- **Authority, Rs 40,000/month:** everything in Growth, motion-graphic Reels, YouTube Shorts, competitor analysis and priority support.
-
-Hospitals get a custom plan. We write scripts and give shoot guidance so you can record on your phone; we handle editing, posting and strategy, and we don't send camera crews. Every post is checked against the NMC rules and goes live only after your approval. See [pricing](services.html#pricing), and use the checklist above to compare any agency, including us.
+Hospitals get a plan that covers every doctor and department. We write scripts and give shoot guidance so you can record on your phone; we handle editing, posting and strategy, and we don't send camera crews. Every post is checked against the NMC rules and goes live only after your approval. See our [services](services.html), and use the checklist above to compare any agency, including us.
 
 ## Frequently asked questions
 

@@ -53,7 +53,7 @@ Pricing in this market is not standard, and we won't guess at other agencies' pr
 
 The HMS Consultants summary says agency, influencer and platform contracts must not pay per patient procured or referred, and that lead-generation fees tied to referrals are also barred. If an agency's main pitch is "you only pay per patient", walk away.
 
-For reference, Karunya Digital uses fixed monthly plans: Starter Rs 20,000, Growth Rs 25,000 and Authority Rs 40,000 per month. You can see what each includes on our [pricing page](services.html#pricing).
+We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 ## Red flags to watch for
 
@@ -103,7 +103,7 @@ We are one option among many. Use the checklist above with any agency you speak 
 Yes. Doctors can share factual, educational information and get help doing it. The doctor stays responsible for what is published, so the agency must follow the NMC guidelines.
 
 **How much does a digital marketing agency for doctors cost?**
-It varies by agency and scope. Compare what is included, not just the fee. Karunya Digital's plans are Rs 20,000, Rs 25,000 and Rs 40,000 per month.
+It varies by agency and scope. Compare what is included, not just the fee. We share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours.
 
 **Is pay-per-lead marketing allowed for doctors?**
 Reported summaries of the guidelines say payment linked to patients procured or referred is barred. A fixed monthly fee is the safer model.
