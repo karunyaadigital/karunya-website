@@ -34,6 +34,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-15 | ivf clinic marketing agency | blog-ivf-clinic-marketing-agency |
 | 2026-11-16 | healthcare marketing agency in india | blog-healthcare-marketing-agency-in-india |
 | 2026-11-16 | orthopaedic doctor marketing agency | blog-orthopaedic-doctor-marketing-agency |
+| 2026-11-17 | how to choose a digital marketing agency for clinic | blog-how-to-choose-digital-marketing-agency-for-clinic |
+| 2026-11-17 | gynaecologist marketing agency | blog-gynaecologist-marketing-agency |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -41,9 +43,7 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 ## Backlog: agency-intent keywords (volumes not checked yet: Apify quota used up on 7 Nov)
 | Keyword | Volume | Notes / angle |
 |---|---|---|
-| how to choose a digital marketing agency for clinic | ? | Questions to ask, red flags |
 | social media marketing agency for hospitals | ? | |
-| gynaecologist marketing agency | ? | Speciality |
 | healthcare digital marketing agency for clinics | ? | Found 8 Nov: competitor pages use "for doctors, clinics & hospitals"; clinic-owner angle |
 | digital marketing company for doctors in india | ? | Found 8 Nov: "company" variant common in listings; India-wide comparison |
 | doctor marketing agency contract checklist | ? | Found 8 Nov: guidelines summaries advise reviewing every agency contract; account ownership, exit terms |
@@ -88,6 +88,11 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | physiotherapy clinic marketing agency | ? | Found 16 Nov: allied clinic angle; check which council rules apply |
 | healthcare digital marketing agency in india for hospitals | ? | Found 16 Nov: agency pages pitch "doctors & hospitals"; hospital factual-info rules (departments, facilities, charges) |
 | top healthcare marketing agencies in india | ? | Found 16 Nov: "top 10" listicles rank; how to read listing pages critically (no attacks on named agencies) |
+| women's clinic marketing agency | ? | Found 17 Nov: gynae/women's health variant; PCPNDT Sec 22 sex-determination ad ban + NMC |
+| maternity hospital marketing agency | ? | Found 17 Nov: hospital angle for gynae; factual-info-only hospital ads, newborn photo privacy |
+| questions to ask a healthcare marketing agency before signing | ? | Found 17 Nov: blogspot/agency pages rank "questions before signing a contract" + red flags |
+| healthcare marketing agency red flags | ? | Found 17 Nov: red-flag sections common on choose-an-agency pages; NMC "agency doesn't shield doctor" clause |
+| digital marketing agency for clinics in varanasi | ? | Found 17 Nov: clinic + city variant of the Varanasi guide |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
