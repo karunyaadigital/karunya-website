@@ -534,6 +534,13 @@ def home():
 </section>
 {ticker()}
 
+<section class="sec white ad-sec" aria-labelledby="ad-h"><div class="wrap about-grid">
+ <div><p class="og-tag lt rv">Watch</p><h2 id="ad-h" class="rv">Karunya Digital in 45 seconds.</h2>
+ <p class="lead rv">Made exactly the way we make reels for our doctors: a clear hook, a simple story and a reason to act. Tap “Sound on”.</p>
+ <a class="btn btn-navy rv" style="margin-top:22px" href="{wa("Hello Karunya Digital, I'd like a reel like your 45-second video for my clinic.")}" target="_blank" rel="noopener">{wa_icon(18)}Make one like this for me</a></div>
+ <div>{reel("karunya-ad", "Karunya Digital in 45 seconds", "Made the way we make reels for doctors", cls="about-reel")}</div>
+</div></section>
+
 <section class="sec light story" id="journey" aria-labelledby="story-h">
  <div class="wrap">
   <h2 id="story-h" class="rv">One night. One patient. One search.</h2>
@@ -627,12 +634,6 @@ def home():
  </div>
 </section>
 
-<section class="sec white ad-sec" aria-labelledby="ad-h"><div class="wrap about-grid">
- <div><p class="og-tag lt rv">Watch</p><h2 id="ad-h" class="rv">Karunya Digital in 45 seconds.</h2>
- <p class="lead rv">Made exactly the way we make reels for our doctors: a clear hook, a simple story and a reason to act. Tap “Sound on”.</p>
- <a class="btn btn-navy rv" style="margin-top:22px" href="{wa("Hello Karunya Digital, I'd like a reel like your 45-second video for my clinic.")}" target="_blank" rel="noopener">{wa_icon(18)}Make one like this for me</a></div>
- <div>{reel("karunya-ad", "Karunya Digital in 45 seconds", "Made the way we make reels for doctors", cls="about-reel")}</div>
-</div></section>
 
 {team()}
 
