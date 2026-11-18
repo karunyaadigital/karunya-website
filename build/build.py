@@ -56,13 +56,16 @@ def head(title, desc, page):
 <meta property="og:url" content="https://karunyadigital.online/{canon(page)}">
 <meta property="og:image" content="https://karunyadigital.online/assets/icon-blue-512.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Karunya Digital">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="fonts/Waylimo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add("js")</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"ProfessionalService","name":"Karunya Digital","url":"https://karunyadigital.online/","description":"Healthcare marketing agency for doctors and hospitals in India: Instagram reels, Google Business Profile, SEO and doctor branding","logo":"https://karunyadigital.online/assets/icon-blue-512.png","image":"https://karunyadigital.online/assets/icon-blue-512.png","knowsAbout":["Social media management for doctors","Healthcare marketing","SEO for doctors","Google Business Profile","NMC advertising guidelines"],"founder":{{"@type":"Person","name":"Bhanu Pratap Rai","sameAs":"{IG_FOUNDER}"}},"sameAs":["{IG_KARUNYA}"],"telephone":"{CALL}","openingHours":"Mo-Sa 10:00-19:00","address":{{"@type":"PostalAddress","streetAddress":"Taktakpur Road, Near Mahavir Mandir","addressLocality":"Varanasi","postalCode":"221001","addressRegion":"Uttar Pradesh","addressCountry":"IN"}},"areaServed":["Varanasi","Meerut","Lucknow","Prayagraj","Agra","Greater Noida"]}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://karunyadigital.online/#org","name":"Karunya Digital","url":"https://karunyadigital.online/","description":"Healthcare digital marketing agency in Varanasi for doctors, clinics and hospitals across India: Instagram reels, Google Business Profile, SEO and doctor branding","logo":"https://karunyadigital.online/assets/icon-blue-512.png","image":"https://karunyadigital.online/assets/icon-blue-512.png","knowsAbout":["Social media management for doctors","Healthcare marketing","SEO for doctors","Google Business Profile","NMC advertising guidelines"],"founder":{{"@type":"Person","name":"Bhanu Pratap Rai","sameAs":"{IG_FOUNDER}"}},"sameAs":["{IG_KARUNYA}"],"telephone":"{CALL}","openingHours":"Mo-Sa 10:00-19:00","address":{{"@type":"PostalAddress","streetAddress":"Taktakpur Road, Near Mahavir Mandir","addressLocality":"Varanasi","postalCode":"221001","addressRegion":"Uttar Pradesh","addressCountry":"IN"}},"areaServed":["Varanasi","Meerut","Lucknow","Prayagraj","Agra","Greater Noida","India"]}}</script>
 </head>
 <body class="page-{page}">
 <a class="skip" href="#main">Skip to content</a>
@@ -114,6 +117,25 @@ def popup():
 </div>'''
 
 
+GUIDE_CITIES = ["Varanasi", "Lucknow", "Prayagraj", "Patna", "Gorakhpur", "Kanpur"]
+
+
+def footer_guides():
+    posts = globals().get("POSTS") or []
+    links = []
+    for c in GUIDE_CITIES:
+        m = [p for p in posts if c.lower() in p.get("keyword", "").lower()]
+        m.sort(key=lambda p: (len(p.get("keyword", "")), p.get("date", "")))
+        if m:
+            links.append(f'<a href="{m[0]["slug"]}.html">Agency guide: {c}</a>')
+    for slug, name in [("blog-digital-marketing-agency-for-doctors", "Digital marketing agency for doctors"), ("blog-hospital-marketing-agency", "Hospital marketing agency"), ("blog-digital-marketing-agency-cost-for-doctors", "Agency cost for doctors")]:
+        if any(p["slug"] == slug for p in posts):
+            links.append(f'<a href="{slug}.html">{name}</a>')
+    if not links:
+        return ""
+    return f'<div class="wrap f-guides"><h4>Healthcare marketing guides</h4><p>{" · ".join(links)}</p></div>'
+
+
 def footer():
     return f'''<section class="cta-band" aria-labelledby="cta-h">
  <div class="lotus-wrap">{lotus()}</div>
@@ -151,6 +173,7 @@ def footer():
    </div>
   </div>
  </div>
+ {footer_guides()}
  <div class="f-bot"><div class="wrap"><span>© <span data-year>2026</span> Karunya Digital. Made with care in Kashi.</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Every post goes live only after the doctor's approval.</span></div></div>
 </footer>
 <a class="wa-float" href="{wa()}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">{wa_icon(26)}<span>Chat on WhatsApp</span></a>
@@ -382,18 +405,53 @@ def post_card(p):
 def blog_index(posts):
     cards = "".join(post_card(p) for p in posts) or '<p class="lead">The first articles are on their way.</p>'
     body = f"""<main id="main">
-{page_hero("The Karunya blog", "Practical guides for doctors on Google, Instagram, reels and patient trust. Plain language, no jargon, always within NMC guidelines.")}
+{page_hero("The Karunya blog", "Practical guides for doctors and hospitals on choosing a healthcare marketing agency, plus Google, Instagram and the NMC rules. Plain language, no jargon.")}
 <section class="sec light"><div class="wrap"><div class="posts">{cards}</div></div></section>
 </main>
 """
-    return head("Blog: healthcare marketing guides for doctors | Karunya Digital", "Practical guides for doctors in India on Google Business Profile, Instagram reels, NMC rules and patient trust.", "blog") + header("Blog") + body + footer()
+    return head("Blog: Guides to Hiring a Healthcare Marketing Agency | Karunya Digital", "Guides for doctors and hospitals in India on choosing a digital marketing agency: costs, city guides, speciality guides and NMC rules.", "blog") + header("Blog") + body + footer()
+
+
+STOP = set("a an the for in of and to vs or how what is your my with india 2026 digital marketing agency".split())
+
+
+def related_posts(p, posts, n=3):
+    kw = set(re.findall(r"[a-z]+", (p.get("keyword", "") + " " + p["title"]).lower())) - STOP
+    scored = []
+    for i, o in enumerate(posts):
+        if o["slug"] == p["slug"]:
+            continue
+        ow = set(re.findall(r"[a-z]+", (o.get("keyword", "") + " " + o["title"]).lower())) - STOP
+        scored.append((-len(kw & ow), i, o))
+    scored.sort(key=lambda t: (t[0], t[1]))
+    return [o for _, _, o in scored[:n]]
+
+
+def faq_ld(html):
+    m = re.search(r"<h2[^>]*>\s*Frequently asked questions\s*</h2>(.*?)(?=<h2|$)", html, re.S | re.I)
+    if not m:
+        return ""
+    qa = re.findall(r"<p><strong>(.*?)</strong>\s*(?:<br\s*/?>)?\s*(.*?)</p>", m.group(1), re.S)
+    items = []
+    for q, a in qa:
+        q = _html.unescape(re.sub("<[^>]+>", "", q)).strip()
+        a = _html.unescape(re.sub("<[^>]+>", "", a)).strip()
+        if q and a:
+            items.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
+    if not items:
+        return ""
+    import json
+    return json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": items}, ensure_ascii=False)
 
 
 def blog_post(p, posts):
-    others = [o for o in posts if o["slug"] != p["slug"]][:2]
+    others = related_posts(p, posts, 2)
     rel = "".join(post_card(o) for o in others)
-    ld = ('{"@context":"https://schema.org","@type":"BlogPosting","headline":%s,"description":%s,"datePublished":"%s","author":{"@type":"Person","name":"Bhanu Pratap Rai","url":"%s"},"publisher":{"@type":"Organization","name":"Karunya Digital","logo":{"@type":"ImageObject","url":"https://karunyadigital.online/assets/icon-blue-512.png"}},"mainEntityOfPage":"https://karunyadigital.online/%s.html"}'
-          % (_json_str(p["title"]), _json_str(p.get("description", "")), p.get("date", ""), IG_FOUNDER, p["slug"]))
+    ld = ('{"@context":"https://schema.org","@type":"BlogPosting","headline":%s,"description":%s,"datePublished":"%s","author":{"@type":"Person","name":"Bhanu Pratap Rai","url":"%s"},"publisher":{"@type":"Organization","name":"Karunya Digital","logo":{"@type":"ImageObject","url":"https://karunyadigital.online/assets/icon-blue-512.png"}},"mainEntityOfPage":"https://karunyadigital.online/%s.html","image":"https://karunyadigital.online/media/blog/%s.jpg","dateModified":"%s","inLanguage":"en-IN","keywords":%s,"articleSection":%s}'
+          % (_json_str(p["title"]), _json_str(p.get("description", "")), p.get("date", ""), IG_FOUNDER, p["slug"], p["slug"], p.get("date", ""), _json_str(p.get("keyword", "")), _json_str(p.get("category", ""))))
+    bc = ('{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://karunyadigital.online/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://karunyadigital.online/blog.html"},{"@type":"ListItem","position":3,"name":%s,"item":"https://karunyadigital.online/%s.html"}]}'
+          % (_json_str(p["title"]), p["slug"]))
+    fq = faq_ld(p["html"])
     body = f"""<main id="main">
 <section class="page-hero post-hero"><div class="wrap">
  <p class="crumb hero-fade d1"><a href="blog.html">Blog</a> / {p["category"]}</p>
@@ -413,7 +471,11 @@ def blog_post(p, posts):
 """
     h = head(f"{p['title']} | Karunya Digital", p.get("description", ""), p["slug"])
     h = h.replace('content="https://karunyadigital.online/assets/icon-blue-512.png"', f'content="https://karunyadigital.online/media/blog/{p["slug"]}.jpg"')
-    h = h.replace("</head>", f'<script type="application/ld+json">{ld}</script>\n</head>')
+    h = h.replace('<meta property="og:type" content="website">', f'<meta property="og:type" content="article">\n<meta property="article:published_time" content="{p.get("date", "")}">')
+    extra = f'<script type="application/ld+json">{ld}</script>\n<script type="application/ld+json">{bc}</script>\n'
+    if fq:
+        extra += f'<script type="application/ld+json">{fq}</script>\n'
+    h = h.replace("</head>", extra + "</head>")
     return h + header("Blog") + body + footer()
 
 
@@ -524,7 +586,7 @@ def home():
  <div class="h3-time" aria-hidden="true"><span class="tt"><b>6:00 pm</b>Saw your reel</span><span class="ta"></span><span class="tt"><b>6:15 pm</b>At your clinic</span></div>
  <div class="wrap hero-inner">
   <h1 id="hero-h" class="hero-fade d1">A good doctor should be <span class="hl">easy to find.</span></h1>
-  <p class="sub hero-fade d2">Social media and marketing for doctors and hospitals. Your name on Google, Instagram and YouTube, in your patients' language.</p>
+  <p class="sub hero-fade d2">A healthcare digital marketing agency in Varanasi for doctors and hospitals across India. Your name on Google, Instagram and YouTube, in your patients' language.</p>
   <div class="cta-row hero-fade d3">
    <a class="btn btn-lime" href="audit.html">Get a free check</a>
    <a class="btn btn-wa" href="{wa()}" target="_blank" rel="noopener">{wa_icon()}WhatsApp us</a>
@@ -669,10 +731,23 @@ def home():
 
 </main>
 '''
-    return head("Karunya Digital | Social Media & Marketing Agency for Doctors in India", "Karunya Digital is a social media and marketing agency for doctors and hospitals in India: Instagram reels, Google Business Profile, SEO and doctor branding. 50+ doctor clients.", "home") + header("Home") + body + footer()
+    return head("Healthcare Digital Marketing Agency for Doctors in Varanasi & India | Karunya Digital", "Healthcare digital marketing agency in Varanasi for doctors, clinics and hospitals across India: Instagram reels, Google Business Profile, SEO. 50+ doctors.", "home") + header("Home") + body + footer()
 
 
 # ------------------------------------------------------------------ SPECIALTY
+SPEC_WORDS = {"gynae": ["gynae", "women", "maternity"], "ivf": ["ivf", "fertility"], "ortho": ["ortho", "spine", "physio"], "dental": ["dental", "dentist"]}
+
+
+def spec_guides(k):
+    words = SPEC_WORDS.get(k, [])
+    ps = [p for p in POSTS if any(w in (p.get("keyword", "") + " " + p["slug"]).lower() for w in words)][:3]
+    if not ps:
+        return ""
+    sp = SPECS[k]
+    return (f'<section class="sec light" aria-labelledby="sg-h"><div class="wrap"><h2 id="sg-h" style="font-size:clamp(1.6rem,3vw,2.2rem)">Guides for {"dentists" if k == "dental" else sp["name"] + " doctors"}</h2>'
+            f'<p class="lead">Hiring a {sp["name"].lower()} marketing agency? Start with these guides.</p><div class="posts">{"".join(post_card(p) for p in ps)}</div></div></section>')
+
+
 def spec_page(k):
     sp = SPECS[k]
     msg = f"Hello Karunya Digital, I'm a {sp['who']} and I'd like to talk about reels and marketing for my clinic."
@@ -728,13 +803,14 @@ def spec_page(k):
  <div class="values">{how}</div>
 </div></section>
 
+{spec_guides(k)}
 <section class="sec white" aria-label="Other specialties"><div class="wrap">
  <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Explore other specialties</h2>
  <div class="others">{others}</div>
 </div></section>
 </main>
 '''
-    return head(f"Marketing for {sp['name']} doctors | Karunya Digital", f"Instagram reels, Google Business Profile and SEO for {sp['name']} doctors, by a healthcare-only team.", k) + header(sp["short"]) + body + footer()
+    return head(f"{sp['name']} Marketing Agency for {'Dentists' if k == 'dental' else 'Doctors'} | Karunya Digital, Varanasi", f"{sp['name']} marketing agency in Varanasi for doctors across India: NMC-safe Instagram reels, Google Business Profile and SEO.", k) + header(sp["short"]) + body + footer()
 
 
 # ------------------------------------------------------------------ SERVICES
@@ -785,7 +861,7 @@ def services():
 </div></section>
 </main>
 '''
-    return head("Social Media Marketing Services for Doctors | Karunya Digital", "Social media management, Instagram reels, Google Business Profile, SEO and personal branding for doctors and hospitals.", "services") + header("Services") + body + footer()
+    return head("Digital Marketing Services for Doctors & Hospitals | Karunya Digital, Varanasi", "Healthcare digital marketing services from Varanasi: social media management, Instagram reels, Google Business Profile, SEO and branding for doctors and hospitals.", "services") + header("Services") + body + footer()
 
 
 # ------------------------------------------------------------------ WORK
@@ -836,7 +912,7 @@ def work():
 </div></section>
 </main>
 '''
-    return head("Work | Karunya Digital", "Karunya Originals, reels for our doctors by speciality, and the monthly formats behind our work.", "work") + header("Work") + body + footer()
+    return head("Our Work: Reels & Marketing for Doctors | Karunya Digital", "Karunya Originals, reels for our doctors by speciality, and the monthly formats behind our work.", "work") + header("Work") + body + footer()
 
 
 # ------------------------------------------------------------------ ABOUT
@@ -895,7 +971,7 @@ def about():
 </div></section>
 </main>
 '''
-    return head("About | Karunya Digital", "Karunya Digital is a healthcare marketing agency in Varanasi, founded by Bhanu Pratap Rai. We work only with doctors and hospitals.", "about") + header("About") + body + footer()
+    return head("About Karunya Digital | Healthcare Marketing Agency in Varanasi", "Karunya Digital is a healthcare marketing agency in Varanasi, founded by Bhanu Pratap Rai. We work only with doctors and hospitals.", "about") + header("About") + body + footer()
 
 
 # ------------------------------------------------------------------ CONTACT
@@ -930,7 +1006,7 @@ def contact():
 </div></section>
 </main>
 '''
-    return head("Contact | Karunya Digital", "Talk to Karunya Digital on WhatsApp or by phone. Taktakpur Road, Varanasi.", "contact") + header("Contact") + body + footer()
+    return head("Contact Karunya Digital | Healthcare Marketing Agency, Varanasi", "Talk to Karunya Digital, a healthcare marketing agency on Taktakpur Road, Varanasi. Call +91 73176 59337 or WhatsApp +91 63864 92334.", "contact") + header("Contact") + body + footer()
 
 
 FB = {"Dr. Madhuresh Kumar": "https://www.facebook.com/starorthoandmaternity/"}

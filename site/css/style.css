@@ -1410,3 +1410,8 @@ a:hover .svc-art .swatch,.svc-detail:hover .svc-art .swatch{translate:0 -8px}
 .spinp-price{font-size:1.6rem;font-weight:900;margin:2px 0 8px}
 .spinp-price s{opacity:.6;font-weight:600;font-size:1rem;margin-right:8px}
 .spinp-note{margin:0 0 16px;font-size:.92rem;font-weight:500}
+.f-guides{padding-top:4px;padding-bottom:22px}
+.f-guides h4{margin:0 0 8px}
+.f-guides p{margin:0;font-size:.92rem;line-height:1.9;opacity:.85}
+.f-guides a{color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:3px}
+.f-guides a:hover{color:var(--lime)}
