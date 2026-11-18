@@ -36,6 +36,8 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-16 | orthopaedic doctor marketing agency | blog-orthopaedic-doctor-marketing-agency |
 | 2026-11-17 | how to choose a digital marketing agency for clinic | blog-how-to-choose-digital-marketing-agency-for-clinic |
 | 2026-11-17 | gynaecologist marketing agency | blog-gynaecologist-marketing-agency |
+| 2026-11-18 | social media marketing agency for hospitals | blog-social-media-marketing-agency-for-hospitals |
+| 2026-11-18 | dental clinic marketing agency in varanasi | blog-dental-clinic-marketing-agency-in-varanasi |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -43,7 +45,6 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 ## Backlog: agency-intent keywords (volumes not checked yet: Apify quota used up on 7 Nov)
 | Keyword | Volume | Notes / angle |
 |---|---|---|
-| social media marketing agency for hospitals | ? | |
 | healthcare digital marketing agency for clinics | ? | Found 8 Nov: competitor pages use "for doctors, clinics & hospitals"; clinic-owner angle |
 | digital marketing company for doctors in india | ? | Found 8 Nov: "company" variant common in listings; India-wide comparison |
 | doctor marketing agency contract checklist | ? | Found 8 Nov: guidelines summaries advise reviewing every agency contract; account ownership, exit terms |
@@ -54,7 +55,6 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | hospital seo agency | ? | Found 9 Nov: department pages + doctor directory angle |
 | marketing agency for multispeciality hospital | ? | Found 9 Nov: approval process across many doctors |
 | best digital marketing agency for doctors | ? | "best" only as the search phrase; never a claim about Karunya |
-| dental clinic marketing agency in varanasi | ? | Found 10 Nov: city + dental; NDC advisory angle |
 | healthcare seo pricing india | ? | Found 10 Nov: competitor pages target "seo pricing healthcare"; SEO-only scope vs full retainer |
 | digital marketing agency for dentists | ? | Found 10 Nov: "dentists" variant used by listing sites (Clutch/DesignRush dental categories) |
 | monthly retainer vs pay per lead doctors | ? | Found 10 Nov: pricing-model comparison; NMC fee-linkage rule |
@@ -93,6 +93,11 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | questions to ask a healthcare marketing agency before signing | ? | Found 17 Nov: blogspot/agency pages rank "questions before signing a contract" + red flags |
 | healthcare marketing agency red flags | ? | Found 17 Nov: red-flag sections common on choose-an-agency pages; NMC "agency doesn't shield doctor" clause |
 | digital marketing agency for clinics in varanasi | ? | Found 17 Nov: clinic + city variant of the Varanasi guide |
+| hospital instagram marketing agency | ? | Found 18 Nov: Instagram-only scope for hospitals; NMC bars promoting individual doctors from hospital pages |
+| healthcare social media agency india | ? | Found 18 Nov: Clutch "social media marketing companies for healthcare providers in India" listing pages rank |
+| dentist marketing agency in lucknow | ? | Found 18 Nov: city + dental; NDC 14 Oct advisory + 13 Nov BDS/MDS scope clarification |
+| dental seo agency india | ? | Found 18 Nov: SEO-only dental scope; don't advertise procedures beyond BDS/MDS scope (NDC, Nov 2026) |
+| hospital social media management services | ? | Found 18 Nov: services-intent variant; hospital stays responsible for agency content (Medical Dialogues, 23 Oct 2026) |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
