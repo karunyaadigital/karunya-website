@@ -80,6 +80,8 @@ We don't publish fixed prices: we share a plan and fee that fits your speciality
 
 ## About Karunya Digital
 
+See our [healthcare digital marketing agency in Varanasi page](healthcare-marketing-agency-varanasi.html) for our services, office address and how we work with doctors in the city.
+
 Karunya Digital is a healthcare marketing agency based in Varanasi, founded by Bhanu Pratap Rai. We work only with doctors and hospitals, and have worked with 50+ doctor clients. We provide scripts, shoot guidance, editing, posting and strategy. You record short videos on your phone; we handle the rest. Because we are in Varanasi, you can meet us in person to plan your content.
 
 We're one local option. Whoever you pick, use the questions in this guide.

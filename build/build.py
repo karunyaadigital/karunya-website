@@ -122,7 +122,7 @@ GUIDE_CITIES = ["Varanasi", "Lucknow", "Prayagraj", "Patna", "Gorakhpur", "Kanpu
 
 def footer_guides():
     posts = globals().get("POSTS") or []
-    links = []
+    links = ['<a href="healthcare-marketing-agency-varanasi.html">Healthcare marketing agency in Varanasi</a>']
     for c in GUIDE_CITIES:
         m = [p for p in posts if c.lower() in p.get("keyword", "").lower()]
         m.sort(key=lambda p: (len(p.get("keyword", "")), p.get("date", "")))
@@ -586,7 +586,7 @@ def home():
  <div class="h3-time" aria-hidden="true"><span class="tt"><b>6:00 pm</b>Saw your reel</span><span class="ta"></span><span class="tt"><b>6:15 pm</b>At your clinic</span></div>
  <div class="wrap hero-inner">
   <h1 id="hero-h" class="hero-fade d1">A good doctor should be <span class="hl">easy to find.</span></h1>
-  <p class="sub hero-fade d2">A healthcare digital marketing agency in Varanasi for doctors and hospitals across India. Your name on Google, Instagram and YouTube, in your patients' language.</p>
+  <p class="sub hero-fade d2">A <a href="healthcare-marketing-agency-varanasi.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">healthcare digital marketing agency in Varanasi</a> for doctors and hospitals across India. Your name on Google, Instagram and YouTube, in your patients' language.</p>
   <div class="cta-row hero-fade d3">
    <a class="btn btn-lime" href="audit.html">Get a free check</a>
    <a class="btn btn-wa" href="{wa()}" target="_blank" rel="noopener">{wa_icon()}WhatsApp us</a>
@@ -733,6 +733,71 @@ def home():
 '''
     return head("Healthcare Digital Marketing Agency for Doctors in Varanasi & India | Karunya Digital", "Healthcare digital marketing agency in Varanasi for doctors, clinics and hospitals across India: Instagram reels, Google Business Profile, SEO. 50+ doctors.", "home") + header("Home") + body + footer()
 
+
+
+# ------------------------------------------------------------------ VARANASI LANDING (local SEO)
+VNS_SLUG = "healthcare-marketing-agency-varanasi"
+VNS_FAQ = [
+    ("Where is Karunya Digital's office in Varanasi?", "Our office is on Taktakpur Road, near Mahavir Mandir, Varanasi, Uttar Pradesh 221001. We are open Monday to Saturday, 10am to 7pm."),
+    ("Do you work only with doctors and hospitals?", "Yes. Karunya Digital is a healthcare-only marketing agency. We work with doctors, dentists, clinics and hospitals, not with other industries."),
+    ("Do you send a camera crew for shoots?", "No. We write the scripts, guide you on how to record on your phone (light, sound, framing), and then handle editing, captions and posting."),
+    ("Is your work safe under the NMC 2026 advertising guidelines?", "Every post is planned as patient education and checked against the NMC guidelines (and the National Dental Commission advisory for dentists) before it reaches you. Nothing goes live without your approval. We don't do testimonials, before/after photos, 'best doctor' claims or discount offers."),
+    ("How much does it cost?", "We don't publish fixed prices. After a short call we share a plan and a fixed monthly fee that fits your speciality and goals. The fee is never linked to the number of patients or leads."),
+    ("Can you work with doctors outside Varanasi?", "Yes. Our only office is in Varanasi, and we work with doctors in other cities remotely over WhatsApp and calls."),
+]
+
+
+def varanasi_page():
+    msg = "Hello Karunya Digital, I'm a doctor in Varanasi and I'd like to talk about marketing for my clinic."
+    services_v = [
+        ("Google Business Profile", "Correct name, address, phone, timings, services and photos, so patients searching 'doctor near me' in Varanasi find you on Google Maps."),
+        ("Instagram & Reels", "Patient-education Reels in Hindi, Hinglish or English. We write scripts, guide your phone shoot, edit, caption and post."),
+        ("SEO & website", "Pages for each service and condition you treat, your qualifications and registration details, and local search basics done right."),
+        ("YouTube & Shorts", "Longer explainers and Shorts that answer the questions your patients ask every day."),
+        ("Monthly strategy & report", "Calls, direction requests, profile views and reach, explained in plain words, with next month's plan."),
+    ]
+    sv = "".join(f'<div class="value"><h3>{t}</h3><p>{d}</p></div>' for t, d in services_v)
+    specs = "".join(f'<li><a href="{SPECS[k]["file"]}">{SPECS[k]["name"]}</a></li>' for k in SPECS) + '<li><a href="services.html">Multi-speciality hospitals</a></li><li><a href="services.html">General physicians</a></li>'
+    guides = [q for q in POSTS if "varanasi" in q.get("keyword", "").lower()][:3]
+    guide_cards = "".join(post_card(q) for q in guides)
+    faq_html = "".join(f'<p><strong>{_html.escape(q)}</strong><br>{_html.escape(a)}</p>' for q, a in VNS_FAQ)
+    body = f"""<main id="main">
+{page_hero("Healthcare digital marketing agency in Varanasi", "Karunya Digital helps doctors, dentists, clinics and hospitals in Varanasi get found on Google, Instagram and YouTube. One healthcare-only team on Taktakpur Road. You approve every post.")}
+<section class="sec light" aria-labelledby="v1-h"><div class="wrap about-grid">
+ <div>
+  <h2 id="v1-h">A digital marketing agency for doctors in Varanasi</h2>
+  <p class="lead">When a family in Varanasi needs a doctor, they search on their phone first: on Google Maps, on Instagram, in Hindi and in English. Our job is to make sure they find correct, useful information about you.</p>
+  <p class="lead">We work only in healthcare, with 50+ doctor clients. Every piece of content is patient education, written for the NMC 2026 guidelines, and goes live only after your yes.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:22px"><a class="btn btn-wa" href="{wa(msg)}" target="_blank" rel="noopener">{wa_icon(18)}Talk on WhatsApp</a><a class="btn btn-navy" href="audit.html">Get a free check</a></div>
+ </div>
+ <div class="values">{sv}</div>
+</div></section>
+<section class="sec dark" aria-labelledby="v2-h"><div class="wrap">
+ <h2 id="v2-h">Specialities we market in Varanasi</h2>
+ <p class="lead">Each speciality has different patients and different questions, so the content is built for it.</p>
+ <ul class="topics">{specs}</ul>
+</div></section>
+<section class="sec white" aria-labelledby="v3-h"><div class="wrap" style="max-width:860px"><article class="prose">
+ <h2 id="v3-h">Why a healthcare-only agency in Varanasi</h2>
+ <p>Most agencies in the city work with every kind of business, from hotels to coaching centres. Medical marketing has its own rules. Since 6 October 2026, the NMC's Guidelines on Ethical Advertising and Public Communication bar patient testimonials, before/after content, "best" or "guaranteed" claims, paid or solicited reviews and discount offers. Dentists also follow the National Dental Commission's advisory of 14 October 2026.</p>
+ <p>We plan around these rules from the start, so your pages build trust without putting your registration at risk. Read our <a href="blog-digital-marketing-agency-in-varanasi.html">guide to choosing a digital marketing agency in Varanasi</a> and our <a href="blog-how-to-choose-digital-marketing-agency-for-clinic.html">clinic agency checklist</a> before you hire anyone, including us.</p>
+ <h2>How we work with Varanasi doctors</h2>
+ <ol><li><b>Free check:</b> we look at your Google profile and Instagram and share the top fixes.</li><li><b>Short call or visit:</b> we understand your speciality, patients and goals, and share a plan with a fixed monthly fee.</li><li><b>Monthly content:</b> topics, scripts, shoot guidance, editing and posting, all approved by you.</li><li><b>Monthly report:</b> what changed on Google and Instagram, in plain words.</li></ol>
+ <h2>Visit or call us</h2>
+ <p><b>Karunya Digital</b><br>{ADDR}<br>Mon–Sat, 10am–7pm<br>Call <a href="tel:{CALL}">{CALL_TXT}</a> · WhatsApp <a href="{wa(msg)}" target="_blank" rel="noopener">{WA_TXT}</a><br><a href="https://www.google.com/maps/search/?api=1&amp;query=Karunya+Digital+Taktakpur+Road+Varanasi" target="_blank" rel="noopener">Open in Google Maps</a></p>
+ <h2>Frequently asked questions</h2>
+ {faq_html}
+</article></div></section>
+{f'<section class="sec light"><div class="wrap"><h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Varanasi guides for doctors</h2><div class="posts">{guide_cards}</div></div></section>' if guide_cards else ''}
+</main>
+"""
+    import json
+    faq = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in VNS_FAQ]}, ensure_ascii=False)
+    bc = json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://karunyadigital.online/"}, {"@type": "ListItem", "position": 2, "name": "Healthcare marketing agency in Varanasi", "item": f"https://karunyadigital.online/{VNS_SLUG}.html"}]})
+    svc = json.dumps({"@context": "https://schema.org", "@type": "Service", "name": "Healthcare digital marketing in Varanasi", "serviceType": "Digital marketing for doctors, clinics and hospitals", "provider": {"@id": "https://karunyadigital.online/#org"}, "areaServed": {"@type": "City", "name": "Varanasi"}, "url": f"https://karunyadigital.online/{VNS_SLUG}.html"})
+    h = head("Healthcare Digital Marketing Agency in Varanasi for Doctors | Karunya Digital", "Healthcare digital marketing agency in Varanasi for doctors, dentists and hospitals: Google Maps, Instagram Reels, SEO. NMC-safe. Taktakpur Road office.", VNS_SLUG)
+    h = h.replace("</head>", f'<script type="application/ld+json">{svc}</script>\n<script type="application/ld+json">{bc}</script>\n<script type="application/ld+json">{faq}</script>\n</head>')
+    return h + header("") + body + footer()
 
 # ------------------------------------------------------------------ SPECIALTY
 SPEC_WORDS = {"gynae": ["gynae", "women", "maternity"], "ivf": ["ivf", "fertility"], "ortho": ["ortho", "spine", "physio"], "dental": ["dental", "dentist"]}
@@ -1042,9 +1107,9 @@ open(os.path.join(OUT, "blog.html"), "w").write(blog_index(POSTS))
 for _p in POSTS:
     open(os.path.join(OUT, _p["slug"] + ".html"), "w").write(blog_post(_p, POSTS))
 BANNED = ["apna hospital", "golden hospital", "aaha rani", "asha rani", "muzammil", "mujammil", "muzzamil"]
-for fn, html in [("index.html", home()), ("audit.html", audit_page()), ("404.html", page404()), ("services.html", services()), ("work.html", work()), ("about.html", about()), ("contact.html", contact()), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]:
+for fn, html in [(VNS_SLUG + ".html", varanasi_page()), ("index.html", home()), ("audit.html", audit_page()), ("404.html", page404()), ("services.html", services()), ("work.html", work()), ("about.html", about()), ("contact.html", contact()), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]:
     open(os.path.join(OUT, fn), "w").write(html)
-pages = [""] + [SPECS[k]["file"] for k in SPECS] + ["blog.html"] + [p["slug"] + ".html" for p in POSTS] + ["audit.html", "services.html", "work.html", "about.html", "contact.html", "privacy.html", "terms.html"]
+pages = ["", VNS_SLUG + ".html"] + [SPECS[k]["file"] for k in SPECS] + ["blog.html"] + [p["slug"] + ".html" for p in POSTS] + ["audit.html", "services.html", "work.html", "about.html", "contact.html", "privacy.html", "terms.html"]
 open(os.path.join(OUT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>https://karunyadigital.online/{p}</loc><lastmod>{datetime.date.today().isoformat()}</lastmod></url>" for p in pages) + "</urlset>")
 for _f in glob.glob(os.path.join(OUT, "*.html")):
     _t = open(_f).read().lower()
