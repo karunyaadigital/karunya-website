@@ -38,6 +38,7 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-17 | gynaecologist marketing agency | blog-gynaecologist-marketing-agency |
 | 2026-11-18 | social media marketing agency for hospitals | blog-social-media-marketing-agency-for-hospitals |
 | 2026-11-18 | dental clinic marketing agency in varanasi | blog-dental-clinic-marketing-agency-in-varanasi |
+| 2026-11-19 | digital marketing agency for hospitals in varanasi | blog-digital-marketing-agency-for-hospitals-in-varanasi |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -48,7 +49,6 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | healthcare digital marketing agency for clinics | ? | Found 8 Nov: competitor pages use "for doctors, clinics & hospitals"; clinic-owner angle |
 | digital marketing company for doctors in india | ? | Found 8 Nov: "company" variant common in listings; India-wide comparison |
 | doctor marketing agency contract checklist | ? | Found 8 Nov: guidelines summaries advise reviewing every agency contract; account ownership, exit terms |
-| digital marketing agency for hospitals in varanasi | ? | Local hospital angle; SSPG 500-bed upgrade news (Jan 2026) |
 | digital marketing agency in lucknow | ? | Found 9 Nov: broader city term; many blogspot "top company" lists rank for it |
 | healthcare digital marketing company in lucknow | ? | Found 9 Nov: "company" variant used by Lucknow listing pages |
 | hospital digital marketing services | ? | Found 9 Nov: services-intent variant; hospital factual-info rules (departments, facilities, packages) |
@@ -98,6 +98,10 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | dentist marketing agency in lucknow | ? | Found 18 Nov: city + dental; NDC 14 Oct advisory + 13 Nov BDS/MDS scope clarification |
 | dental seo agency india | ? | Found 18 Nov: SEO-only dental scope; don't advertise procedures beyond BDS/MDS scope (NDC, Nov 2026) |
 | hospital social media management services | ? | Found 18 Nov: services-intent variant; hospital stays responsible for agency content (Medical Dialogues, 23 Oct 2026) |
+| hospital seo agency in varanasi | ? | Found 19 Nov: Varanasi; department pages + doctor directory; Medanta/Apollo 400-bed entries raise local competition |
+| multispeciality hospital marketing agency in varanasi | ? | Found 19 Nov: Varanasi; most city hospitals 50-150 beds (Medanta CEO, Mar 2026); NMC hospital factual-info rules |
+| healthcare marketing agency in purvanchal | ? | Found 19 Nov: regional term (Varanasi, Ghazipur, Mirzapur, Jaunpur, Azamgarh); referral-city angle |
+| digital marketing agency for nursing homes | ? | Found 19 Nov: India-wide; Jharkhand SMC told nursing homes to remove doctor-photo ads (UNI, 16 Nov 2026) |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |

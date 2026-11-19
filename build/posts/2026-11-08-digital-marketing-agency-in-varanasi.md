@@ -51,6 +51,8 @@ Local work matters most for doctors, because patients usually search by area and
 4. **Reply to reviews politely.** Without revealing any patient details.
 5. **Report monthly.** Profile views, calls, direction requests and reel views, all things you can check yourself.
 
+Running a hospital rather than a clinic? Our guide to choosing a [digital marketing agency for hospitals in Varanasi](blog-digital-marketing-agency-for-hospitals-in-varanasi.html) covers the NMC's hospital rules and a local search checklist.
+
 ## Offers to say no to
 
 Whether the agency is in Varanasi, Lucknow or Delhi, these are red flags under the 2026 rules:
