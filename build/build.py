@@ -21,7 +21,7 @@ def wa(msg=DEFAULT_MSG):
     return f"https://wa.me/{WA_NUM}?text=" + urllib.parse.quote(msg)
 
 
-PAGES = [("index.html", "Home"), ("services.html", "Services"), ("work.html", "Work"), ("blog.html", "Blog"), ("about.html", "About"), ("contact.html", "Contact"), ("audit.html", "Free check")]
+PAGES = [("index.html", "Home"), ("services.html", "Services"), ("work.html", "Work"), ("blog.html", "Blog"), ("game.html", "Game"), ("about.html", "About"), ("contact.html", "Contact"), ("audit.html", "Free check")]
 
 ORIGINALS = [
     ("reelbaaz", "kc-reelbaaz", "EP 01", "Reelbaaz Doctor", "Why every doctor needs to be on social media."),
@@ -85,7 +85,7 @@ def header(active):
     dd = (f'<div class="dd"><button class="link dd-btn" type="button" aria-expanded="false" aria-controls="dd-menu"{dcur}>Specialties'
           f'<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg></button>'
           f'<div class="dd-menu" id="dd-menu">{items}</div></div>')
-    links = L("index.html", "Home") + dd + L("services.html", "Services") + L("work.html", "Work") + L("blog.html", "Blog") + L("about.html", "About") + L("contact.html", "Contact")
+    links = L("index.html", "Home") + dd + L("services.html", "Services") + L("work.html", "Work") + L("blog.html", "Blog") + L("game.html", "Game") + L("about.html", "About") + L("contact.html", "Contact")
     return f'''<header class="site-header">
  <div class="wrap head-in">
   <a class="brand" href="index.html" aria-label="Karunya Digital home"><img src="assets/logo-white.png" alt="Karunya Digital" width="120" height="38"></a>
@@ -355,6 +355,76 @@ def audit_page():
 </main>
 """
     return head("Free Google + Instagram check for doctors | Karunya Digital", "A free 2-minute check of your clinic's Google Business Profile and Instagram. Get a score out of 100 and your top 3 fixes.", "audit") + header("Free check") + body + footer()
+
+
+def game_page():
+    body = f"""<main id="main">
+<section class="kg-sec" aria-labelledby="kg-h">
+ <div class="wrap kg-grid">
+  <div class="kg-intro">
+   <p class="og-tag">Karunya Games &middot; Free &middot; 60 seconds</p>
+   <h1 id="kg-h">Doctor Saheb <mark>Famous</mark> Kaise Bane?</h1>
+   <p>A quick game for doctors. Catch the marketing that brings patients, like Reels, real Google reviews and a strong Google Business Profile. Dodge the mistakes that hurt a clinic, like fake reviews and "100% cure" claims.</p>
+   <ul class="kg-how">
+    <li><b>1</b><span>Move the doctor left and right with your finger, mouse or arrow keys.</span></li>
+    <li><b>2</b><span>Catch the white cards. Avoid the red ones. You have 3 lives.</span></li>
+    <li><b>3</b><span>Grab the lime <b style="display:inline;background:none;color:#D1FF42;width:auto;height:auto">K</b> card for 6 seconds of double points and a shield.</span></li>
+   </ul>
+   <p class="kg-note">Every red card you catch comes with a real-life lesson at the end, based on Google's rules and the NMC guidelines for doctors.</p>
+  </div>
+
+  <div class="kg" id="kg">
+   <canvas aria-label="Doctor Saheb Famous Kaise Bane game"></canvas>
+   <div class="kg-hud" id="kg-hud">
+    <div class="kg-row">
+     <div class="kg-pill">⭐ <b id="kg-score">0</b></div>
+     <div class="kg-pill">🧑‍🤝‍🧑 Patients <b id="kg-patients">0</b></div>
+     <div class="kg-pill" id="kg-lives">❤️❤️❤️</div>
+    </div>
+    <div class="kg-time"><i id="kg-timefill"></i></div>
+    <div class="kg-boost" id="kg-boostTag"><span>⚡ KARUNYA BOOST – Double Points!</span></div>
+   </div>
+   <div class="kg-ctrl"><button type="button" id="kg-fs" aria-label="Full screen">⛶</button><button type="button" id="kg-mute" aria-label="Sound on or off">🔊</button></div>
+
+   <div class="kg-ov" id="kg-startScreen">
+    <div class="kg-brand"><div class="kg-k"><span>K</span><i></i></div><div class="kg-wm">Karunýa<small>DIGITAL</small></div></div>
+    <h2>Doctor Saheb<br><mark>Famous</mark> Kaise Bane?</h2>
+    <p class="kg-sub">Doctor ko left-right chalao. Sahi marketing pakdo, galtiyon se bacho. 60 second mein kitne patients tak pahunch sakte ho?</p>
+    <div class="kg-legend">
+     <div class="kg-lg good"><h4>✅ Pakdo</h4>🎬 Reels<br>⭐ Asli Reviews<br>📍 GMB · 🔍 SEO<br>📢 Meta Ads<br>💬 WhatsApp · 🌐 Website</div>
+     <div class="kg-lg bad"><h4>❌ Bacho</h4>🤥 Fake Reviews<br>🚫 "100% Cure" claims<br>😴 Inactive Page<br>💸 Random Boost<br>🙈 DM Ignore</div>
+     <div class="kg-lg gold">⚡ <b>Lime "K" card</b> pakdo = Karunya Team aa gayi! 6 second Double Points + Shield 🛡️</div>
+    </div>
+    <button type="button" class="kg-btn lime" id="kg-playBtn">▶ Game Shuru Karo</button>
+    <p class="kg-hint">📱 Ungli se drag karo &nbsp;·&nbsp; 💻 Mouse ya ← → keys</p>
+   </div>
+
+   <div class="kg-ov" id="kg-endScreen" hidden>
+    <div class="kg-rank">Aapka Rank</div>
+    <div class="kg-rankname" id="kg-rankName">—</div>
+    <div class="kg-stats">
+     <div class="kg-stat"><b id="kg-fScore">0</b><small>Score</small></div>
+     <div class="kg-stat"><b id="kg-fPatients">0</b><small>Patients</small></div>
+     <div class="kg-stat"><b id="kg-fBest">0</b><small>Best</small></div>
+    </div>
+    <div class="kg-lessons" id="kg-lessons"></div>
+    <p class="kg-ctaq">Game mein toh ho gaya — <b>asli clinic</b> ko bhi famous banana hai? 👇</p>
+    <a class="kg-btn wa" id="kg-waBtn" href="{wa()}" target="_blank" rel="noopener">💬 WhatsApp pe Baat Karein</a>
+    <div class="kg-contact">WhatsApp: {WA_TXT} · Call: {CALL_TXT}<br>Karunya Digital — Healthcare Marketing Agency, Varanasi</div>
+    <div class="kg-row2">
+     <button type="button" class="kg-btn lime" id="kg-againBtn">↻ Dobara Khelo</button>
+     <button type="button" class="kg-btn ghost" id="kg-copyBtn">📋 Score Copy Karo</button>
+    </div>
+   </div>
+   <div class="kg-toast" id="kg-toast"></div>
+  </div>
+ </div>
+</section>
+</main>
+"""
+    h = head("Free marketing game for doctors | Karunya Digital", "Doctor Saheb Famous Kaise Bane? A free 60-second game for doctors: catch Reels, Google reviews and SEO, dodge fake reviews and NMC mistakes.", "game")
+    h = h.replace('<link rel="stylesheet" href="css/style.css">', '<link rel="stylesheet" href="css/style.css">\n<link rel="stylesheet" href="css/game.css">')
+    return h + header("Game") + body + footer().replace('<script src="js/main.js" defer></script>', '<script src="js/main.js" defer></script>\n<script src="js/game.js" defer></script>')
 
 
 def page404():
@@ -1107,9 +1177,9 @@ open(os.path.join(OUT, "blog.html"), "w").write(blog_index(POSTS))
 for _p in POSTS:
     open(os.path.join(OUT, _p["slug"] + ".html"), "w").write(blog_post(_p, POSTS))
 BANNED = ["apna hospital", "golden hospital", "aaha rani", "asha rani", "muzammil", "mujammil", "muzzamil"]
-for fn, html in [(VNS_SLUG + ".html", varanasi_page()), ("index.html", home()), ("audit.html", audit_page()), ("404.html", page404()), ("services.html", services()), ("work.html", work()), ("about.html", about()), ("contact.html", contact()), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]:
+for fn, html in [(VNS_SLUG + ".html", varanasi_page()), ("index.html", home()), ("audit.html", audit_page()), ("game.html", game_page()), ("404.html", page404()), ("services.html", services()), ("work.html", work()), ("about.html", about()), ("contact.html", contact()), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]:
     open(os.path.join(OUT, fn), "w").write(html)
-pages = ["", VNS_SLUG + ".html"] + [SPECS[k]["file"] for k in SPECS] + ["blog.html"] + [p["slug"] + ".html" for p in POSTS] + ["audit.html", "services.html", "work.html", "about.html", "contact.html", "privacy.html", "terms.html"]
+pages = ["", VNS_SLUG + ".html"] + [SPECS[k]["file"] for k in SPECS] + ["blog.html"] + [p["slug"] + ".html" for p in POSTS] + ["audit.html", "game.html", "services.html", "work.html", "about.html", "contact.html", "privacy.html", "terms.html"]
 open(os.path.join(OUT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>https://karunyadigital.online/{p}</loc><lastmod>{datetime.date.today().isoformat()}</lastmod></url>" for p in pages) + "</urlset>")
 for _f in glob.glob(os.path.join(OUT, "*.html")):
     _t = open(_f).read().lower()

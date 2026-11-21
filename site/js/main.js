@@ -289,7 +289,7 @@
 
   /* free check popup: after 10 seconds on the site, once per session */
   var pop = document.getElementById("fc-pop");
-  if (pop && !/audit\.html/.test(location.pathname)) {
+  if (pop && !/audit\.html|\/game(\.html)?$/.test(location.pathname)) {
     var seen = false;
     try { seen = sessionStorage.getItem("kd-pop") === "1"; } catch (e) {}
     function closePop() { pop.hidden = true; pop.classList.remove("show"); try { sessionStorage.setItem("kd-pop", "1"); } catch (e) {} }

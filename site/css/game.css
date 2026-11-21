@@ -1,0 +1,78 @@
+/* Karunya game page: "Doctor Saheb Famous Kaise Bane?" */
+.page-game .wa-float,.page-game #fc-pop{display:none!important}
+.kg-sec{background:linear-gradient(180deg,#012A5E 0%,#0251B0 70%,#012A5E 100%);color:#fff;padding:calc(110px + var(--sale-h,0px)) 0 70px}
+.kg-grid{display:grid!important;grid-template-columns:1fr minmax(320px,440px);gap:48px;align-items:center}
+.kg-intro h1{font:400 clamp(34px,4.6vw,56px)/1.05 "Waylimo",Georgia,serif;margin:0 0 16px}
+.kg-intro h1 mark{background:#D1FF42;color:#012A5E;padding:0 .18em;border-radius:8px}
+.kg-intro p{color:#B0E0E6;font-size:17px;line-height:1.6;max-width:520px;margin:0 0 18px}
+.kg-how{display:grid;gap:10px;margin:0 0 22px;padding:0;list-style:none;max-width:520px}
+.kg-how li{display:flex;gap:12px;align-items:flex-start;background:rgba(1,42,94,.55);border:1px solid rgba(176,224,230,.22);border-radius:14px;padding:12px 14px;font-size:15px;line-height:1.5}
+.kg-how b{flex:none;width:26px;height:26px;border-radius:50%;background:#D1FF42;color:#012A5E;display:grid;place-items:center;font-size:13px}
+.kg-note{font-size:13px!important;color:rgba(176,224,230,.85)!important}
+
+.kg{position:relative;width:100%;height:min(760px,calc(100svh - 120px));min-height:560px;border-radius:26px;overflow:hidden;background:#0251B0;
+  box-shadow:0 0 0 2px rgba(209,255,66,.5),0 30px 60px rgba(0,10,30,.45);font-family:"Figtree",system-ui,sans-serif;color:#fff;user-select:none;-webkit-user-select:none}
+.kg:fullscreen{border-radius:0;height:100%;max-height:none;box-shadow:none}
+.kg canvas{display:block;width:100%;height:100%;touch-action:none}
+.kg *{box-sizing:border-box}
+.kg-hud{position:absolute;top:0;left:0;right:0;padding:12px 14px 0;display:none;pointer-events:none}
+.kg-row{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.kg-pill{background:rgba(1,42,94,.75);border:1px solid rgba(176,224,230,.35);border-radius:999px;padding:6px 11px;font-weight:700;font-size:14px;white-space:nowrap}
+.kg-pill b{color:#D1FF42}
+.kg-time{margin-top:10px;height:6px;border-radius:6px;background:rgba(255,255,255,.18);overflow:hidden}
+.kg-time i{display:block;height:100%;width:100%;background:#D1FF42;border-radius:6px}
+.kg-boost{margin-top:8px;text-align:center;display:none}
+.kg-boost span{background:#D1FF42;color:#012A5E;font-weight:700;font-size:13px;border-radius:999px;padding:4px 12px}
+.kg-ctrl{position:absolute;bottom:12px;right:12px;display:flex;gap:8px;z-index:5}
+.kg-ctrl button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(176,224,230,.4);background:rgba(1,42,94,.65);color:#fff;font-size:17px;cursor:pointer;display:grid;place-items:center}
+
+.kg-ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px 20px;text-align:center;overflow-y:auto;
+  background:radial-gradient(120% 80% at 50% 0%,#0a63cf 0%,#0251B0 45%,#012A5E 100%);z-index:4}
+.kg-ov[hidden]{display:none}
+.kg-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.kg-k{width:42px;height:42px;border-radius:12px;background:#D1FF42;display:grid;place-items:center;position:relative}
+.kg-k span{font:700 25px "Figtree",sans-serif;color:#012A5E;line-height:1}
+.kg-k i{position:absolute;top:8px;right:9px;width:5px;height:12px;background:#0251B0;border-radius:2px;transform:rotate(25deg)}
+.kg-wm{font:400 24px/1 "Waylimo",Georgia,serif;text-align:left}
+.kg-wm small{display:block;font:500 10px "Figtree",sans-serif;letter-spacing:4px;color:#B0E0E6;margin-top:4px}
+.kg-ov h2{font:400 32px/1.08 "Waylimo",Georgia,serif;margin:0 0 10px;color:#fff}
+.kg-ov h2 mark{background:#D1FF42;color:#012A5E;padding:0 6px;border-radius:6px}
+.kg-sub{color:#B0E0E6;font-size:14.5px;line-height:1.5;max-width:340px;margin:0 0 16px}
+.kg-legend{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:360px;margin:0 0 18px;text-align:left}
+.kg-lg{border-radius:14px;padding:10px 12px;font-size:12.5px;line-height:1.6}
+.kg-lg h4{font-size:13px;margin:0 0 4px;font-weight:700}
+.kg-lg.good{background:#fff;color:#012A5E}
+.kg-lg.bad{background:#E0475B;color:#fff}
+.kg-lg.gold{grid-column:1/-1;background:#012A5E;border:1.5px solid #D1FF42;color:#fff}
+.kg-lg.gold b{color:#D1FF42}
+.kg-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:999px;font:700 17px "Figtree",sans-serif;padding:14px 30px;cursor:pointer;text-decoration:none;transition:transform .12s}
+.kg-btn:active{transform:scale(.96)}
+.kg-btn.lime{background:#D1FF42;color:#012A5E;box-shadow:0 6px 0 #9cc21c}
+.kg-btn.wa{background:#25D366;color:#fff;box-shadow:0 6px 0 #179a48;width:100%;max-width:340px}
+.kg-btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);font-size:15px;padding:11px 22px}
+.kg-hint{font-size:12px;color:#B0E0E6;margin:12px 0 0}
+.kg-rank{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#B0E0E6}
+.kg-rankname{font:400 30px "Waylimo",Georgia,serif;margin:4px 0 14px}
+.kg-rankname span{background:#D1FF42;color:#012A5E;padding:0 8px;border-radius:8px}
+.kg-stats{display:flex;gap:10px;margin-bottom:14px}
+.kg-stat{background:rgba(1,42,94,.7);border:1px solid rgba(176,224,230,.3);border-radius:16px;padding:10px 14px;min-width:92px}
+.kg-stat b{display:block;font-size:24px;color:#D1FF42}
+.kg-stat small{font-size:11px;color:#B0E0E6}
+.kg-lessons{background:#F3F6FA;color:#012A5E;border-radius:16px;padding:14px 16px;text-align:left;width:100%;max-width:340px;margin-bottom:14px;font-size:13px;line-height:1.5}
+.kg-lessons h4{font-size:14px;margin:0 0 6px}
+.kg-lessons ul{margin:0;padding:0 0 0 18px;list-style:disc}
+.kg-lessons li{margin:0 0 6px}
+.kg-lessons li::marker{color:#E0475B}
+.kg-ctaq{font-size:14px;margin:0 0 10px;line-height:1.45}
+.kg-contact{font-size:12px;color:#B0E0E6;margin:10px 0 14px;line-height:1.6}
+.kg-row2{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.kg-toast{position:absolute;left:50%;bottom:66px;transform:translateX(-50%);background:#012A5E;border:1px solid #D1FF42;color:#fff;padding:8px 14px;border-radius:999px;font-size:13px;display:none;z-index:9}
+
+@media (max-width:860px){
+  .kg-sec{padding:calc(88px + var(--sale-h,0px)) 0 40px}
+  .kg-grid{grid-template-columns:1fr;gap:22px}
+  .kg-intro h1{font-size:34px}
+  .kg-intro p{font-size:15.5px;margin-bottom:0}
+  .kg-how,.kg-note{display:none!important}
+  .kg{height:calc(100svh - 90px);min-height:540px;border-radius:20px}
+}
