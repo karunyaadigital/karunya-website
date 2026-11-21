@@ -59,7 +59,7 @@ Our post on [NMC penalties for doctors' advertising](blog-nmc-penalties-for-doct
 | Search terms | "Skin doctor near me" | Department + city, emergency, facilities |
 | Main risk | One doctor's registration | Several doctors plus the hospital's licence |
 
-Because more people are involved, a hospital needs a clear approval process. Ask the agency who drafts, who checks for compliance, and who signs off on the hospital side.
+Because more people are involved, a hospital needs a clear approval process. Ask the agency who drafts, who checks for compliance, and who signs off on the hospital side. If you run a smaller 10 to 50-bed setup, our guide to choosing a [digital marketing agency for nursing homes](blog-digital-marketing-agency-for-nursing-homes.html) covers that middle ground.
 
 ## How hospital marketing agencies charge
 
