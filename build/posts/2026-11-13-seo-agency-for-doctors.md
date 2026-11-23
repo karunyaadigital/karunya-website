@@ -100,7 +100,7 @@ For pricing questions, our guide on [digital marketing agency cost for doctors](
 
 ## Where Karunya Digital fits
 
-Karunya Digital is a healthcare marketing agency based in Varanasi, founded by Bhanu Pratap Rai, working with 50+ doctor clients. We work only with doctors and hospitals, so the NMC check is part of every page and post.
+Karunya Digital is a healthcare marketing agency based in Varanasi, founded by Bhanu Pratap Rai, working with 50+ doctor clients. We work only with doctors and hospitals, so the NMC check is part of every page and post. If your clinic is in or around Varanasi, our [SEO agency for doctors in Varanasi guide](blog-seo-agency-for-doctors-in-varanasi.html) covers local searches, areas and a Maps checklist.
 
 For SEO, we focus on patient information and being found: clear website pages, a correct Google Business Profile, simple patient-education content and plain monthly reports. You stay the owner of every account, and nothing goes live without your approval. We also write Reel scripts, give shoot guidance and handle editing and posting if you want Instagram too.
 

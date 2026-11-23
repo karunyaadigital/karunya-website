@@ -40,6 +40,7 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-18 | dental clinic marketing agency in varanasi | blog-dental-clinic-marketing-agency-in-varanasi |
 | 2026-11-19 | digital marketing agency for hospitals in varanasi | blog-digital-marketing-agency-for-hospitals-in-varanasi |
 | 2026-11-21 | digital marketing agency for nursing homes | blog-digital-marketing-agency-for-nursing-homes |
+| 2026-11-23 | seo agency for doctors in varanasi | blog-seo-agency-for-doctors-in-varanasi |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -99,13 +100,16 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | dentist marketing agency in lucknow | ? | Found 18 Nov: city + dental; NDC 14 Oct advisory + 13 Nov BDS/MDS scope clarification |
 | dental seo agency india | ? | Found 18 Nov: SEO-only dental scope; don't advertise procedures beyond BDS/MDS scope (NDC, Nov 2026) |
 | hospital social media management services | ? | Found 18 Nov: services-intent variant; hospital stays responsible for agency content (Medical Dialogues, 23 Oct 2026) |
-| hospital seo agency in varanasi | ? | Found 19 Nov: Varanasi; department pages + doctor directory; Medanta/Apollo 400-bed entries raise local competition |
 | multispeciality hospital marketing agency in varanasi | ? | Found 19 Nov: Varanasi; most city hospitals 50-150 beds (Medanta CEO, Mar 2026); NMC hospital factual-info rules |
 | healthcare marketing agency in purvanchal | ? | Found 19 Nov: regional term (Varanasi, Ghazipur, Mirzapur, Jaunpur, Azamgarh); referral-city angle |
 | nursing home marketing agency in varanasi | ? | Found 21 Nov: Varanasi; small 10-50 bed private hospitals; doctor-photo hoarding cleanup (JSMC 16 Nov notice as warning) |
 | maternity home marketing agency | ? | Found 21 Nov: India-wide; maternity nursing homes, no newborn/patient photos, no package offers |
 | digital marketing agency for nursing homes in patna | ? | Found 21 Nov: Patna/Bihar; nursing-home dense city; NMC photo rule |
 | doctor photo hoarding agency alternative | ? | Found 21 Nov: India-wide; what agencies do instead of photo ads after NMC 9 Oct summary + JSMC notice |
+| local seo company in varanasi for clinics | ? | Found 23 Nov: Varanasi; Maps/profile-only scope; area + landmark pages (Lanka, Sigra, Pandeypur) |
+| google business profile management for doctors in varanasi | ? | Found 23 Nov: Varanasi; profile-only service intent; owner-held accounts, NMC review rules |
+| seo agency for doctors in lucknow | ? | Found 23 Nov: Lucknow; city + SEO variant; NMC 8.1 no ranking/review manipulation |
+| healthcare seo agency for hospitals in purvanchal | ? | Found 23 Nov: regional; SSPG 500-bed super-speciality redevelopment (Rs 315.48 cr, NHM) as Purvanchal referral centre |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
