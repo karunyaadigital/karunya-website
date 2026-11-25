@@ -27,6 +27,8 @@ Recent news reports show healthcare in Varanasi expanding. Two examples:
 
 As large hospitals grow, private clinics and smaller hospitals still need patients to find them and understand what they offer. With big centres described as serving eastern UP, many patients are new to the city and search on their phones before they come. Clear, correct information on Google and Instagram helps them reach the right doctor.
 
+If your clinic is in a nearby district such as Ghazipur, Jaunpur, Mirzapur or Azamgarh, see our guide to choosing a [healthcare marketing agency in Purvanchal](blog-healthcare-marketing-agency-in-purvanchal.html).
+
 ## General agency vs healthcare-focused agency in Varanasi
 
 Both can do good work. The difference is mainly in rule awareness and the kind of content they create.
