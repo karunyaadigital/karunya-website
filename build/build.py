@@ -387,13 +387,14 @@ def game_page():
 <section class="kg-sec" aria-labelledby="kg-h">
  <div class="wrap kg-grid">
   <div class="kg-intro">
-   <p class="og-tag">Karunya Games &middot; Free &middot; 60 seconds</p>
+   <p class="og-tag">Karunya Games &middot; Free &middot; 4 levels</p>
    <h1 id="kg-h">Doctor Saheb <mark>Famous</mark> Kaise Bane?</h1>
-   <p>A quick game for doctors. Catch the marketing that brings patients, like Reels, real Google reviews and a strong Google Business Profile. Dodge the mistakes that hurt a clinic, like fake reviews and "100% cure" claims.</p>
+   <p>A game for doctors. Take your clinic from your mohalla to all of India by catching the marketing that brings patients, and dodging the mistakes that hurt a clinic, like fake reviews and "100% cure" claims.</p>
    <ul class="kg-how">
-    <li><b>1</b><span>Move the doctor left and right with your finger, mouse or arrow keys.</span></li>
-    <li><b>2</b><span>Catch the white cards. Avoid the red ones. You have 3 lives.</span></li>
-    <li><b>3</b><span>Grab the lime <b style="display:inline;background:none;color:#D1FF42;width:auto;height:auto">K</b> card for 6 seconds of double points and a shield.</span></li>
+    <li><b>1</b><span>Pick your doctor, then move left and right with your finger, mouse or arrow keys.</span></li>
+    <li><b>2</b><span>Catch the white cards, avoid the red ones. Combos multiply your points up to 4x.</span></li>
+    <li><b>3</b><span>Clear 4 levels: Mohalla, Shehar, Pradesh and Poora India. A quick true-or-false question follows each one.</span></li>
+    <li><b>4</b><span>Grab power-ups: the lime K card, Strong Hook, Content Plan and Patient Trust.</span></li>
    </ul>
    <p class="kg-note">Every red card you catch comes with a real-life lesson at the end, based on Google's rules and the NMC guidelines for doctors.</p>
   </div>
@@ -403,39 +404,65 @@ def game_page():
    <div class="kg-hud" id="kg-hud">
     <div class="kg-row">
      <div class="kg-pill">⭐ <b id="kg-score">0</b></div>
-     <div class="kg-pill">🧑‍🤝‍🧑 Patients <b id="kg-patients">0</b></div>
+     <div class="kg-pill" id="kg-level">L1 · Mohalla</div>
      <div class="kg-pill" id="kg-lives">❤️❤️❤️</div>
     </div>
     <div class="kg-time"><i id="kg-timefill"></i></div>
-    <div class="kg-boost" id="kg-boostTag"><span>⚡ KARUNYA BOOST – Double Points!</span></div>
    </div>
-   <div class="kg-ctrl"><button type="button" id="kg-fs" aria-label="Full screen">⛶</button><button type="button" id="kg-mute" aria-label="Sound on or off">🔊</button></div>
+   <div class="kg-ctrl"><button type="button" id="kg-pause" aria-label="Pause">⏸</button><button type="button" id="kg-fs" aria-label="Full screen">⛶</button><button type="button" id="kg-mute" aria-label="Sound on or off">🔊</button></div>
 
    <div class="kg-ov" id="kg-startScreen">
     <div class="kg-brand"><div class="kg-k"><span>K</span><i></i></div><div class="kg-wm">Karunýa<small>DIGITAL</small></div></div>
     <h2>Doctor Saheb<br><mark>Famous</mark> Kaise Bane?</h2>
-    <p class="kg-sub">Doctor ko left-right chalao. Sahi marketing pakdo, galtiyon se bacho. 60 second mein kitne patients tak pahunch sakte ho?</p>
+    <p class="kg-sub">Mohalle se poore India tak, 4 level. Sahi marketing pakdo, galtiyon se bacho.</p>
+    <div class="kg-pick" role="group" aria-label="Apna doctor chuno">
+     <button type="button" data-avatar="m" aria-pressed="true"><i>👨‍⚕️</i>Dr. Saheb</button>
+     <button type="button" data-avatar="f" aria-pressed="false"><i>👩‍⚕️</i>Dr. Sahiba</button>
+    </div>
     <div class="kg-legend">
-     <div class="kg-lg good"><h4>✅ Pakdo</h4>🎬 Reels<br>⭐ Asli Reviews<br>📍 GMB · 🔍 SEO<br>📢 Meta Ads<br>💬 WhatsApp · 🌐 Website</div>
-     <div class="kg-lg bad"><h4>❌ Bacho</h4>🤥 Fake Reviews<br>🚫 "100% Cure" claims<br>😴 Inactive Page<br>💸 Random Boost<br>🙈 DM Ignore</div>
-     <div class="kg-lg gold">⚡ <b>Lime "K" card</b> pakdo = Karunya Team aa gayi! 6 second Double Points + Shield 🛡️</div>
+     <div class="kg-lg good"><h4>✅ Pakdo</h4>🎬 Reels · ⭐ Reviews<br>📍 GMB · 🔍 SEO<br>📢 Ads · 🌐 Website</div>
+     <div class="kg-lg bad"><h4>❌ Bacho</h4>🤥 Fake Reviews<br>🚫 "100% Cure"<br>🙈 DM Ignore</div>
+     <div class="kg-lg gold"><b>Power-ups:</b> ⚡ K card = 2x points + shield · 🧲 Strong Hook · 🗓️ Content Plan · ❤️ Patient Trust<br><b>Combo</b> banao: 5 = x2, 10 = x3, 20 = x4</div>
     </div>
     <button type="button" class="kg-btn lime" id="kg-playBtn">▶ Game Shuru Karo</button>
-    <p class="kg-hint">📱 Ungli se drag karo &nbsp;·&nbsp; 💻 Mouse ya ← → keys</p>
+    <p class="kg-hint"><span id="kg-menuBest"></span><br>📱 Ungli se drag karo &nbsp;·&nbsp; 💻 Mouse ya ← → keys</p>
+   </div>
+
+   <div class="kg-ov kg-quiz" id="kg-quiz" hidden>
+    <p class="kg-qtag" id="kg-qTag"></p>
+    <h3>Sahi ya Galat?</h3>
+    <p class="kg-qtext" id="kg-qText"></p>
+    <div class="kg-row2" id="kg-qBtns">
+     <button type="button" class="kg-btn lime" id="kg-qYes">✅ Sahi</button>
+     <button type="button" class="kg-btn red" id="kg-qNo">❌ Galat</button>
+    </div>
+    <p class="kg-qres" id="kg-qRes" hidden></p>
+    <button type="button" class="kg-btn lime" id="kg-qNext" hidden>Aage badho →</button>
+   </div>
+
+   <div class="kg-ov" id="kg-pauseScreen" hidden>
+    <h2>Game ruka hua hai</h2>
+    <p class="kg-sub">Patients intezaar kar rahe hain.</p>
+    <div class="kg-row2">
+     <button type="button" class="kg-btn lime" id="kg-resumeBtn">▶ Wapas Khelo</button>
+     <button type="button" class="kg-btn ghost" id="kg-quitBtn">Game chhodo</button>
+    </div>
    </div>
 
    <div class="kg-ov" id="kg-endScreen" hidden>
-    <div class="kg-rank">Aapka Rank</div>
+    <div class="kg-rank" id="kg-endTag">Aapka Rank</div>
     <div class="kg-rankname" id="kg-rankName">—</div>
     <div class="kg-stats">
      <div class="kg-stat"><b id="kg-fScore">0</b><small>Score</small></div>
      <div class="kg-stat"><b id="kg-fPatients">0</b><small>Patients</small></div>
      <div class="kg-stat"><b id="kg-fBest">0</b><small>Best</small></div>
     </div>
+    <div class="kg-mini" id="kg-mini"></div>
+    <div class="kg-badges" id="kg-badges"></div>
     <div class="kg-lessons" id="kg-lessons"></div>
-    <p class="kg-ctaq">Game mein toh ho gaya — <b>asli clinic</b> ko bhi famous banana hai? 👇</p>
+    <p class="kg-ctaq">Game mein toh ho gaya. <b>Asli clinic</b> ko bhi famous banana hai? 👇</p>
     <a class="kg-btn wa" id="kg-waBtn" href="{wa()}" target="_blank" rel="noopener">💬 WhatsApp pe Baat Karein</a>
-    <div class="kg-contact">WhatsApp: {WA_TXT} · Call: {CALL_TXT}<br>Karunya Digital — Healthcare Marketing Agency, Varanasi</div>
+    <div class="kg-contact">WhatsApp: {WA_TXT} · Call: {CALL_TXT}</div>
     <div class="kg-row2">
      <button type="button" class="kg-btn lime" id="kg-againBtn">↻ Dobara Khelo</button>
      <button type="button" class="kg-btn ghost" id="kg-copyBtn">📋 Score Copy Karo</button>
@@ -447,7 +474,7 @@ def game_page():
 </section>
 </main>
 """
-    h = head("Free marketing game for doctors | Karunya Digital", "Doctor Saheb Famous Kaise Bane? A free 60-second game for doctors: catch Reels, Google reviews and SEO, dodge fake reviews and NMC mistakes.", "game")
+    h = head("Free marketing game for doctors | Karunya Digital", "Doctor Saheb Famous Kaise Bane? A free 4-level game for doctors: catch Reels, Google reviews and SEO, dodge fake reviews and NMC mistakes, and earn badges.", "game")
     h = h.replace('<link rel="stylesheet" href="css/style.css">', '<link rel="stylesheet" href="css/style.css">\n<link rel="stylesheet" href="css/game.css">')
     return h + header("Game") + body + footer().replace('<script src="js/main.js" defer></script>', '<script src="js/main.js" defer></script>\n<script src="js/game.js" defer></script>')
 

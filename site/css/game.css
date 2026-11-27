@@ -76,3 +76,41 @@
   .kg-how,.kg-note{display:none!important}
   .kg{height:calc(100svh - 90px);min-height:540px;border-radius:20px}
 }
+
+/* v2: levels, doctor picker, quiz, pause, badges */
+.kg-ov{justify-content:flex-start}
+.kg-ov>:first-child{margin-top:auto}
+.kg-ov>:last-child{margin-bottom:auto}
+.kg-ov h3{font:400 28px/1.1 "Waylimo",Georgia,serif;margin:0 0 12px;color:#fff}
+.kg-ctrl #kg-pause{display:none}
+.kg-pick{display:flex;gap:10px;margin:0 0 14px}
+.kg-pick button{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:999px;border:1.5px solid rgba(176,224,230,.4);background:rgba(1,42,94,.6);color:#fff;font:700 14px "Figtree",sans-serif;cursor:pointer}
+.kg-pick button i{font-style:normal;font-size:22px}
+.kg-pick button[aria-pressed="true"]{background:#D1FF42;color:#012A5E;border-color:#D1FF42}
+.kg-btn.red{background:#E0475B;color:#fff;box-shadow:0 6px 0 #a82c3d}
+.kg-qtag{display:inline-block;background:#D1FF42;color:#012A5E;font-weight:700;font-size:13px;border-radius:999px;padding:5px 14px;margin:0 0 16px}
+.kg-qtext{background:#F3F6FA;color:#012A5E;border-radius:18px;padding:18px 18px;font-size:17px;font-weight:700;line-height:1.45;max-width:340px;margin:0 0 20px}
+.kg-qres{background:rgba(1,42,94,.75);border:1px solid rgba(176,224,230,.3);border-radius:16px;padding:14px 16px;font-size:14px;line-height:1.5;max-width:340px;margin:0 0 18px;color:#fff}
+.kg-qres b{display:block;margin-bottom:6px;font-size:15px}
+.kg-qres b.ok{color:#D1FF42}
+.kg-qres b.no{color:#ffb3bd}
+.kg-qres[hidden],.kg-row2[hidden],.kg-btn[hidden]{display:none}
+.kg-mini{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;font-size:12.5px;color:#B0E0E6;margin:0 0 12px}
+.kg-mini b{color:#fff}
+.kg-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:350px;margin:0 0 14px}
+.kg-badges span{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;padding:5px 10px 5px 7px;border-radius:999px;border:1px dashed rgba(176,224,230,.4);color:rgba(176,224,230,.6);position:relative}
+.kg-badges span i{font-style:normal;font-size:14px;filter:grayscale(1);opacity:.5}
+.kg-badges span.on{border:1px solid #D1FF42;background:rgba(209,255,66,.12);color:#fff}
+.kg-badges span.on i{filter:none;opacity:1}
+.kg-badges span.new::after{content:"NEW";position:absolute;top:-7px;right:-4px;background:#D1FF42;color:#012A5E;font-size:8px;padding:1px 5px;border-radius:999px}
+.kg-stats{margin-bottom:10px}
+.kg-lessons{margin-bottom:12px}
+.kg-contact{margin:8px 0 12px}
+.kg-legend{margin-bottom:14px}
+.kg-sub{margin-bottom:12px}
+@media (max-width:860px){.kg-ov h2{font-size:28px}.kg{min-height:600px}}
+.kg-ov{padding-bottom:64px}
+.kg-playing .kg-ctrl{top:68px;bottom:auto;right:8px;flex-direction:column;gap:6px;opacity:.75}
+.kg-playing .kg-ctrl button{width:32px;height:32px;font-size:13px}
+@media (max-width:860px){.kg-intro p:not(.og-tag){display:none}.kg-intro h1{margin-bottom:0}}
+.kg-end .kg-ctrl{display:none}.kg-ctaq{max-width:340px}
