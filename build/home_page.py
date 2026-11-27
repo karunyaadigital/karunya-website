@@ -182,10 +182,10 @@ def home_body(ctx):
     blog = ""
     if posts:
         f0 = posts[0]
-        blog = (f'<a class="bp-main" href="{f0["slug"]}.html" data-r><img src="media/blog/{f0["slug"]}.jpg" alt="" width="1200" height="630" loading="lazy">'
+        blog = (f'<a class="bp-main" href="{f0["slug"]}.html" data-r><img src="media/blog/{f0["slug"]}.jpg" alt="{f0["title"]}" width="1200" height="630" loading="lazy">'
                 f'<span class="bp-c">{f0["category"]} · {f0["minutes"]} min read</span><h3>{f0["title"]}</h3><p>{f0.get("description", "")}</p></a>')
         blog += '<div class="bp-side">' + "".join(
-            f'<a class="bp-s" href="{p["slug"]}.html" data-r><img src="media/blog/{p["slug"]}.jpg" alt="" width="1200" height="630" loading="lazy"><span><span class="bp-c">{p["category"]}</span><b>{p["title"]}</b></span></a>'
+            f'<a class="bp-s" href="{p["slug"]}.html" data-r><img src="media/blog/{p["slug"]}.jpg" alt="{p["title"]}" width="1200" height="630" loading="lazy"><span><span class="bp-c">{p["category"]}</span><b>{p["title"]}</b></span></a>'
             for p in posts[1:]) + '</div>'
     return f"""<main id="main">
 <section class="hero3" aria-labelledby="hero-h">

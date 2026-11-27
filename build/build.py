@@ -1,4 +1,4 @@
-import os, urllib.parse
+import os, json, urllib.parse
 from art import *
 from specs import *
 from audit import *
@@ -66,10 +66,29 @@ def head(title, desc, page):
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://karunyadigital.online/#org","name":"Karunya Digital","url":"https://karunyadigital.online/","description":"Healthcare digital marketing agency in Varanasi for doctors, clinics and hospitals across India: Instagram reels, Google Business Profile, SEO and doctor branding","logo":"https://karunyadigital.online/assets/icon-blue-512.png","image":"https://karunyadigital.online/assets/icon-blue-512.png","knowsAbout":["Social media management for doctors","Healthcare marketing","SEO for doctors","Google Business Profile","NMC advertising guidelines"],"founder":{{"@type":"Person","name":"Bhanu Pratap Rai","sameAs":"{IG_FOUNDER}"}},"sameAs":["{IG_KARUNYA}"],"telephone":"{CALL}","openingHours":"Mo-Sa 10:00-19:00","address":{{"@type":"PostalAddress","streetAddress":"Taktakpur Road, Near Mahavir Mandir","addressLocality":"Varanasi","postalCode":"221001","addressRegion":"Uttar Pradesh","addressCountry":"IN"}},"areaServed":["Varanasi","Lucknow","Prayagraj","Kanpur","Gorakhpur","Meerut","Agra","Greater Noida","Patna","Uttar Pradesh","Bihar",{{"@type":"Country","name":"India"}}]}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Karunya Digital","alternateName":["Karunya Digital Varanasi","Karunya Digital healthcare marketing agency"],"url":"https://karunyadigital.online/"}}</script>
 </head>
 <body class="page-{page}">
 <a class="skip" href="#main">Skip to content</a>
 '''
+
+
+def page_ld(html, name, url, faq=None, service=None):
+    """Add BreadcrumbList (+ FAQPage / Service) structured data to a page."""
+    base = "https://karunyadigital.online/"
+    out = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": base},
+        {"@type": "ListItem", "position": 2, "name": name, "item": base + url}]}]
+    if faq:
+        out.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]})
+    if service:
+        out.append({"@context": "https://schema.org", "@type": "Service", "name": service, "serviceType": service, "url": base + url,
+                    "provider": {"@type": "ProfessionalService", "name": "Karunya Digital", "url": base},
+                    "areaServed": [{"@type": "City", "name": "Varanasi"}, {"@type": "Country", "name": "India"}],
+                    "audience": {"@type": "Audience", "audienceType": "Doctors, clinics and hospitals"}})
+    tags = "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False)}</script>\n' for o in out)
+    return html.replace("</head>", tags + "</head>", 1)
 
 
 def header(active):
@@ -466,7 +485,7 @@ def nice_date(d):
 
 def post_card(p):
     cov = f'media/blog/{p["slug"]}.jpg'
-    art = f'<img src="{cov}" alt="" width="1200" height="630" loading="lazy">' if os.path.exists(os.path.join(OUT, cov)) else icon(CAT_ICON.get(p["category"], "calendar"), 200)
+    art = f'<img src="{cov}" alt="{_html.escape(p["title"], quote=True)}" width="1200" height="630" loading="lazy">' if os.path.exists(os.path.join(OUT, cov)) else icon(CAT_ICON.get(p["category"], "calendar"), 200)
     return (f'<a class="pcard rv" href="{p["slug"]}.html"><div class="pc-art{" has-img" if "<img" in art else ""}">{art}</div>'
             f'<span class="pc-cat">{p["category"]}</span><h3>{_html.escape(p["title"])}</h3><p>{_html.escape(p.get("description", ""))}</p>'
             f'<span class="pc-meta">{nice_date(p.get("date", ""))} &middot; {p["minutes"]} min read</span></a>')
@@ -560,9 +579,9 @@ def blog_preview():
     if not posts:
         return ""
     f0 = posts[0]
-    main = (f'<a class="bp-main rv" href="{f0["slug"]}.html"><img src="media/blog/{f0["slug"]}.jpg" alt="" width="1200" height="630" loading="lazy">'
+    main = (f'<a class="bp-main rv" href="{f0["slug"]}.html"><img src="media/blog/{f0["slug"]}.jpg" alt="{_html.escape(f0["title"], quote=True)}" width="1200" height="630" loading="lazy">'
             f'<span class="pc-cat">{f0["category"]} · {f0["minutes"]} min read</span><h3>{_html.escape(f0["title"])}</h3><p>{_html.escape(f0.get("description", ""))}</p></a>')
-    side = "".join(f'<a class="bp-s rv" href="{p["slug"]}.html"><img src="media/blog/{p["slug"]}.jpg" alt="" width="1200" height="630" loading="lazy"><span><span class="pc-cat">{p["category"]}</span><b>{_html.escape(p["title"])}</b></span></a>' for p in posts[1:])
+    side = "".join(f'<a class="bp-s rv" href="{p["slug"]}.html"><img src="media/blog/{p["slug"]}.jpg" alt="{_html.escape(p["title"], quote=True)}" width="1200" height="630" loading="lazy"><span><span class="pc-cat">{p["category"]}</span><b>{_html.escape(p["title"])}</b></span></a>' for p in posts[1:])
     return f'''<section class="sec light" aria-labelledby="bl-h"><div class="wrap">
  <p class="og-tag lt rv">From the blog</p>
  <h2 id="bl-h" class="rv">Guides for doctors who want to be found.</h2>
@@ -945,7 +964,8 @@ def spec_page(k):
 </div></section>
 </main>
 '''
-    return head(f"{sp['name']} Marketing Agency for {'Dentists' if k == 'dental' else 'Doctors'} | Karunya Digital, Varanasi", f"{sp['name']} marketing agency in Varanasi for doctors across India: NMC-safe Instagram reels, Google Business Profile and SEO.", k) + header(sp["short"]) + body + footer()
+    _h = head(f"{sp['name']} Marketing Agency for {'Dentists' if k == 'dental' else 'Doctors'} | Karunya Digital, Varanasi", f"{sp['name']} marketing agency in Varanasi for doctors across India: NMC-safe Instagram reels, Google Business Profile and SEO.", k) + header(sp["short"]) + body + footer()
+    return page_ld(_h, f"{sp['name']} marketing for doctors", sp["file"], service=f"{sp['name']} marketing for doctors and clinics")
 
 
 # ------------------------------------------------------------------ SERVICES
@@ -996,7 +1016,8 @@ def services():
 </div></section>
 </main>
 '''
-    return head("Digital Marketing Services for Doctors & Hospitals | Karunya Digital, Varanasi", "Healthcare digital marketing services from Varanasi: social media management, Instagram reels, Google Business Profile, SEO and branding for doctors and hospitals.", "services") + header("Services") + body + footer()
+    _h = head("Digital Marketing Services for Doctors & Hospitals | Karunya Digital, Varanasi", "Healthcare digital marketing services from Varanasi: social media management, Instagram reels, Google Business Profile, SEO and branding for doctors and hospitals.", "services") + header("Services") + body + footer()
+    return page_ld(_h, "Services", "services.html", faq=faq, service="Healthcare digital marketing for doctors and hospitals")
 
 
 # ------------------------------------------------------------------ WORK
