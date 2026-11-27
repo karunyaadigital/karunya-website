@@ -32,7 +32,7 @@ A hospital's online presence has more moving parts than a clinic's. The core wor
 | Local SEO | Location pages, consistent name/address/phone across listings | Helps you appear for department + city searches |
 | Compliance review | Every post checked against NMC rules before it goes live | The hospital and its doctors carry the risk |
 
-If you want the detail behind the Google part, our [Google Business Profile guide for doctors](blog-google-business-profile-for-doctors.html) and [SEO for doctors guide](blog-seo-for-doctors.html) explain it step by step.
+If you want the detail behind the Google part, our [Google Business Profile guide for doctors](blog-google-business-profile-for-doctors.html) and [SEO for doctors guide](blog-seo-for-doctors.html) explain it step by step. If you only need search work for a bigger hospital site, see our guide to hiring a [hospital SEO agency](blog-hospital-seo-agency.html).
 
 ## What the NMC 2026 rules mean for hospital marketing
 

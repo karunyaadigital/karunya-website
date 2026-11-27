@@ -42,6 +42,7 @@ Volumes are monthly Google searches in India (research on 1 Nov 2026). Low = und
 | 2026-11-21 | digital marketing agency for nursing homes | blog-digital-marketing-agency-for-nursing-homes |
 | 2026-11-23 | seo agency for doctors in varanasi | blog-seo-agency-for-doctors-in-varanasi |
 | 2026-11-25 | healthcare marketing agency in purvanchal | blog-healthcare-marketing-agency-in-purvanchal |
+| 2026-11-27 | hospital seo agency | blog-hospital-seo-agency |
 
 ## Focus (owner, 7 Nov 2026)
 Only agency-hiring keywords from now on: what people type when they look for, compare or hire a digital marketing agency. Older general-topic ideas are kept at the bottom for reference only, not as primary keywords.
@@ -55,7 +56,6 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | digital marketing agency in lucknow | ? | Found 9 Nov: broader city term; many blogspot "top company" lists rank for it |
 | healthcare digital marketing company in lucknow | ? | Found 9 Nov: "company" variant used by Lucknow listing pages |
 | hospital digital marketing services | ? | Found 9 Nov: services-intent variant; hospital factual-info rules (departments, facilities, packages) |
-| hospital seo agency | ? | Found 9 Nov: department pages + doctor directory angle |
 | marketing agency for multispeciality hospital | ? | Found 9 Nov: approval process across many doctors |
 | best digital marketing agency for doctors | ? | "best" only as the search phrase; never a claim about Karunya |
 | healthcare seo pricing india | ? | Found 10 Nov: competitor pages target "seo pricing healthcare"; SEO-only scope vs full retainer |
@@ -114,6 +114,10 @@ Only agency-hiring keywords from now on: what people type when they look for, co
 | digital marketing agency for doctors in jaunpur | ? | Found 25 Nov: Jaunpur; govt medical college since 2021; district + Varanasi referral angle |
 | doctor marketing agency in azamgarh | ? | Found 25 Nov: Azamgarh; Govt Medical College & Super Facility Hospital; remote agency angle |
 | google ask maps for clinics agency | ? | Found 25 Nov: India-wide; Ask Maps (SEJ, Jun 2026) uses profile hours/attributes/reviews; profile-management service intent |
+| hospital seo company in varanasi | ? | Found 27 Nov: Varanasi; city + hospital SEO variant; department pages, one profile per real branch |
+| seo agency for multispeciality hospital | ? | Found 27 Nov: India-wide; Semrush/Clutch "healthcare SEO services India" listing pages rank; doctor directory + approvals |
+| hospital seo agency in lucknow | ? | Found 27 Nov: Lucknow; hospital-dense city; NMC 8.1(xii) no ranking/review manipulation |
+| core update recovery for hospital websites | ? | Found 27 Nov: India-wide; Nov 2026 core update done 24 Nov, Dec 2026 core update preannounced (SER); agency-audit intent |
 
 ## Old backlog (reference only, not primary keywords)
 | Keyword | Volume | Notes / angle |
