@@ -718,12 +718,26 @@ def home():
 </section>
 {ticker()}
 
-<section class="sec white ad-sec" aria-labelledby="ad-h"><div class="wrap about-grid">
- <div><p class="og-tag lt rv">Watch</p><h2 id="ad-h" class="rv">Karunya Digital in 45 seconds.</h2>
- <p class="lead rv">Made exactly the way we make reels for our doctors: a clear hook, a simple story and a reason to act. Tap “Sound on”.</p>
- <a class="btn btn-navy rv" style="margin-top:22px" href="{wa("Hello Karunya Digital, I'd like a reel like your 45-second video for my clinic.")}" target="_blank" rel="noopener">{wa_icon(18)}Make one like this for me</a></div>
- <div>{reel("karunya-ad", "Karunya Digital in 45 seconds", "Made the way we make reels for doctors", cls="about-reel")}</div>
-</div></section>
+<section class="sec dark premiere" aria-labelledby="ad-h">
+ <div class="pm-glow" aria-hidden="true"></div>
+ <div class="wrap pm-grid">
+  <div class="pm-copy">
+   <p class="og-tag rv">Now showing</p>
+   <h2 id="ad-h" class="rv">Karunya Digital in 45 seconds.</h2>
+   <p class="lead rv">Made exactly the way we make reels for our doctors: a clear hook, a simple story and a reason to act. Tap “Sound on”.</p>
+   <a class="btn btn-lime rv" style="margin-top:26px" href="{wa("Hello Karunya Digital, I'd like a reel like your 45-second video for my clinic.")}" target="_blank" rel="noopener">{wa_icon(18)}Make one like this for me</a>
+  </div>
+  <div class="pm-stage rv">
+   <span class="pm-ring r1" aria-hidden="true"></span><span class="pm-ring r2" aria-hidden="true"></span>
+   {reel("karunya-ad", "Karunya Digital in 45 seconds", "Made the way we make reels for doctors", cls="pm-reel")}
+  </div>
+  <ol class="pm-beats" aria-label="How every Karunya reel is built">
+   <li class="rv"><b>01</b><div><h3>The hook</h3><p>The first three seconds. One line that makes a patient stop scrolling.</p></div></li>
+   <li class="rv"><b>02</b><div><h3>The story</h3><p>One real question, answered simply, in the language your patients speak.</p></div></li>
+   <li class="rv"><b>03</b><div><h3>The reason to act</h3><p>A clear next step, so the right patient knows how to reach you.</p></div></li>
+  </ol>
+ </div>
+</section>
 
 <section class="sec light story" id="journey" aria-labelledby="story-h">
  <div class="wrap">

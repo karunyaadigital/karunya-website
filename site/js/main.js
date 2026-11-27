@@ -220,7 +220,7 @@
     var cv = document.createElement("canvas"); cv.className = "trail"; cv.setAttribute("aria-hidden", "true");
     document.body.appendChild(cv); document.body.appendChild(dot);
     var ctx = cv.getContext("2d"), dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var DARK = ".hero,.dark,.cta-band,.page-hero,.site-footer,.a-hero,.spec-hero,.ghat-cap,.founder,.bridge-sec,.pricing";
+    var DARK = ".hero,.dark,.cta-band,.page-hero,.site-footer,.a-hero,.spec-hero,.ghat-cap,.founder,.bridge-sec,.pricing,.premiere";
     var mx = -100, my = -100, hx = -100, hy = -100, pts = [], light = false, raf = 0, lastT = null;
     function size() { cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
     size(); window.addEventListener("resize", size);
