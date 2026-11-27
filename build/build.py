@@ -42,6 +42,9 @@ def canon(page):
 
 
 def head(title, desc, page):
+    if len(title) > 65 and " | " in title:
+        short = title.rsplit(" | ", 1)[0]
+        title = short if len(short) >= 30 else title
     return f'''<!doctype html>
 <html lang="en-IN">
 <head>
@@ -141,7 +144,10 @@ GUIDE_CITIES = ["Varanasi", "Lucknow", "Prayagraj", "Patna", "Gorakhpur", "Kanpu
 
 def footer_guides():
     posts = globals().get("POSTS") or []
-    links = ['<a href="healthcare-marketing-agency-varanasi.html">Healthcare marketing agency in Varanasi</a>']
+    links = ['<a href="healthcare-marketing-agency-varanasi.html">Healthcare marketing agency in Varanasi</a>',
+             '<a href="google-business-profile-management-for-doctors.html">Google Business Profile for doctors</a>',
+             '<a href="instagram-reels-for-doctors.html">Instagram Reels for doctors</a>',
+             '<a href="seo-services-for-doctors.html">SEO services for doctors</a>']
     for c in GUIDE_CITIES:
         m = [p for p in posts if c.lower() in p.get("keyword", "").lower()]
         m.sort(key=lambda p: (len(p.get("keyword", "")), p.get("date", "")))
@@ -809,6 +815,8 @@ def home():
 
 {blog_preview()}
 
+{home_faq()}
+
 <section class="sec white seo-sec" aria-labelledby="seo-h"><div class="wrap seo-grid">
  <h2 id="seo-h" class="rv">A social media and marketing agency for doctors</h2>
  <div class="rv">
@@ -820,11 +828,33 @@ def home():
 
 </main>
 '''
-    return head("Healthcare Digital Marketing Agency for Doctors in Varanasi & India | Karunya Digital", "Healthcare digital marketing agency in Varanasi for doctors, clinics and hospitals across India: Instagram reels, Google Business Profile, SEO. 50+ doctors.", "home") + header("Home") + body + footer()
+    _h = head("Healthcare Digital Marketing Agency for Doctors | Karunya Digital", "Healthcare digital marketing agency in Varanasi for doctors, clinics and hospitals across India: Instagram reels, Google Business Profile, SEO. 50+ doctors.", "home") + header("Home") + body + footer()
+    return page_ld(_h, "Healthcare marketing agency for doctors", "", faq=HOME_FAQ)
 
 
 
 # ------------------------------------------------------------------ VARANASI LANDING (local SEO)
+HOME_FAQ = [
+    ("What does a healthcare marketing agency do for a doctor?", "It makes you easy to find and easy to trust online. For our doctors that means patient-education Reels, a complete Google Business Profile, SEO for your clinic's name and services, and a consistent look everywhere, with a clear report every month."),
+    ("Which doctors and hospitals does Karunya Digital work with?", "Only healthcare. We work with gynaecologists, IVF specialists, orthopaedic surgeons, dentists, pulmonologists, physicians, clinics, nursing homes and multi-speciality hospitals. 50+ doctors across India work with us from our Varanasi office."),
+    ("Is my marketing safe under the NMC 2026 guidelines?", "Yes. Every post is planned as patient education and checked against the NMC's Guidelines on Ethical Advertising and Public Communication (October 2026). No testimonials, no before/after photos, no 'best doctor' claims and no discount offers. Nothing goes live without your approval."),
+    ("I'm not comfortable on camera. Can you still help?", "Yes. We write the script and guide you on what to say, where to stand and which light to use, so most doctors record on their own phone in a few minutes. If you prefer not to appear, voiceover and motion-graphic videos work too."),
+    ("How much of my time does it take every month?", "One call to start. After that, you approve the monthly content calendar and give a little time for recording. Scripts, editing, captions, posting, Google updates and reports are handled by our team."),
+    ("Do I need to be in Varanasi to work with you?", "No. Our office is on Taktakpur Road, Varanasi, and we work with doctors in Meerut, Lucknow, Prayagraj, Agra, Greater Noida, Bihar and other cities over WhatsApp and calls."),
+    ("How do I get started?", "Take the free 2-minute Google + Instagram check, or send us a WhatsApp message. We look at your profiles, have a short call, and share a written plan made for your speciality and city."),
+]
+
+
+def home_faq():
+    rows = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in HOME_FAQ)
+    return f'''<section class="sec light" id="faq" aria-labelledby="hfaq-h"><div class="wrap">
+ <p class="og-tag lt rv">Before you message us</p>
+ <h2 id="hfaq-h" class="rv">Questions doctors ask us first.</h2>
+ <div class="faq rv">{rows}</div>
+ <p class="lead rv" style="margin-top:26px">More questions? See our <a href="services.html">services</a>, read the <a href="blog.html">guides for doctors</a>, or <a href="{wa()}" target="_blank" rel="noopener">ask us on WhatsApp</a>.</p>
+</div></section>'''
+
+
 VNS_SLUG = "healthcare-marketing-agency-varanasi"
 VNS_FAQ = [
     ("Where is Karunya Digital's office in Varanasi?", "Our office is on Taktakpur Road, near Mahavir Mandir, Varanasi, Uttar Pradesh 221001. We are open Monday to Saturday, 10am to 7pm."),
@@ -887,6 +917,122 @@ def varanasi_page():
     h = head("Healthcare Digital Marketing Agency in Varanasi for Doctors | Karunya Digital", "Healthcare digital marketing agency in Varanasi for doctors, dentists and hospitals: Google Maps, Instagram Reels, SEO. NMC-safe. Taktakpur Road office.", VNS_SLUG)
     h = h.replace("</head>", f'<script type="application/ld+json">{svc}</script>\n<script type="application/ld+json">{bc}</script>\n<script type="application/ld+json">{faq}</script>\n</head>')
     return h + header("") + body + footer()
+
+# ------------------------------------------------------------------ SERVICE LANDING PAGES
+NMC_LINE = "Every post is planned as patient education and checked against the NMC's Guidelines on Ethical Advertising and Public Communication (October 2026). Nothing goes live without your approval."
+SVC_PAGES = {
+    "google-business-profile-management-for-doctors": {
+        "nav": "Google Business Profile for doctors", "svc": "gmb",
+        "title": "Google Business Profile Management for Doctors | Karunya Digital",
+        "desc": "Google Business Profile management for doctors, clinics and hospitals: complete profile, weekly posts, review replies and a monthly report. NMC-safe.",
+        "h1": "Google Business Profile management for doctors",
+        "sub": "When a patient searches \u201cdoctor near me\u201d, Google Maps answers first. We keep your profile complete, correct and active, so the right patients can call you or ask for directions.",
+        "h2": "Be the doctor patients find on Google Maps",
+        "intro": ["Most patients never reach a clinic's website. They see the Google profile: your name, speciality, timings, photos and reviews, and decide in a few seconds. A half-filled profile with the wrong timing or an old phone number quietly sends them elsewhere.",
+                  "Karunya Digital manages Google Business Profiles for doctors, dentists, clinics and hospitals. We work only in healthcare, so we know what a patient looks for and what the medical rules allow."],
+        "points": [("A complete, correct profile", "Name, address, phone, timings, services, departments, service area and photos, checked and kept up to date."),
+                   ("Weekly Google posts", "Short patient-education updates and health-day posts that keep your profile active."),
+                   ("Review replies in your tone", "Polite, professional replies to every review. We never buy, write or solicit reviews."),
+                   ("Patient questions answered", "Clear answers to the common questions people ask on your profile."),
+                   ("A monthly report", "Profile views, calls and direction requests, explained in plain words.")],
+        "why": ("Why doctors need a healthcare-only team for Google", "A Google profile for a clinic is not the same as one for a shop. Medical categories, doctor-and-hospital listings at the same address, and the NMC and National Dental Commission rules on reviews and claims all need care. We set the profile up correctly once, then keep it active every week."),
+        "steps": ["We check your current profile and share the top fixes.", "We complete and correct every section, with your approval.", "We post weekly and reply to reviews in your tone.", "You get a monthly report with calls and direction requests."],
+        "faq": [("What is Google Business Profile management for doctors?", "It is the regular work of keeping a doctor's or clinic's Google listing complete, correct and active: details, photos, services, posts, review replies and a monthly report, so patients searching nearby can find and contact you."),
+                ("Can you get me more Google reviews?", "We help you reply to reviews professionally and make it easy for patients to find your profile. We never buy, write or solicit reviews, because the NMC guidelines and Google's own policies do not allow it."),
+                ("Do you manage profiles for hospitals with many doctors?", "Yes. We manage the hospital listing and each doctor's listing so they support each other and patients are not confused."),
+                ("Do I need a website for Google Business Profile?", "No, a profile works without a website. A simple, correct website does help trust and search, and we can guide you on that too."),
+                ("What do I see every month?", "A plain-language report with profile views, calls, direction requests and what we plan next.")],
+        "related": ["blog-google-business-profile-for-doctors", "blog-google-reviews-for-doctors-nmc", "blog-seo-for-doctors"],
+    },
+    "instagram-reels-for-doctors": {
+        "nav": "Instagram Reels for doctors", "svc": "reels",
+        "title": "Instagram Reels & Social Media for Doctors | Karunya Digital",
+        "desc": "Instagram Reels and social media management for doctors: scripts, shoot guidance, editing, captions and posting. Patient education, NMC-safe.",
+        "h1": "Instagram Reels and social media for doctors",
+        "sub": "You know the answers your patients need. We turn them into short, clear Reels in Hindi, Hinglish or English, and handle everything after you press record.",
+        "h2": "Patient education that people actually watch",
+        "intro": ["Patients scroll before they search. A 40-second Reel that answers one real question, in the language your patients speak, builds more trust than any poster. The hard part is finding the time: topics, scripts, editing, captions, posting.",
+                  "Karunya Digital does that part. We work only with doctors and hospitals, with 50+ doctor clients across India, so every script is written for patients and for the medical rules."],
+        "points": [("Topics from real patient questions", "Weekly topics picked from what your patients actually ask in the OPD."),
+                   ("Scripts in your language", "Hindi, Hinglish or English: a 3-second hook, three clear points and a simple next step."),
+                   ("Shoot guidance", "What to say, where to stand and which light to use, so you can record on your phone in minutes."),
+                   ("Editing, captions and thumbnails", "Clean edits, readable captions and a consistent look for your page."),
+                   ("Posting on Instagram and YouTube Shorts", "We publish, write the captions and keep your page regular.")],
+        "why": ("Why doctors choose a healthcare-only social media team", "A general agency writes for likes. Medical content has to be accurate, calm and within the rules. We write patient education, not promotion: no testimonials, no before/after photos, no superlative claims. Not comfortable on camera? Voiceover and motion-graphic Reels work too."),
+        "steps": ["You share the questions patients ask you most.", "We send a monthly content calendar and scripts for your approval.", "You record on your phone with our guidance.", "We edit, caption and post, and report every month."],
+        "faq": [("Do you send a camera crew to my clinic?", "No. We write the scripts and guide your phone shoot (light, sound, framing), then handle editing, captions and posting."),
+                ("Are Reels allowed for doctors under the NMC guidelines?", "Educational content is allowed. What the October 2026 NMC guidelines restrict is promotion: testimonials, before/after content, 'best' or 'guaranteed' claims and solicitation. We plan every Reel as patient education and you approve it before it goes live."),
+                ("I don't have time to shoot. What then?", "Most doctors record a month's Reels in one short sitting. If you prefer not to appear, we make voiceover and motion-graphic videos."),
+                ("Which languages do you write in?", "Hindi, Hinglish and English, based on what your patients speak."),
+                ("Do you also manage Facebook and YouTube?", "Yes. The same content is adapted for Facebook and YouTube Shorts.")],
+        "related": ["blog-instagram-marketing-agency-for-doctors", "blog-social-media-agency-for-doctors", "blog-bio-for-doctors-on-instagram"],
+    },
+    "seo-services-for-doctors": {
+        "nav": "SEO services for doctors", "svc": "calendar",
+        "title": "SEO Services for Doctors, Clinics & Hospitals | Karunya Digital",
+        "desc": "SEO services for doctors, clinics and hospitals in India: local SEO, Google Business Profile, service pages and patient-education content. NMC-safe.",
+        "h1": "SEO services for doctors, clinics and hospitals",
+        "sub": "Patients type their problem and their city into Google. Good SEO makes sure a correct, helpful page about you is what they find.",
+        "h2": "Local SEO built for how patients search",
+        "intro": ["A patient rarely searches for a doctor's name first. They search \u201cgynaecologist in Varanasi\u201d, \u201cknee pain doctor near me\u201d or a question about their symptom. SEO for doctors is the work of being the clear, trustworthy answer to those searches.",
+                  "Karunya Digital does SEO only for healthcare. We combine your Google Business Profile, your website and your patient-education content, so they all point patients to the same correct information."],
+        "points": [("Local SEO and Google Maps", "A complete Google Business Profile and consistent name, address and phone everywhere."),
+                   ("Pages for what you treat", "Clear pages for each service and condition, with your qualifications and registration details."),
+                   ("Patient-education articles", "Answers to the questions patients ask, written in simple language and reviewed by you."),
+                   ("Technical basics done right", "Fast pages, mobile-friendly layout, correct titles and structured data."),
+                   ("A monthly report", "Which searches found you, plus calls and direction requests, in plain words.")],
+        "why": ("Why medical SEO needs a specialist", "Google holds health pages to a higher standard of accuracy and trust, and the NMC guidelines limit what a doctor's page can claim. We write factual, patient-first content with your credentials shown clearly, and we stay away from 'best doctor' and 'guaranteed' language that can put your registration at risk."),
+        "steps": ["Free check of your Google profile and current search presence.", "A plan for your speciality and city, with the pages and topics to build.", "We build and publish, with your approval on every page.", "Monthly report and next month's plan."],
+        "faq": [("How long does SEO take for a doctor?", "Google profile fixes can show within weeks. Website pages and articles build steadily over a few months as Google reads and trusts them."),
+                ("Do I need a website for SEO?", "For Google Maps, a complete profile is the start. For wider searches, a simple website with clear pages for your services helps a lot, and we can guide you on that."),
+                ("Is SEO allowed for doctors under NMC rules?", "Yes. Giving accurate information about your qualifications, services and timings, and educating patients, is allowed. Superlative claims, testimonials and solicitation are not, and we avoid them."),
+                ("Do you do SEO for hospitals?", "Yes. We plan pages for each department and doctor so the hospital and its doctors are found together."),
+                ("Which cities do you work in?", "Our office is in Varanasi and we work with doctors across India, including Lucknow, Prayagraj, Meerut, Patna and Gorakhpur, over WhatsApp and calls.")],
+        "related": ["blog-seo-agency-for-doctors", "blog-seo-for-doctors", "blog-hospital-seo-agency"],
+    },
+}
+
+
+def service_page(slug):
+    d = SVC_PAGES[slug]
+    msg = f"Hello Karunya Digital, I'd like to know more about {d['nav']}."
+    pts = "".join(f'<div class="value"><h3>{t}</h3><p>{x}</p></div>' for t, x in d["points"])
+    steps = "".join(f"<li>{x}</li>" for x in d["steps"])
+    faq_html = "".join(f"<details><summary>{_html.escape(q)}</summary><p>{_html.escape(a)}</p></details>" for q, a in d["faq"])
+    rel = [q for q in POSTS if q["slug"] in d["related"]]
+    rel_cards = "".join(post_card(q) for q in rel)
+    others = "".join(f'<li><a href="{k}.html">{v["nav"]}</a></li>' for k, v in SVC_PAGES.items() if k != slug) + "".join(f'<li><a href="{SPECS[k]["file"]}">{SPECS[k]["name"]} marketing</a></li>' for k in SPECS) + f'<li><a href="{VNS_SLUG}.html">Healthcare marketing agency in Varanasi</a></li>'
+    body = f"""<main id="main">
+{page_hero(d["h1"], d["sub"])}
+<section class="sec light" aria-labelledby="s1-h"><div class="wrap about-grid">
+ <div>
+  <h2 id="s1-h">{d["h2"]}</h2>
+  {"".join(f'<p class="lead">{x}</p>' for x in d["intro"])}
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:22px"><a class="btn btn-wa" href="{wa(msg)}" target="_blank" rel="noopener">{wa_icon(18)}Talk on WhatsApp</a><a class="btn btn-navy" href="audit.html">Get a free check</a></div>
+ </div>
+ <div class="values">{pts}</div>
+</div></section>
+<section class="sec white" aria-labelledby="s2-h"><div class="wrap" style="max-width:860px"><article class="prose">
+ <h2 id="s2-h">{d["why"][0]}</h2>
+ <p>{d["why"][1]}</p>
+ <p>{NMC_LINE}</p>
+ <h2>How it works</h2>
+ <ol>{steps}</ol>
+ <p>We don't publish fixed prices. After a short call we share a written plan and a fixed monthly fee that fits your speciality and city.</p>
+</article>
+ <h2 style="margin-top:48px">Frequently asked questions</h2>
+ <div class="faq">{faq_html}</div>
+</div></section>
+<section class="sec dark" aria-labelledby="s3-h"><div class="wrap">
+ <h2 id="s3-h">More from Karunya Digital</h2>
+ <ul class="topics">{others}</ul>
+</div></section>
+{f'<section class="sec light"><div class="wrap"><h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Guides for doctors</h2><div class="posts">{rel_cards}</div></div></section>' if rel_cards else ''}
+</main>
+"""
+    h = head(d["title"], d["desc"], slug)
+    return page_ld(h, d["nav"], slug + ".html", faq=d["faq"], service=d["nav"]) + header("Services") + body + footer()
+
 
 # ------------------------------------------------------------------ SPECIALTY
 SPEC_WORDS = {"gynae": ["gynae", "women", "maternity"], "ivf": ["ivf", "fertility"], "ortho": ["ortho", "spine", "physio"], "dental": ["dental", "dentist"]}
@@ -987,6 +1133,7 @@ def services():
          ["Your colours and fonts", "Instagram profile, bio and highlight covers", "Thumbnail and cover style", "A consistent look across reels and posts"],
          "A consistent identity helps patients remember you, and builds trust faster.", "I'd like to know more about doctor branding."),
     ]
+    more = {"reels": ' <a class="btn btn-line btn-sm" style="margin-top:12px" href="instagram-reels-for-doctors.html">Reels for doctors, in detail</a>', "gmb": ' <a class="btn btn-line btn-sm" style="margin-top:12px" href="google-business-profile-management-for-doctors.html">Google profile management, in detail</a>'}
     rows = ""
     for k, t, f, ticks, honest, msg in items:
         rows += f'''<article class="svc-detail" id="{k}">
@@ -996,7 +1143,7 @@ def services():
   <p class="for">{f}</p>
   <ul class="ticks">{"".join(f"<li>{x}</li>" for x in ticks)}</ul>
   <p class="honest">{honest}</p>
-  <a class="btn btn-navy btn-sm" href="{wa(msg)}" target="_blank" rel="noopener">{wa_icon(18)}Ask about this</a>
+  <a class="btn btn-navy btn-sm" href="{wa(msg)}" target="_blank" rel="noopener">{wa_icon(18)}Ask about this</a>{more.get(k, "")}
  </div>
 </article>'''
     faq = [
@@ -1198,9 +1345,9 @@ open(os.path.join(OUT, "blog.html"), "w").write(blog_index(POSTS))
 for _p in POSTS:
     open(os.path.join(OUT, _p["slug"] + ".html"), "w").write(blog_post(_p, POSTS))
 BANNED = ["apna hospital", "golden hospital", "aaha rani", "asha rani", "muzammil", "mujammil", "muzzamil"]
-for fn, html in [(VNS_SLUG + ".html", varanasi_page()), ("index.html", home()), ("audit.html", audit_page()), ("game.html", game_page()), ("404.html", page404()), ("services.html", services()), ("work.html", work()), ("about.html", about()), ("contact.html", contact()), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]:
+for fn, html in [(k + ".html", service_page(k)) for k in SVC_PAGES] + [(VNS_SLUG + ".html", varanasi_page()), ("index.html", home()), ("audit.html", audit_page()), ("game.html", game_page()), ("404.html", page404()), ("services.html", services()), ("work.html", work()), ("about.html", about()), ("contact.html", contact()), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]:
     open(os.path.join(OUT, fn), "w").write(html)
-pages = ["", VNS_SLUG + ".html"] + [SPECS[k]["file"] for k in SPECS] + ["blog.html"] + [p["slug"] + ".html" for p in POSTS] + ["audit.html", "game.html", "services.html", "work.html", "about.html", "contact.html", "privacy.html", "terms.html"]
+pages = ["", VNS_SLUG + ".html"] + [k + ".html" for k in SVC_PAGES] + [SPECS[k]["file"] for k in SPECS] + ["blog.html"] + [p["slug"] + ".html" for p in POSTS] + ["audit.html", "game.html", "services.html", "work.html", "about.html", "contact.html", "privacy.html", "terms.html"]
 open(os.path.join(OUT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>https://karunyadigital.online/{p}</loc><lastmod>{datetime.date.today().isoformat()}</lastmod></url>" for p in pages) + "</urlset>")
 for _f in glob.glob(os.path.join(OUT, "*.html")):
     _t = open(_f).read().lower()
