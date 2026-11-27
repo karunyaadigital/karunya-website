@@ -148,6 +148,7 @@ def footer_guides():
              '<a href="google-business-profile-management-for-doctors.html">Google Business Profile for doctors</a>',
              '<a href="instagram-reels-for-doctors.html">Instagram Reels for doctors</a>',
              '<a href="seo-services-for-doctors.html">SEO services for doctors</a>']
+    links += [f'<a href="healthcare-marketing-agency-{c.lower()}.html">Healthcare marketing agency in {c}</a>' for c in ["Lucknow", "Prayagraj", "Meerut", "Patna", "Gorakhpur"]]
     for c in GUIDE_CITIES:
         m = [p for p in posts if c.lower() in p.get("keyword", "").lower()]
         m.sort(key=lambda p: (len(p.get("keyword", "")), p.get("date", "")))
@@ -862,7 +863,7 @@ def home():
  <h2 id="seo-h" class="rv">A social media and marketing agency for doctors</h2>
  <div class="rv">
   <p>Karunya Digital is a <b>healthcare marketing agency</b> that works only with doctors and hospitals. We handle <b>social media management for doctors</b>, Instagram reels, Google Business Profile and SEO, within the new NMC rules, so patients in your city find you easily.</p>
-  <p>Gynaecologists, IVF specialists, orthopaedic surgeons, dentists and pulmonologists, from Varanasi to Meerut, Lucknow, Agra and Prayagraj: 50+ doctors work with us today.</p>
+  <p>Gynaecologists, IVF specialists, orthopaedic surgeons, dentists and pulmonologists, from <a href="healthcare-marketing-agency-varanasi.html">Varanasi</a> to <a href="healthcare-marketing-agency-meerut.html">Meerut</a>, <a href="healthcare-marketing-agency-lucknow.html">Lucknow</a>, Agra, <a href="healthcare-marketing-agency-prayagraj.html">Prayagraj</a>, <a href="healthcare-marketing-agency-patna.html">Patna</a> and <a href="healthcare-marketing-agency-gorakhpur.html">Gorakhpur</a>: 50+ doctors work with us today.</p>
  </div>
 </div></section>
 
@@ -1073,6 +1074,91 @@ def service_page(slug):
 """
     h = head(d["title"], d["desc"], slug)
     return page_ld(h, d["nav"], slug + ".html", faq=d["faq"], service=d["nav"]) + header("Services") + body + footer()
+
+
+# ------------------------------------------------------------------ CITY LANDING PAGES
+CITY_PAGES = {
+    "lucknow": {"city": "Lucknow", "state": "Uttar Pradesh", "guide": "blog-digital-marketing-agency-for-doctors-in-lucknow",
+        "proof": "In Lucknow we already work with Dr. Rishabh Jaiswal (orthopaedics, Max Hospital) and Dr. Tanima Shukla (gynaecology).",
+        "local": "Lucknow has large hospitals and hundreds of independent clinics, so a patient searching on their phone sees many names at once. The doctors they call are the ones whose Google profile is complete and whose face and voice they have already seen in a short video."},
+    "prayagraj": {"city": "Prayagraj", "state": "Uttar Pradesh", "guide": "blog-digital-marketing-agency-in-prayagraj",
+        "proof": "In Prayagraj we already work with Dr. Vaibhav Krishna (pulmonology).",
+        "local": "Patients come to Prayagraj from the districts around it, and most of them search in Hindi before they travel. Clear Hindi and Hinglish content, with the right address, timings and phone number on Google, is what brings them to the right clinic."},
+    "meerut": {"city": "Meerut", "state": "Uttar Pradesh", "guide": "",
+        "proof": "In Meerut we already work with Dr. Manisha Chaudhary (gynaecology), Dr. Raman Jindal (orthopaedics) and Sangeeta Hospital.",
+        "local": "Meerut patients compare local doctors with hospitals in Delhi NCR. A doctor who explains things simply in a Reel, and whose Google profile shows correct timings and real replies to reviews, gives families a reason to stay in the city for treatment."},
+    "patna": {"city": "Patna", "state": "Bihar", "guide": "blog-digital-marketing-agency-for-doctors-in-patna",
+        "proof": "In Bihar we already work with doctors in Siwan, including Dr. Alka Sony Chaudhary (gynaecology) and Dr. Madhuresh Kumar (orthopaedics).",
+        "local": "Patna is where families from across Bihar come for specialist care. They usually search from their home district first, so the doctors they find are the ones with a complete Google profile and patient-education videos in the language they speak."},
+    "gorakhpur": {"city": "Gorakhpur", "state": "Uttar Pradesh", "guide": "blog-digital-marketing-agency-in-gorakhpur",
+        "proof": "We are based in Varanasi and work with 50+ doctors across Uttar Pradesh and Bihar.",
+        "local": "Gorakhpur serves patients from eastern Uttar Pradesh and the districts near the border. Many of them search in Hindi on a phone, so simple Hindi videos and a correct Google Maps listing matter more than a fancy website."},
+}
+
+
+def city_slug(k):
+    return f"healthcare-marketing-agency-{k}"
+
+
+def city_page(k):
+    d = CITY_PAGES[k]; c = d["city"]; slug = city_slug(k)
+    msg = f"Hello Karunya Digital, I'm a doctor in {c} and I'd like to talk about marketing for my clinic."
+    services_c = [
+        ("Google Business Profile", f"Correct name, address, phone, timings, services and photos, so patients searching 'doctor near me' in {c} find you on Google Maps."),
+        ("Instagram & Reels", "Patient-education Reels in Hindi, Hinglish or English. We write scripts, guide your phone shoot, edit, caption and post."),
+        ("SEO & website", "Pages for each service and condition you treat, your qualifications and registration details, and local search basics done right."),
+        ("YouTube & Shorts", "Longer explainers and Shorts that answer the questions your patients ask every day."),
+        ("Monthly strategy & report", "Calls, direction requests, profile views and reach, explained in plain words, with next month's plan."),
+    ]
+    sv = "".join(f'<div class="value"><h3>{t}</h3><p>{x}</p></div>' for t, x in services_c)
+    specs = "".join(f'<li><a href="{SPECS[x]["file"]}">{SPECS[x]["name"]}</a></li>' for x in SPECS) + "".join(f'<li><a href="{x}.html">{v["nav"]}</a></li>' for x, v in SVC_PAGES.items())
+    faq = [
+        (f"Does Karunya Digital have an office in {c}?", f"No. Our only office is on Taktakpur Road, Varanasi. We work with doctors in {c} remotely, over WhatsApp and calls, the same way we work with doctors in other cities."),
+        (f"How do shoots work for a doctor in {c}?", "We don't send a camera crew. We write the script and guide you on light, sound and framing, so you record on your phone in a few minutes. We then edit, caption and post."),
+        ("Is the work safe under the NMC 2026 advertising guidelines?", "Every post is planned as patient education and checked against the NMC guidelines (and the National Dental Commission advisory for dentists). No testimonials, before/after photos, 'best doctor' claims or discount offers. Nothing goes live without your approval."),
+        ("How much does it cost?", "We don't publish fixed prices. After a short call we share a written plan and a fixed monthly fee that fits your speciality and city. The fee is never linked to the number of patients or leads."),
+        (f"Which doctors in {c} do you work with?", "Gynaecologists, IVF specialists, orthopaedic surgeons, dentists, pulmonologists, physicians, clinics, nursing homes and multi-speciality hospitals. We work only in healthcare."),
+    ]
+    faq_html = "".join(f"<details><summary>{_html.escape(q)}</summary><p>{_html.escape(a)}</p></details>" for q, a in faq)
+    guide = next((q for q in POSTS if q["slug"] == d["guide"]), None)
+    guide_line = f' Before you hire anyone, including us, read our <a href="{guide["slug"]}.html">guide to choosing a digital marketing agency in {c}</a>.' if guide else ""
+    others = "".join(f'<li><a href="{city_slug(x)}.html">{v["city"]}</a></li>' for x, v in CITY_PAGES.items() if x != k) + f'<li><a href="{VNS_SLUG}.html">Varanasi</a></li>'
+    body = f"""<main id="main">
+{page_hero(f"Healthcare digital marketing agency for doctors in {c}", f"Karunya Digital helps doctors, dentists, clinics and hospitals in {c} get found on Google, Instagram and YouTube. A healthcare-only team. You approve every post.")}
+<section class="sec light" aria-labelledby="c1-h"><div class="wrap about-grid">
+ <div>
+  <h2 id="c1-h">A digital marketing agency for doctors in {c}</h2>
+  <p class="lead">{d["local"]}</p>
+  <p class="lead">{d["proof"]} Every piece of content is patient education, written for the NMC 2026 guidelines, and goes live only after your yes.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:22px"><a class="btn btn-wa" href="{wa(msg)}" target="_blank" rel="noopener">{wa_icon(18)}Talk on WhatsApp</a><a class="btn btn-navy" href="audit.html">Get a free check</a></div>
+ </div>
+ <div class="values">{sv}</div>
+</div></section>
+<section class="sec dark" aria-labelledby="c2-h"><div class="wrap">
+ <h2 id="c2-h">What we do for {c} doctors</h2>
+ <p class="lead">Each speciality has different patients and different questions, so the content is built for it.</p>
+ <ul class="topics">{specs}</ul>
+</div></section>
+<section class="sec white" aria-labelledby="c3-h"><div class="wrap" style="max-width:860px"><article class="prose">
+ <h2 id="c3-h">Why {c} doctors choose a healthcare-only agency</h2>
+ <p>Most agencies work with every kind of business, from hotels to coaching centres. Medical marketing has its own rules. Since 6 October 2026, the NMC's Guidelines on Ethical Advertising and Public Communication bar patient testimonials, before/after content, "best" or "guaranteed" claims, paid or solicited reviews and discount offers. We plan around these rules from the start, so your pages build trust without putting your registration at risk.{guide_line}</p>
+ <h2>How we work with doctors in {c}</h2>
+ <ol><li><b>Free check:</b> we look at your Google profile and Instagram and share the top fixes.</li><li><b>Short call:</b> we understand your speciality, patients and goals, and share a written plan with a fixed monthly fee.</li><li><b>Monthly content:</b> topics, scripts, shoot guidance, editing and posting, all approved by you.</li><li><b>Monthly report:</b> what changed on Google and Instagram, in plain words.</li></ol>
+ <h2>Talk to us</h2>
+ <p><b>Karunya Digital</b><br>{ADDR}<br>Mon–Sat, 10am–7pm<br>Call <a href="tel:{CALL}">{CALL_TXT}</a> · WhatsApp <a href="{wa(msg)}" target="_blank" rel="noopener">{WA_TXT}</a></p>
+</article>
+ <h2 style="margin-top:48px">Frequently asked questions</h2>
+ <div class="faq">{faq_html}</div>
+</div></section>
+<section class="sec dark" aria-labelledby="c4-h"><div class="wrap">
+ <h2 id="c4-h" style="font-size:clamp(1.6rem,3vw,2.2rem)">Other cities we work in</h2>
+ <ul class="topics">{others}</ul>
+</div></section>
+</main>
+"""
+    h = head(f"Healthcare Marketing Agency for Doctors in {c} | Karunya Digital", f"Healthcare digital marketing agency for doctors, clinics and hospitals in {c}: Google Business Profile, Instagram Reels and SEO. NMC-safe, healthcare-only team.", slug)
+    h = page_ld(h, f"Healthcare marketing agency in {c}", slug + ".html", faq=faq, service=f"Healthcare digital marketing in {c}")
+    return h + header("") + body + footer()
 
 
 # ------------------------------------------------------------------ SPECIALTY
@@ -1386,9 +1472,9 @@ open(os.path.join(OUT, "blog.html"), "w").write(blog_index(POSTS))
 for _p in POSTS:
     open(os.path.join(OUT, _p["slug"] + ".html"), "w").write(blog_post(_p, POSTS))
 BANNED = ["apna hospital", "golden hospital", "aaha rani", "asha rani", "muzammil", "mujammil", "muzzamil"]
-for fn, html in [(k + ".html", service_page(k)) for k in SVC_PAGES] + [(VNS_SLUG + ".html", varanasi_page()), ("index.html", home()), ("audit.html", audit_page()), ("game.html", game_page()), ("404.html", page404()), ("services.html", services()), ("work.html", work()), ("about.html", about()), ("contact.html", contact()), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]:
+for fn, html in [(city_slug(k) + ".html", city_page(k)) for k in CITY_PAGES] + [(k + ".html", service_page(k)) for k in SVC_PAGES] + [(VNS_SLUG + ".html", varanasi_page()), ("index.html", home()), ("audit.html", audit_page()), ("game.html", game_page()), ("404.html", page404()), ("services.html", services()), ("work.html", work()), ("about.html", about()), ("contact.html", contact()), ("privacy.html", legal("privacy")), ("terms.html", legal("terms"))]:
     open(os.path.join(OUT, fn), "w").write(html)
-pages = ["", VNS_SLUG + ".html"] + [k + ".html" for k in SVC_PAGES] + [SPECS[k]["file"] for k in SPECS] + ["blog.html"] + [p["slug"] + ".html" for p in POSTS] + ["audit.html", "game.html", "services.html", "work.html", "about.html", "contact.html", "privacy.html", "terms.html"]
+pages = ["", VNS_SLUG + ".html"] + [city_slug(k) + ".html" for k in CITY_PAGES] + [k + ".html" for k in SVC_PAGES] + [SPECS[k]["file"] for k in SPECS] + ["blog.html"] + [p["slug"] + ".html" for p in POSTS] + ["audit.html", "game.html", "services.html", "work.html", "about.html", "contact.html", "privacy.html", "terms.html"]
 open(os.path.join(OUT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>https://karunyadigital.online/{p}</loc><lastmod>{datetime.date.today().isoformat()}</lastmod></url>" for p in pages) + "</urlset>")
 for _f in glob.glob(os.path.join(OUT, "*.html")):
     _t = open(_f).read().lower()

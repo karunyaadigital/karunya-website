@@ -96,6 +96,8 @@ We write Reel scripts in simple Hindi or Hinglish and give shoot guidance so you
 
 We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours. You can also read how we work with doctors in our [digital marketing agency in Varanasi guide](blog-digital-marketing-agency-in-varanasi.html). We are one option; compare us with the same questions.
 
+See how we work with doctors in Prayagraj on our [healthcare marketing agency in Prayagraj](healthcare-marketing-agency-prayagraj.html) page.
+
 ## Frequently asked questions
 
 **How do I choose a digital marketing agency in Prayagraj for my clinic?**

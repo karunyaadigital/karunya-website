@@ -101,6 +101,8 @@ Karunya Digital is a healthcare marketing agency based in Varanasi, founded by B
 
 We are one option among many. Use the questions above with any agency you speak to.
 
+See how we work with doctors in Lucknow on our [healthcare marketing agency in Lucknow](healthcare-marketing-agency-lucknow.html) page.
+
 ## Frequently asked questions
 
 **Do I need an agency based in Lucknow?**

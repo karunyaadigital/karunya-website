@@ -93,6 +93,8 @@ We give you Reel scripts in simple Hindi or Hinglish and shoot guidance so you c
 
 We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours. See our [services](services.html) and our guide on [digital marketing agency cost for doctors](blog-digital-marketing-agency-cost-for-doctors.html). We are one option; compare us with the same questions.
 
+See how we work with doctors in Patna on our [healthcare marketing agency in Patna](healthcare-marketing-agency-patna.html) page.
+
 ## Frequently asked questions
 
 **How do I choose a digital marketing agency for doctors in Patna?**

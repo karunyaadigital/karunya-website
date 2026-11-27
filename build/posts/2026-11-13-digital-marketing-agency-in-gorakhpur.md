@@ -87,6 +87,8 @@ We work only with doctors and hospitals. We write Reel scripts in simple Hindi o
 
 We don't publish fixed prices: we share a plan and fee that fits your speciality and city after a short call. [Message us on WhatsApp](https://wa.me/916386492334) to get yours. Use the questions above to compare any agency, including us.
 
+See how we work with doctors in Gorakhpur on our [healthcare marketing agency in Gorakhpur](healthcare-marketing-agency-gorakhpur.html) page.
+
 ## Frequently asked questions
 
 **How much does a digital marketing agency in Gorakhpur charge doctors?**
